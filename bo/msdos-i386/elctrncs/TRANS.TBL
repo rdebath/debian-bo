@@ -1,0 +1,5 @@
+L ACS.DEB;1                         	acs.deb	../../binary-i386/electronics/acs_021-2.deb
+L NITPIC.DEB;1                      	nitpic.deb	../../binary-i386/electronics/nitpic_0.1-1.deb
+L PCB.DEB;1                         	pcb.deb	../../binary-i386/electronics/pcb_1.4.3-1.deb
+L X10.DEB;1                         	x10.deb	../../binary-i386/electronics/x10_1.05-1.deb
+L X10-ATMT.DEB;1                    	x10-atmt.deb	../../binary-i386/electronics/x10-automate_1.00-1.deb

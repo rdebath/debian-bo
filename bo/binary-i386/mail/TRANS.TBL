@@ -1,0 +1,40 @@
+F AF_1_99_.DEB;1                    	af_1.99.18-beta-1.deb
+L BBDB_1_5.DEB;1                    	bbdb_1.51-2.deb	../../binary-all/mail/bbdb_1.51-2.deb
+F BEROLIST.DEB;1                    	berolist_2.3.5-1.deb
+F BIFF_5_3.DEB;1                    	biff_5.31-1.deb
+F BULKMAIL.DEB;1                    	bulkmail_1.6-2.deb
+F COMPFACE.DEB;1                    	compface_89.11.11-9.deb
+F DELIVER_.DEB;1                    	deliver_2.1.12-2.deb
+F ELM-ME__.DEB;1                    	elm-me+_2.4pl25ME+31-5.deb
+L EXIM-DOC.DEB;1                    	exim-doc_1.61-1.deb	../../binary-all/mail/exim-doc_1.61-1.deb
+F EXIMON_1.DEB;1                    	eximon_1.61-1.deb
+F EXIM_1_6.DEB;1                    	exim_1.61-1.deb
+L EXMH_1_6.DEB;1                    	exmh_1.6.9-4.deb	../../binary-all/mail/exmh_1.6.9-4.deb
+F FETCHMAI.DEB;1                    	fetchmail_3.8-0.deb
+F IMAP-4_4.DEB;1                    	imap-4_4-4.deb
+F ITIMER_1.DEB;1                    	itimer_1.00-4.deb
+F MAILAGEN.DEB;1                    	mailagent_3.56-3.deb
+L MAILPGP_.DEB;1                    	mailpgp_1.0-3.deb	../../binary-all/mail/mailpgp_1.0-3.deb
+F MAILTOOL.DEB;1                    	mailtools_1.06-3.deb
+F MAILX_8_.DEB;1                    	mailx_8.1.1-3.deb
+F METAMAIL.DEB;1                    	metamail_2.7-21.deb
+F MH-PAPER.DEB;1                    	mh-papers_6.8.3-1.deb
+F MHONARC_.DEB;1                    	mhonarc_1.2.3-3.deb
+F MH_6_8_4.DEB;1                    	mh_6.8.4-13.deb
+F MIMEDECO.DEB;1                    	mimedecode_1.8-1.deb
+F MPACK_1_.DEB;1                    	mpack_1.5-2.deb
+F POPPASSD.DEB;1                    	poppassd_1.2-5.deb
+F PROCMAIL.000;1                    	procmail_3.10.4-2.deb
+L PROCMAIL.DEB;1                    	procmail-lib_950828-1.deb	../../binary-all/mail/procmail-lib_950828-1.deb
+F QPOPPER_.DEB;1                    	qpopper_2.2-4.deb
+F SENDMAIL.DEB;1                    	sendmail_8.8.5-1.deb
+L SIGNIFY_.DEB;1                    	signify_1.02-3.deb	../../binary-all/mail/signify_1.02-3.deb
+F SIGROT_1.DEB;1                    	sigrot_1.0-2.deb
+F SMAIL_3_.DEB;1                    	smail_3.2-3.deb
+F SMARTLIS.DEB;1                    	smartlist_3.10-16.deb
+F SPLITDIG.DEB;1                    	splitdigest_2.3-1.deb
+F TKMAIL_4.DEB;1                    	tkmail_4.0beta8-1.deb
+F TM_7_105.DEB;1                    	tm_7.105.1-1.deb
+L VM_6_28-.DEB;1                    	vm_6.28-1.deb	../../binary-all/mail/vm_6.28-1.deb
+F XFACES_3.DEB;1                    	xfaces_3.3-6.deb
+F XMAILTOO.DEB;1                    	xmailtool_3.1.2b-1.deb

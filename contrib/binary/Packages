@@ -1,0 +1,746 @@
+Package: abuse
+Version: 1.10-8
+Priority: optional
+Section: contrib
+Maintainer: Joey Hess <joeyh@master.debian.org>
+Depends: libc4, xlib6
+Architecture: i386
+Filename: contrib/binary/abuse_1.10-8.deb
+msdos-filename: contrib/msdos-i386/abuse.deb
+Size: 1897006
+MD5sum: 683047cd56c21b58b06158f7d4ed78f3
+Description: The demo of the Linux version of Crack dot Com's Abuse action game.
+ Abuse is an X11R6 action game from Crack dot Com.
+ The Ants have taken over the world, and the Resistance is depending on
+ you, lone armor-clad hero to destroy the Ants, and free humanity.
+ .
+ Requires a mouse. Binary only.
+installed-size: 5698
+
+Package: acroread
+Version: 3.0-1
+Priority: optional
+Section: contrib
+Maintainer: Klee Dienes <klee@debian.org>
+Depends: libc5 (>= 5.4.0-0), libdl1, xlib6 (>= 3.2-0)
+Architecture: i386
+Filename: contrib/binary/acroread_3.0-1.deb
+msdos-filename: contrib/msdos-i386/acroread.deb
+Size: 3666282
+MD5sum: 50c232aa2416366837f61343efddc415
+Description: Adobe Portable Document Format file viewer.
+ A viewer for the Adobe portable document format.
+ See <URL:http://www.adobe.com> for more information.
+installed-size: 8523
+
+Package: compress-package
+Version: 1.3-1
+Priority: extra
+Section: contrib
+Maintainer: Yves Arrouye <arrouye@debian.org>
+Architecture: all
+Filename: contrib/binary/compress-package_1.3-1.deb
+msdos-filename: contrib/msdos-i386/cmprpckg.deb
+Size: 13576
+MD5sum: 561c5b77f451346bf436fb6727a0e9f6
+Description: fileset to build Debian compress packages
+ This package contains some files that automatize the task of building
+ Debian packages containing the BSD compress(1) command.
+ .
+ Please note that the usual compress implementation uses an algorithm
+ that is patented by Unisys and that use of such a compress may be
+ subject to authorization from Unisys.
+
+Package: ferret
+Version: 1.2.1-1
+Priority: extra
+Section: contrib
+Maintainer: Brian White <bcwhite@pobox.com>
+Depends: libc5, perl (>=5.003), perl (<<5.004), libgdbm1, libg++27
+Architecture: i386
+Filename: contrib/binary/ferret_1.2.1-1.deb
+msdos-filename: contrib/msdos-i386/ferret.deb
+Size: 143864
+MD5sum: 52d5792418de119e15c5a5925d906070
+Description: A small to medium sized search engine with a Perl interface
+ Ferret is intended for indexing a collection of documents containing
+ thousands of files and tens to hundreds of megabytes worth of data.
+ Originally intended for indexing small to medium sized web-sites, the
+ actual engine is general enough to be used for any type of text.
+ .
+ The query mechanism is very fast and includes a nifty front-end for
+ the World-Wide-Web.  Three different web interfaces are available
+ to support everyone from the novice to advanced user.  Multiple output
+ formats are also available.
+ .
+ Ferret supports many advanced search abilities including:  boolean
+ operators, phrase matching, proximity, and word expansion.
+ .
+ Ferret is a commercial product that is free for educational or non-profit
+ organizations.  For more information, send email to ferret-info@verisim.com,
+ phone +1-613-224-7547, fax +1-613-224-7542, or visit http://www.verisim.com/
+ .
+ *** This evaluation version is completely free until October 18th, 1997! ***
+installed-size: 475
+
+Package: filerunner
+Version: 2.2.1-1
+Priority: optional
+Section: contrib
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Depends: tk42, libc5 (>= 5.4.17-1)
+Architecture: i386
+Filename: contrib/binary/filerunner_2.2.1-1.deb
+msdos-filename: contrib/msdos-i386/filernnr.deb
+Size: 88988
+MD5sum: fc561664212e27390300a2043e56da43
+Description: X-Based FTP program & file manager
+ FileRunner is an X-Based FTP program.  It gives you a windowed
+ view of files on your local system and a remote system.  It
+ allows transferring multiple files at once, tagging of files,
+ etc.
+installed-size: 375
+
+Package: gimp-dmotif
+Version: 0.54.1-6
+Priority: optional
+Section: contrib
+Maintainer: Rob Browning <osiris@cs.utexas.edu>
+Depends: libc5 (>= 5.4.0-0), libpng1 (>= 0.88), xlib6 (>= 3.2-0), xpm4.7 (>= 3.4g-0), zlib1 (>= 1.00)
+Conflicts: gimp-smotif
+Replaces: gimp-smotif
+Architecture: i386
+Filename: contrib/binary/gimp-dmotif_0.54.1-6.deb
+msdos-filename: contrib/msdos-i386/gimpdmtf.deb
+Size: 271516
+MD5sum: 552a04f5b7014cba33ff647e10cf9af0
+Description: GIMP (General Image Manipulation Program), dynamic Motif linkage.
+ The GIMP is designed to provide an intuitive graphical interface to a
+ variety of image editing operations.
+ .
+ The GIMP's functionality includes:
+ .
+      Support for 8, 15, 16, & 24 bit displays
+      Ordered and Floyd-Steinberg Dithering for 8 bit
+      RGB, Grayscale, & Indexed color modes
+      Multiple views of same image to ease complex tasks
+      Fast zooming and panning on images
+      Full suite of selection tools - (rectangle, ellipse, freehand,
+        fuzzy, bezier, intelligent)
+      Transform tools - (rotate, scale, shear, flip)
+      Crop, color picker, bucket-fill, blend, & text tools
+      Paint tools - (paintbrush, airbrush, clone, blur, sharpen, convolve)
+      Full set of brush masks and support for arbitrary brushes
+      File format support - (jpg, tif, gif, png, xpm)
+      Numerous effects filters - (blur, edge detect, pixelize, ...)
+      Channel operations - (add, composite, blend, ...)
+ .
+ A good deal of the GIMP's functionality is invested in external
+ modules, called plug-ins.  These independent programs are called from
+ the GIMP to run as separate processes and carry out essential tasks
+ such as loading and saving images, running effects filters, combining
+ multiple images with channel operations, and communicating with other
+ programs (such as scanning software, ray tracers, other image
+ manipulation packages, etc).  Programmers are invited/urged to add
+ new functionality by creating new plug-ins.
+ .
+ GIMP requires Motif. This package is dynamically linked against Motif
+ for people who have Motif installed on their system.
+installed-size: 1004
+source: gimp
+
+Package: gimp-plugins
+Version: 1.0-1
+Priority: optional
+Section: contrib
+Maintainer: Rob Browning <osiris@cs.utexas.edu>
+Depends: libc5 (>= 5.4.17-1)
+Architecture: i386
+Filename: contrib/binary/gimp-plugins_1.0-1.deb
+msdos-filename: contrib/msdos-i386/gimpplgn.deb
+Size: 250928
+MD5sum: 4851bd9a3982f6bc1bf33b11ebf312c1
+Description: A set of fairly "standard" plug-ins for the GIMP.
+ A set of fairly "standard" plug-ins for the GIMP.
+installed-size: 1204
+
+Package: gimp-smotif
+Version: 0.54.1-6
+Priority: optional
+Section: contrib
+Maintainer: Rob Browning <osiris@cs.utexas.edu>
+Depends: libc5 (>= 5.4.0-0), libpng1 (>= 0.88), xlib6 (>= 3.2-0), xpm4.7 (>= 3.4g-0), zlib1 (>= 1.00)
+Conflicts: gimp-dmotif
+Replaces: gimp-dmotif
+Architecture: i386
+Filename: contrib/binary/gimp-smotif_0.54.1-6.deb
+msdos-filename: contrib/msdos-i386/gimpsmtf.deb
+Size: 784750
+MD5sum: 555edbf0d1f18cb83f4912c20846da6d
+Description: GIMP (General Image Manipulation Program), static Motif linkage.
+ The GIMP is designed to provide an intuitive graphical interface to a
+ variety of image editing operations.
+ .
+ The GIMP's functionality includes:
+ .
+      Support for 8, 15, 16, & 24 bit displays
+      Ordered and Floyd-Steinberg Dithering for 8 bit
+      RGB, Grayscale, & Indexed color modes
+      Multiple views of same image to ease complex tasks
+      Fast zooming and panning on images
+      Full suite of selection tools - (rectangle, ellipse, freehand,
+        fuzzy, bezier, intelligent)
+      Transform tools - (rotate, scale, shear, flip)
+      Crop, color picker, bucket-fill, blend, & text tools
+      Paint tools - (paintbrush, airbrush, clone, blur, sharpen, convolve)
+      Full set of brush masks and support for arbitrary brushes
+      File format support - (jpg, tif, gif, png, xpm)
+      Numerous effects filters - (blur, edge detect, pixelize, ...)
+      Channel operations - (add, composite, blend, ...)
+ .
+ A good deal of the GIMP's functionality is invested in external
+ modules, called plug-ins.  These independent programs are called from
+ the GIMP to run as separate processes and carry out essential tasks
+ such as loading and saving images, running effects filters, combining
+ multiple images with channel operations, and communicating with other
+ programs (such as scanning software, ray tracers, other image
+ manipulation packages, etc).  Programmers are invited/urged to add
+ new functionality by creating new plug-ins.
+ .
+ GIMP requires Motif. This package is statically linked against Motif
+ for people who don't have Motif installed on their system.
+installed-size: 2164
+source: gimp
+
+Package: java-cup
+Version: 0.10b-1
+Priority: optional
+Section: contrib
+Maintainer: Vincent Renardias <vincent@waw.com>
+Depends: java-virtual-machine,jdk-common
+Suggests: java-compiler
+Architecture: all
+Filename: contrib/binary/java-cup_0.10b-1.deb
+msdos-filename: contrib/msdos-i386/java-cup.deb
+Size: 83382
+MD5sum: e7722946a27e8e00720b17fb33087d1c
+Description: LALR grammar parser for java.
+ CUP is a system for generating LALR parsers from simple specifications.
+ It serves the same role as the widely used program YACC and in fact
+ offers most of the features of YACC. However, CUP is written in Java,
+ uses specifications including embedded Java code, and produces parsers
+ which are implemented in Java.
+installed-size: 221
+
+Package: kaffe
+Version: 0.7.1-2
+Priority: optional
+Section: contrib
+Maintainer: Vincent Renardias <vincent@waw.com>
+Depends: libc5 (>= 5.4.0-0), libdl1,jdk-common
+Provides: java-virtual-machine
+Architecture: i386
+Filename: contrib/binary/kaffe_0.7.1-2.deb
+msdos-filename: contrib/msdos-i386/kaffe.deb
+Size: 130128
+MD5sum: f9688328b645d3081daff606c98d6de1
+Description: A JVM to run Java bytecode
+ This is Kaffe, a virtual machine design to execute Java bytecode.
+ It performs "just-in-time" code conversion from the abstract code to
+ the host machine's native code.  This will ultimately allow execution of
+ Java code at the same speed as standard compiled code but while maintaining
+ the advantages and flexibility of code independence.
+installed-size: 338
+
+Package: koules
+Version: 1.3-2
+Priority: optional
+Section: contrib
+Maintainer: Klee Dienes <klee@debian.org>
+Depends: libc5 (>= 5.4.0-0), xlib6 (>= 3.2-0)
+Architecture: i386
+Filename: contrib/binary/koules_1.3-2.deb
+msdos-filename: contrib/msdos-i386/koules.deb
+Size: 220690
+MD5sum: 2d3ae5d00af804d66d5216afa71cabc0
+Description: Space action game for X11.
+ A somewhat abstract space action game for X11 with sound.
+ Supports multiplayer deathmatch and cooperative play.
+ .
+ See <URL:http://www.paru.cas.cz/~hubicka/koules> for more
+ information.
+installed-size: 377
+
+Package: logwrites
+Version: 1.1-3
+Priority: extra
+Section: contrib
+Maintainer: Heiko Schlittermann <heiko@lotte.sax.de>
+Depends: libc5 (>= 5.2.18)
+Architecture: i386
+Filename: contrib/binary/logwrites_1.1-3.deb
+msdos-filename: contrib/msdos-i386/logwrite.deb
+Size: 15698
+MD5sum: e77bd39b83f3d3e616ea7743b7e697b7
+Description: Loggging and saving of file modifications
+ .
+ This is useful for tracking changes to files while installing
+ software packages.
+installed-size: 33
+
+Package: lyx
+Version: 0.10.7-3
+Priority: optional
+Section: contrib
+Maintainer: Stuart Lamble <lamble@yoyo.cc.monash.edu.au>
+Depends: libc5 (>= 5.4.13-1), libg++27 (>= 2.7.2.1-1), xforms0 (<< 0.8101), xforms0 (>= 0.81), xlib6 (>= 3.2-0), xpm4.7 (>= 3.4g-0)
+Recommends: latex, dvips, tetex-base|ltxgraph
+Architecture: i386
+Filename: contrib/binary/lyx_0.10.7-3.deb
+msdos-filename: contrib/msdos-i386/lyx.deb
+Size: 420344
+MD5sum: ab40b592c76ecb9deef9901526f5fedc
+Description: High Level Word Processor (BETA version)
+ LyX is an almost WYSIWYG-frontend for LaTeX that runs under the X Window
+ System. It makes the power and typesetting quality of LaTeX available for
+ people who are used to word processors. Since LyX supports LaTeX's concept
+ of general mark-ups, it is even easier and faster to create professional
+ quality documents with it than with usual word processors. It is also
+ possible to use LaTeX-commands within LyX, so nothing of LaTeX's power is
+ lost.
+ .
+ Note that LyX is still under development. It may still have some bugs. But
+ it is already very usable.
+installed-size: 1514
+
+Package: metrox
+Version: 3.1.2-1
+Priority: extra
+Section: contrib
+Maintainer: Johnie Ingram <johnie@debian.org>
+Depends: libc5 (>= 5.4.0-0), xbase (>= 3.2-0), xlib6 (>= 3.2-0)
+Provides: xserver
+Architecture: all
+Filename: contrib/binary/metrox_3.1.2-1.deb
+msdos-filename: contrib/msdos-i386/metrox.deb
+Size: 9274
+MD5sum: e6f63885c6002fd5399dd18be3ea892a
+Description: MetroX X server (installer)
+ An enhanced, accelerated X server, which can run with multiple
+ video cards if the cards are made by Matrox.
+ .
+ MetroX is commercial software -- it must be purchased separately
+ (often less than $30) and placed in $TMPDIR (or /var/tmp if
+ $TMPDIR is not defined).  The file is  MetroX-3.1.2.tar[.gz].
+installed-size: 25
+
+Package: nedit-dmotif
+Version: 4.0.3-1
+Priority: optional
+Section: contrib
+Maintainer: Erik B. Andersen <andersee@debian.org>
+Depends: libc5 (>= 5.4.0-0), xlib6 (>= 3.2-0), xpm4.7 (>= 3.4g-0)
+Conflicts: nedit-smotif
+Replaces: nedit-smotif
+Architecture: i386
+Filename: contrib/binary/nedit-dmotif_4.0.3-1.deb
+msdos-filename: contrib/msdos-i386/nedtdmtf.deb
+Size: 179230
+MD5sum: 94f244f1d71a264a32500bea5db12c37
+Description: NEdit is a powerful, customizable, Motif based text editor.
+ .
+ NEdit is a GUI (Graphical User Interface) style text editor for programs and
+ plain-text files.  Users of Macintosh and MS Windows based text editors will
+ find NEdit a familiar and comfortable environment.  NEdit provides all of the
+ standard menu, dialog, editing, and mouse support, as well as all of the
+ standard shortcuts to which the users of modern GUI based environments are
+ accustomed.  For users of older style Unix editors, welcome to the world of
+ mouse-based editing!
+ .
+ This version of NEdit requires Motif. This package is dynamically linked
+ with Motif for people who have the Motif libraries installed on their
+ system.  If you DO NOT have Motif installed, try "nedit-smotif".
+installed-size: 396
+source: nedit
+
+Package: nedit-smotif
+Version: 4.0.3-1
+Priority: optional
+Section: contrib
+Maintainer: Erik B. Andersen <andersee@debian.org>
+Depends: libc5 (>= 5.4.0-0), xlib6 (>= 3.2-0), xpm4.7 (>= 3.4g-0)
+Conflicts: nedit-dmotif
+Replaces: nedit-dmotif
+Architecture: i386
+Filename: contrib/binary/nedit-smotif_4.0.3-1.deb
+msdos-filename: contrib/msdos-i386/nedtsmtf.deb
+Size: 634898
+MD5sum: 744e9546baf2f0a809420af83840a1f9
+Description: NEdit is a powerful, customizable, Motif based text editor.
+ .
+ NEdit is a GUI (Graphical User Interface) style text editor for programs and
+ plain-text files.  Users of Macintosh and MS Windows based text editors will
+ find NEdit a familiar and comfortable environment.  NEdit provides all of the
+ standard menu, dialog, editing, and mouse support, as well as all of the
+ standard shortcuts to which the users of modern GUI based environments are
+ accustomed.  For users of older style Unix editors, welcome to the world of
+ mouse-based editing!
+ .
+ This version of NEdit is statically linked with Motif for people who DO
+ NOT have the Motif libraries installed on their system.  If you are
+ unsure whether you have Motif, then you almost certainly do not have it,
+ and you should use this package.  If you DO have Motif installed, try
+ "nedit-dmotif".
+installed-size: 1395
+source: nedit
+
+Package: netscape
+Version: 3.01-4
+Priority: optional
+Section: contrib
+Maintainer: Brian White <bcwhite@verisim.com>
+Depends: xpm4.7, motifnls, libc5 (>= 5.4.0-0), libdl1, xlib6 (>= 3.2-0)
+Recommends: mime-support
+Provides: www-browser, news-reader, mail-reader
+Replaces: netscape-beta
+Architecture: i386
+Filename: contrib/binary/netscape_3.01-4.deb
+msdos-filename: contrib/msdos-i386/netscape.deb
+Size: 5658
+MD5sum: ec927e86f2b4923c747306908ef4c47e
+Description: Popular World-Wide-Web browser software (installer)
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ Netscape Communications Corporation does not allow redistribution of
+ their software.  Therefore, this package requires the user to fetch
+ the netscape archive seperately and place it in the directory pointed
+ to by the TMPDIR environment variable (or /tmp if TMPDIR not defined)
+ before attempting to install this package.  You can get the linux
+ packages via anonymous ftp from "ftp.netscape.com".
+ .
+ Do NOT try to install any version of Netscape other than that matching
+ the version number of this package!
+ .
+ Netscape Communications Corporation does not support the Linux release
+ in the slightest, even for paying customers.  It has been made available
+ purely as a courtesy, so please do not send them questions about Linux.
+ .
+ This installer package has been placed in the public domain!
+installed-size: 35
+source: netscape-installer
+
+Package: npasswd-boulder
+Version: 1.2.2-2
+Priority: extra
+Section: contrib
+Maintainer: Chris Fearnley <cjf@netaxs.com>
+Depends: libc5
+Conflicts: npasswd_boulder
+Replaces: npasswd_boulder
+Architecture: i386
+Filename: contrib/binary/npasswd-boulder_1.2.2-2.deb
+msdos-filename: contrib/msdos-i386/npssbldr.deb
+Size: 938044
+MD5sum: 162784a36c172669d0abc7199afd7c88
+Description: npasswd - a replacement passwd (for better site security)
+ npasswd changes or installs a login password for username (your own
+ by default).  Only the super-user can change another users' password.
+ .
+ When changing a password, npasswd prompts for the old password
+ and then for the new one.  The new password must be typed twice to
+ forestall mistakes.  The new password is checked for reasonableness.
+ .
+ This is npasswd-boulder + cracklib 5.  I needed it because one of
+ my clients had 50% of his Debian users' passwds cracked by crack.
+ Some have argued that npasswd + cracklib offers as much (or more)
+ security than shadow passwd.  I'm not a security guru, but it's better
+ than the default passwd under Debian for multi-user systems.
+
+Package: pash
+Version: 2.2-1
+Priority: optional
+Section: contrib
+Maintainer: Christoph Lameter <clameter@waterf.org>
+Depends: libc5 (>= 5.4.7-5)
+Architecture: i386
+Filename: contrib/binary/pash_2.2-1.deb
+msdos-filename: contrib/msdos-i386/pash.deb
+Size: 103260
+MD5sum: 664a50a181030ff1115a2df9885b94c6
+Description: a full screen shell for Unix
+ Pash is a full screen overlaying shell for Unix (a shell user-interface)
+ inspired from the functionalities of Symantec's Norton Commander.
+ It supports file handling operations (copy,move,...), process control and
+ IPC devices control.
+ .
+ With Pash, you do everything you can do under a standard shell, but through
+ menus and dialog boxes. Pash must be run on top of a standard shell to be
+ able to run programs. It cannot be set up as a user's standard shell.
+installed-size: 255
+
+Package: picasm
+Version: 1.5-2
+Priority: optional
+Section: contrib
+Maintainer: Klee Dienes <klee@debian.org>
+Depends: libc5 (>= 5.4.0-0)
+Architecture: i386
+Filename: contrib/binary/picasm_1.5-2.deb
+msdos-filename: contrib/msdos-i386/picasm.deb
+Size: 19992
+MD5sum: 8a3965227cc66dcd8717bf8bdd27d97c
+Description: Assember for the Microchip PIC-family Microcontrollers
+ An assembler for the the Microchip PIC family of
+ microcontrollers.  Supports the majority of the Microchip PIC
+ family.  Uses Microchip (not Parallax) syntax.
+installed-size: 47
+
+Package: pinepgp
+Version: 1.11
+Priority: optional
+Section: contrib
+Maintainer: Hakan Ardo <hakan@debian.org>
+Depends: pine, pgp
+Architecture: all
+Filename: contrib/binary/pinepgp_1.11.deb
+msdos-filename: contrib/msdos-i386/pinepgp.deb
+Size: 4154
+MD5sum: 58bf5eea3f07b2c4253a3592b6b35ec3
+Description: Automates the pgp sign, encrypt and decrypt functions within pine
+ Pinepgp is a set filters designed for use with perl that automates
+ the process of pgp signing and encrypting outgoing mail and
+ decrypting incomming.
+installed-size: 20
+
+Package: swi-prolog
+Version: 2.8.0-2
+Priority: optional
+Section: contrib
+Maintainer: Milan Zamazal <pdm@fi.muni.cz>
+Depends: libc5 (>= 5.4.0-0), libdl1, libreadline2 (>= 2.0.1-1), ncurses3.0
+Architecture: i386
+Filename: contrib/binary/swi-prolog_2.8.0-2.deb
+msdos-filename: contrib/msdos-i386/swi-prlg.deb
+Size: 978750
+MD5sum: 7cced3c0bd9d83901f9cc4020d7b6039
+Description: SWI-Prolog interpreter.
+ SWI-Prolog is a Prolog implementation based on a subset of the WAM.
+ SWI-Prolog has been designed and implemented such that it can easily be
+ modified for experiments with logic programming and the relation
+ between logic programming and other programming paradigms (such as the
+ object oriented XPCE environment).  SWI-Prolog has a rich set of
+ built-in predicates and reasonable performance, which makes it possible
+ to develop substantial applications in it.  The current version offers
+ a module system, garbage collection and an interface to the C language.
+installed-size: 2037
+
+Package: xephem-smotif
+Version: 3.0-1
+Priority: optional
+Section: contrib
+Maintainer: Karl Sackett <krs@debian.org>
+Depends: libc5 (>= 5.4.0-0), xlib6 (>= 3.2-0), xpm4.7 (>= 3.4g-0)
+Architecture: i386
+Filename: contrib/binary/xephem-smotif_3.0-1.deb
+msdos-filename: contrib/msdos-i386/xphmsmtf.deb
+Size: 1659326
+MD5sum: d6bebd606b366f4abcf260cd23526d9f
+Description: An interactive astronomical ephemeris for X.
+ Xephem is an interactive astronomical ephemeris program for X Windows
+ systems with Motif.  It provides many graphical views as well as
+ quantitative heliocentric, geocentric and topocentric information for
+ Earth satellites, solar system and celestial objects.
+ .
+ This package contains an xephem binary statically linked against Motif.
+installed-size: 3846
+source: xephem
+
+Package: xforms-dev
+Version: 0.81-6
+Priority: optional
+Section: contrib
+Maintainer: Heiko Schlittermann <heiko@lotte.sax.de>
+Depends: elf-x11r6lib, libc5 (>= 5.2.18), xforms0 (>= 0.81-6)
+Suggests: xpm-dev
+Architecture: i386
+Filename: contrib/binary/xforms-dev_0.81-6.deb
+msdos-filename: contrib/msdos-i386/xformdev.deb
+Size: 417754
+MD5sum: ad8a58154a9eff1c6fd5fbaa05e88208
+Description: GUI Toolkit for X Window Systems
+ NOTE: No source available.
+ .
+ Forms Library is a graphical user interface toolkit based on Xlib
+ for X Window Systems. It comes with a rich set of objects such as
+ buttons, browsers, sliders and menus integrated into an elegant
+ event/object callback execution model that allows fast and easy
+ construction of X applications. The library consists of a flexible
+ set of C-routines that can be used in C and C++ programs.
+ .
+ Bundled with the library is also a Form designer, fdesign, which
+ can be used to build interaction forms in a WYSIWYG (what you see
+ is what you get) way and to generate the corresponding C code for
+ you.  50+ demos in source code are distributed with the library.
+ .
+ For compilation of the examples you need to have the xpm-dev package
+ installed.
+installed-size: 1226
+source: xforms0
+
+Package: xforms0
+Version: 0.81-6
+Priority: optional
+Section: contrib
+Maintainer: Heiko Schlittermann <heiko@lotte.sax.de>
+Provides: xforms
+Replaces: xforms
+Architecture: i386
+Filename: contrib/binary/xforms0_0.81-6.deb
+msdos-filename: contrib/msdos-i386/xforms0.deb
+Size: 147082
+MD5sum: 1a98bcf3a9233cf7debac194bd548bd2
+Description: GUI Toolkit for X Window Systems
+ NOTE: No source code available.
+ .
+ Forms Library is a graphical user interface toolkit based on Xlib
+ for X Window Systems. It comes with a rich set of objects such as
+ buttons, browsers, sliders and menus integrated into an elegant
+ event/object callback execution model that allows fast and easy
+ construction of X applications. The library consists of a flexible
+ set of C-routines that can be used in C and C++ programs.
+installed-size: 343
+
+Package: xgmod
+Version: 3.0.5-1
+Priority: optional
+Section: contrib
+Maintainer: Riku Voipio <riku.voipio@sci.fi>
+Depends: libc5 (>= 5.4.17-1), libg++27 (>= 2.7.2.1-1), qt1(>= 1.00), xlib6 (>= 3.2-0)
+Architecture: i386
+Filename: contrib/binary/xgmod_3.0.5-1.deb
+msdos-filename: contrib/msdos-i386/xgmod.deb
+Size: 71264
+MD5sum: 413cccd6babefe0172f7721d2f7280a9
+Description: xgmod, gmod with a fancy X interface
+ XGmod plays MOD/669/MTM/S3M/ULT/XM modules on machines that have an
+ Ultrasound (ace/max/pnp) sound card.
+ This version has a X-windows interface that requires Qt.
+installed-size: 232
+source: gmod
+
+Package: xirc
+Version: 1.17-2
+Priority: optional
+Section: contrib
+Maintainer: Igor Grobman <igor@debian.org>
+Depends: libc5 (>= 5.4.0-0), qt1(>= 1.00), xlib6 (>= 3.2-0)
+Architecture: i386
+Filename: contrib/binary/xirc_1.17-2.deb
+msdos-filename: contrib/msdos-i386/xirc.deb
+Size: 147438
+MD5sum: d6f29ed250542e67a22beed0e52bb41a
+Description: Irc client for X
+ X irc client with many features which include:
+ 	* DCC chat
+ 	* individual windows for each channel you've joined and private
+ 	  conversations
+  	* Subset of IRC-II command set
+installed-size: 435
+
+Package: xisp
+Version: 1.3-1
+Priority: optional
+Section: contrib
+Maintainer: Luca Maranzano <liuk@linux.it>
+Depends: libc5 (>= 5.4.0-0), xforms (>= 0.81-1), xlib6 (>= 3.2-0)
+Architecture: i386
+Filename: contrib/binary/xisp_1.3-1.deb
+msdos-filename: contrib/msdos-i386/xisp.deb
+Size: 27938
+MD5sum: 4d1f9e08d5b24ddf6920f14e392a0d1a
+Description: A user-friendly X interface to pppd/chat.
+ The xisp package implements a user-friendly X interface
+ to pppd/chat and provides maximum feedback from the dial-in and login
+ phases on a browser screen. It also provides greater versatility in
+ interrupting a call in progress and in general enhances the user's
+ feeling of "what's going on", especially if he/she is not all that well
+ acquainted with the intricacies of system log files. It's also much
+ nicer to look at as compared to connection scripts writing output on
+ the terminal :) The main application, xisp, relies on a special dialer,
+ xispdial, which is spawned by pppd in order to do the dialing.
+installed-size: 76
+
+Package: xldlas
+Version: 0.80-1
+Priority: optional
+Section: contrib
+Maintainer: Vincent Renardias <vincent@waw.com>
+Depends: libc5 (>= 5.4.0-0), xforms0 (>= 0.81-1), xlib6 (>= 3.2-0)
+Suggests: gnuplot,www-browser,postscript-viewer
+Architecture: i386
+Filename: contrib/binary/xldlas_0.80-1.deb
+msdos-filename: contrib/msdos-i386/xldlas.deb
+Size: 120618
+MD5sum: 263c9eae58ed891b2bfc7953cde64189
+Description: A program for statistics
+ Most standard statistical tasks can be performed by xldlas,
+ including data summaries, OLS regression, ANOVA, line plots,
+ scatter plots, and histograms. In addition, xldlas includes
+ some experimental data fitting techniques that use
+ connectionist artificial intelligence (such as Neural
+ Networks and Genetic Algorithms).
+installed-size: 311
+
+Package: xosview
+Version: 1.3.2-6
+Priority: optional
+Section: contrib
+Maintainer: joost witteveen <joostje@debian.org>
+Depends: elf-x11r6lib, libc5, libg++
+Architecture: i386
+Filename: contrib/binary/xosview_1.3.2-6.deb
+msdos-filename: contrib/msdos-i386/xosview.deb
+Size: 22400
+MD5sum: 083f714984ff69ca2e882cb22f3d9d2d
+Description: Fun to watch CPU/network usage programme
+ you see the usage of CPU/swap/network/interupts statistics in one 
+ window. Fun to watch, not much else.
+
+Package: xtar-dmotif
+Version: 1.4-2
+Priority: optional
+Section: contrib
+Maintainer: Steve Dunham <dunham@cps.msu.edu>
+Depends: elf-x11r6lib, libc5 (>= 5.4.0-0), xpm4.7 (>= 3.4g-0)
+Architecture: i386
+Filename: contrib/binary/xtar-dmotif_1.4-2.deb
+msdos-filename: contrib/msdos-i386/xtardmtf.deb
+Size: 42380
+MD5sum: 13e5eac69f47dc130296a420b044ebaf
+Description: xtar - Motif front end for tar
+  Fancy Motif front end for tar
+  .
+  This version requires libXm.so.2, use xtar-smotif if you don't own Motif
+installed-size: 97
+source: xtar
+
+Package: xtar-smotif
+Version: 1.4-2
+Priority: optional
+Section: contrib
+Maintainer: Steve Dunham <dunham@cps.msu.edu>
+Depends: elf-x11r6lib, libc5 (>= 5.4.0-0), xpm4.7 (>= 3.4g-0)
+Architecture: i386
+Filename: contrib/binary/xtar-smotif_1.4-2.deb
+msdos-filename: contrib/msdos-i386/xtarsmtf.deb
+Size: 497842
+MD5sum: 3276f35c450e1e2b9909fb29c30240fa
+Description: xtar - Motif front end for tar, with static libXm
+  Fancy Motif front end for tar
+  .
+  This version includes a statically linked libXm.so.2.  If you own
+  Motif, you should install xtar-dmotif instead
+installed-size: 98
+source: xtar

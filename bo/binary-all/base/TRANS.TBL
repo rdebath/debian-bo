@@ -1,0 +1,7 @@
+F ADDUSER_.DEB;1                    	adduser_3.2.deb
+F BASE-FIL.DEB;1                    	base-files_1.3.5.deb
+F BASE-PAS.DEB;1                    	base-passwd_1.3.1.deb
+F DPKG-FTP.DEB;1                    	dpkg-ftp_1.4.8.deb
+F MODCONF_.DEB;1                    	modconf_0.2.12.deb
+F NCURSES-.DEB;1                    	ncurses-base_1.9.9e-1.deb
+F TIMEZONE.DEB;1                    	timezone_7.55-2.deb

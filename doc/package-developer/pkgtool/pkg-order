@@ -1,0 +1,382 @@
+From: Manoj Srivastava <srivasta@datasync.com>
+Date: 12 Apr 1997 02:59:47 -0500
+Message-ID: <87sp0wisc8.fsf@tiamat.datasync.com>
+
+Hi,
+
+	I have just finished the next version of the package ordering
+ libraries/tool which shall be uploaded tonight to master -- I think I
+ have caught most of the design issues rasied on the lists (I am
+ including the spec below).
+
+	I am also including the output of a test ordering run
+ below. Any comments, criticisms are welcome.
+
+	manoj
+=========================================================================
+sample output:
+
+START
+wdiff
+tetexdoc
+tetexlib
+tetex
+svgalib1
+spellprogs
+sp
+rpncalc
+rcs
+picon-weather
+picon-users
+picon-unknown
+picon-misc
+picon-domains
+netstd
+metamail
+mbr
+lilo
+dwww
+dpkg
+dpkg-dev
+debmake
+bug
+bsdutils
+svgalib1-dev
+END
+=============================================================================
+
+Requirements
+------------
+
+* The package should write out an order to install new packages
+
+* The package should be able to detect dependency loops in the new
+  package list.
+
+* The package should be able to work stand alone, however, it should
+  provide libraries so that the dependency checks and topological
+  sorts on new packages are available to other scripts/programs as
+  well. (like dftp, auto build a whole distribution from scratch,
+  other dependency checkers).
+
+* The package should be a user interface only, all functionality
+  should be wrapped into the libraries so that alternate user
+  interfaces would be easy (using ncurses, perltk, dialog, CGI, etc
+  one can have multiple front ends).
+
+* The package should make no assumptions about the fields in the
+  package description, except possibly fields that it needs for
+  operation (Package, Status, Pre-Depends, Depends, Recommends,
+  Suggests, Conflicts, and Replaces).
+
+* The package should also be able to do dependency satisfaction checks
+  on other relationship fields in the package (Recommends, and
+  Suggests) as well, if asked by the user.
+
+* The package should use dpkg and friends to do version checks rather
+  than hard coding it internally -- (in case things change, like the
+  recent introduction of epochs).
+
+* The package should be able to read installed packages from
+  /var/lib/dpkg/status -- or one or more files in the same format
+  supplied by the user (*must* have the status field)
+
+* The libraries must support incremental construction of both the New
+  and Installed package lists. 
+
+* The package (or at least the libraries underneath) should provide an
+  easy means of adding/deleting packages to the list of packages to be
+  installed. 
+
+* This package should do nothing else than produce an ordering list
+  (apart from error messages about failed dependency checks, and
+  information asked by the user). It should not modify anything, apart
+  from maybe temp files in /tmp.
+
+* The package should be flexible about handling anomalies (a failed
+  dependency check could cause the process to stop, or the package
+  that failed the dependency (or conflict) to be marked as failed, and
+  ignored from further processing, and a ordering generated for the
+  rest of the packages.
+
+* The package should offer configurable levels of verbosity and debug
+  messages. 
+
+* The package should keep track of which package provided a virtual
+  package and use that in dependency ordering.
+
+* The package should be aware of virtual packages.
+
+Nice qualities of the current implementation:
+---- --------- -- --- ------- --------------
+* One should be able to run it as a ordering tool, a dependency
+  checker, or both.
+
+* One may pass in the installed files as a comma separated list to the
+  application, but if you roll your own application, using the library, you
+  could process the installed files one by one, marking failed new
+  packages on each run. Finally, one could just run the ordering pass
+  on the packages that survive (you could do this in one fell swoop,
+  if you wish, as well, as the code is written).
+
+Inputs:
+------
+
+* The new packages list          -- the packages to be installed.
+* The list of installed packages -- the packages on the system
+* The virtual packages list         
+
+	The current implementation of the ordering tool reads the new
+ packages list from a Package file given on the command line, and the
+ installed packages list from /var/lib/dpkg/status (ignoring packages
+ in status that are not installed OK), and uses the built in list of
+ virtual packages, unless given an alternative on the command
+ line. Also there an option of specifying a comma separated list of
+ Package files as installed packages, or another option to specify a
+ comma separated list of status files.
+
+	The underlying Library supports adding packages to the list
+ one at a time (we split up the Packages file internally anyway), by
+ supplying a string containing the output of dpkg --info or dpkg
+ -s. In fact the test method supplies a made up package info string to
+ add a package for a test.
+
+Process: 
+-------
+	In the checking dependency phase, for each package in
+ the new packages list, we look at the dependencies, and ensure that
+ each dependency is satisfied in either the new packages list or the
+ installed list. 
+
+* Test Pre-Dependencies. (add to package order info; need to keep
+  this static)
+   failures: mark packages not to be processed anymore. 
+        Default action: exit on any error
+	Optionally: dynamically ignore package, mark as failed,
+                    continue. 
+
+* Test Conflicts: 
+   failures: mark packages not to be processed anymore. 
+        Default action: continue
+   Need to handle conflict and replace: remove mark if we also replace.
+   That is, a conflict is bad, but a conflict *AND* a replacement of
+   the same package should be fine. Merely replacing a package
+   with another is also not a problem.
+	Optionally: fail hard.
+
+* Test Recommends: (optional)
+    failures: message, Default: do not mark and do not exit
+
+* Test Suggests: (optional)
+    failures: message, Default: do not mark and do not exit
+
+* Test Dependencies:
+     failures: mark packages not to be processed anymore. 
+        Default action: exit on any error
+     The ordering action is tied to this step. If the directive is
+     satisfied from the new packages list, a line is added to the
+     ordering info with the format 
+     <package-that-needs-to-be-installed-first> <current-package>
+     The information is later printed to an output file, and then we
+     run tsort on the output file, giving us an order to install new
+     packages in. 
+
+Responses to failures:
+--------- -- --------
+The user should be able to run any or all of these steps;
+Failure at any step should be configurable Responses could be
+ 1) stop
+ 2) mark package as bad
+ 3) warn verbosely, but no mark.
+ 4) Summarize number of failures
+ 5) ignore (same as not running this step)
+
+ 5 possible runs, each with 5 error Responses.
+
+Class Hierarchy:
+------ ---------
+
+*)Debian::Package::Virtual
+
+ This class handles the list of legal virtual packages, initialized
+ from a space separated list of virtual package names, or by a static
+ built in list valid at the time of writing.
+ 
+ Data Structures:
+ 	Associative array keyed on virtual package name (associative
+ 	array was chosen for ease of determining membership)
+ methods:
+        new: Initializer
+	print: Prints the list of virtual Packages
+	is_member: Checks if argument is a member of the list.
+        add:       Adds a package name to the list
+        test:           Tests the package.
+
+*)Debian::Package::List
+
+ This class handles lists of packages. It creates an associative array
+ of Debian::Package:Package objects, keyed on package name. The most
+ common entry point takes in Packages files. It also records packages
+ which are provided; provided packages do not figure in package
+ ordering, 
+ 
+ Data Structures:
+ 	Associative array 
+ methods:
+        new: Initializer  This takes a named parameter, filename,
+             which should be the path of a Packages file to use as the
+             data for the list. If an empty string, create an empty
+             list.
+	check : virtual functions to be instantiated in the
+	extra : derived classes.  
+	print: loops through the packages in the list, calling the
+	       print function of each package object. 
+	print_name: Like print, but just prints package names.
+        add:       Adds a package to the list
+        test:           Tests the package.
+
+*@)Debian::Package::Installed
+
+ This is a sub class derived from Debian::Package:List, it takes in
+ /var/lib/dpkg/status unless given Packages files of installed
+ packages. Handles Status fields.
+ methods:
+	new: Initializer  defaults Packages file to
+             /var/lib/dpkg/status. If a filename is given as an
+             argument, use that, if an empty string is given, create
+             an empty installed list.
+	check: Reject packages with a status field that is not 
+               OK installed OK.
+        test:           Tests the package.
+
+*@)Debian::Package::New
+
+ This is a sub class derived from Debian::Package:List, all dependency
+ and ordering runs are started on the list of new packages.
+ methods:
+	extra: As an extra processing of every package, creates a
+	       dependency list object for various fields. 
+	check_relations: performs the dependency checks and/or package
+	                 ordering for the new packages.
+	print_order: Write out the order information from all packages
+                     which do not have a failed tag to a file (specify
+                     fields to be considered -- Pre-Depends, Depends, etc)
+	tsort:       Run tsort on the given file. (How hard is it to
+                     write a topological sort in Perl?)
+        test:           Tests the package.
+
+**)Debian::Package::Package:
+
+ This class handles information about a Debian Package. It initializes
+ the package details with a snippet of a Packages file, and also
+ creates and manipulates internal fields by creating fields names
+ starting with a blank and underscore ' _'.  Additional Fields
+ correspond to dependency list object for the fields Depends,
+ Pre-Depends, Recommends, Suggests, Conflicts, and Replaces.
+ Also, the ordering information for a package is kept in '
+ _Order'. and the status (Success and Failure information) is also
+ maintained here.
+
+ Data Structures:
+ 	Associative array keyed on Field name. The values of internal
+ 	fields need not be simple strings.
+ methods:
+        new: Initializer  It takes an required argument, which is a
+             snippet from the Packages file.
+        print takes the key value pairs that constitute a Package
+              definition and prints it out. 
+	print_failure: Print causes for failures (unsatisfied
+                       dependencies, conflicts, etc). Takes in a
+                       keyword for the field (Pre-Depends, Depends,
+                       etc) 
+	failure_as_string: As above, except it returns a string.
+	check_failure: As above, except it returns a count.
+        print_success: Print satisfied dependencies etc. Takes in a
+                       keyword for the field (Pre-Depends, Depends,
+                       etc).
+	success_as_string: As above, except it returns a string.
+	check_success: As above, except it returns a count.
+        print_conflict: Print Conflicts for this package. 
+	conflict_as_string: As above, except it returns a string.
+	check_conflict: As above, except it returns a count.
+	print_order:  Return a string containing the order information
+                      from all dependencies for a particular field for
+                      every dependency in the list.
+        test:           Tests the package.
+
+
+
+***)Debian::Package::Dependency_List
+
+    This class implements a dependency list object. It is expected
+    that one Debian::Package::Dependency_List object shall be created
+    for each of the relationship fields in a package description.
+
+ Data Structures:
+ 	Associative array keyed on the package name of the package we
+ 	depend on. Handles the or `|' operator (used to denote
+ 	alternates, and, the most desirable package .
+ methods:
+        new: Initializer It takes an required named argument, string,
+             whose value is the value of the Pre-Depends, Depends,
+             Recommends, Suggests, Conflicts, or Replaces field values
+             for the package. argument, which is a snippet from the
+             Packages file.
+        add  Adds a new dependency to the list.
+	match: This method takes a dependency object as an argument,
+	       compares it with all the dependencies in the list, and 
+	       returns 'Yes' if there is a match.
+        print takes the internal representation of a dependency list
+              (complete with alternatives) and produces a string,
+              which should be the string used to initialize the
+              object.
+        depend: This method performs dependency checks for all
+                elements of the dependency list. It takes required
+                named argument  Package, which is the package object
+                to whom this dependency list belongs. It cycles
+                through all dependencies, calling the depend method of
+                each dependency object, handling alternates as it
+                goes.  
+	order:  Return the order information from all dependencies in 
+		the list.
+        test:           Tests the package.
+
+****)Debian::Package::Dependency
+
+ This module implements a Debian::Package::Dependency object, which
+ contains Meta info for a single dependency.
+
+ Data Structures:
+ 	Associative array  
+ methods
+	new: Initializer It takes a named argument, string, whose
+	     value is the value of an element in a dependency
+	     list. This is a fancy way of saying we record the name,
+	     relationship, and version number of the package we have a
+	     relationship with, with only the name being required. The
+	     relation ship is one of = << <= >>, or >=.
+	match: This method takes a dependency object as an argument,
+	       compares it with self, and return 'Yes' if they are
+	       identical. 
+	print: This method takes the internal representation of a
+	       dependency and prints it. 
+	as_string This method takes the internal representation of a
+                  dependency and converts it into a string  
+	depend This method takes Named package lists New and
+               Installed, and check self to see if the dependencies
+               are satisfied. It first checks the package list new,
+               and then the package list installed. 
+	order:  Return the order information for this dependency
+        test:           Tests the package.
+
+
+
+
+-- 
+ VOLUNTEER SUBJECT: A college sophomore who, of his or her own free
+ will, is allowed to choose between participating in an experiment or
+ failing a course.
+Manoj Srivastava               <url:mailto:srivasta@acm.org>
+Mobile, Alabama USA            <url:http://www.datasync.com/%7Esrivasta/>
+
+

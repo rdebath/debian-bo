@@ -1,0 +1,58 @@
+F A2GS_1_0.DEB;1                    	a2gs_1.0-4.1.deb
+L APSFILTE.DEB;1                    	apsfilter_4.9.1-10.deb	../../binary-all/text/apsfilter_4.9.1-10.deb
+L CSTOCS_3.DEB;1                    	cstocs_3.0-3.deb	../../binary-all/text/cstocs_3.0-3.deb
+L DEBIANDO.DEB;1                    	debiandoc-sgml_1.0.7.deb	../../binary-all/text/debiandoc-sgml_1.0.7.deb
+F DEROFF_1.DEB;1                    	deroff_1.0-1.deb
+F ENSCRIPT.DEB;1                    	enscript_1.5.0-1.deb
+F FIGLET_2.DEB;1                    	figlet_2.1.1-3.deb
+F GHOSTVIE.DEB;1                    	ghostview_1.5-16.deb
+F GROFF_1_.DEB;1                    	groff_1.10-3.deb
+L GSFONTS_.DEB;1                    	gsfonts_4.01-5.deb	../../binary-all/text/gsfonts_4.01-5.deb
+F GS_3_33-.DEB;1                    	gs_3.33-5.deb
+F GV_2_9_4.DEB;1                    	gv_2.9.4-3.deb
+L IAMERICA.DEB;1                    	iamerican_3.1.20-0.1.deb	../../binary-all/text/iamerican_3.1.20-0.1.deb
+L IBRITISH.DEB;1                    	ibritish_3.1.20-0.1.deb	../../binary-all/text/ibritish_3.1.20-0.1.deb
+L IDANISH_.DEB;1                    	idanish_1.2-1.deb	../../binary-all/text/idanish_1.2-1.deb
+L IFRENCH_.DEB;1                    	ifrench_1.3-2.deb	../../binary-all/text/ifrench_1.3-2.deb
+L IGERMAN_.DEB;1                    	igerman_2-5.deb	../../binary-all/text/igerman_2-5.deb
+L IITALIAN.DEB;1                    	iitalian_0.02-1.deb	../../binary-all/text/iitalian_0.02-1.deb
+L ISPANISH.DEB;1                    	ispanish_1.5-1.deb	../../binary-all/text/ispanish_1.5-1.deb
+F ISPELL_3.DEB;1                    	ispell_3.1.20-0.1.deb
+L ISWEDISH.DEB;1                    	iswedish_1.1-1.deb	../../binary-all/text/iswedish_1.1-1.deb
+L JOURNAL-.DEB;1                    	journal-dev_1-3.deb	../../binary-all/text/journal-dev_1-3.deb
+L JOURNAL_.DEB;1                    	journal_1-3.deb	../../binary-all/text/journal_1-3.deb
+F LESS_321.DEB;1                    	less_321-2.deb
+F LIBPAPER.DEB;1                    	libpaper_1.0.3-3.deb
+F LOUT_3_0.DEB;1                    	lout_3.08-1.deb
+F MAGICFIL.DEB;1                    	magicfilter_1.2-10.deb
+L MISCFILE.DEB;1                    	miscfiles_1.0-1.deb	../../binary-all/text/miscfiles_1.0-1.deb
+F MOST_4_7.DEB;1                    	most_4.7-1.deb
+F MPAGE_2_.DEB;1                    	mpage_2.4-3.deb
+F PAR_1_50.DEB;1                    	par_1.50-3.deb
+F PERLSGML.DEB;1                    	perlsgml_1996Oct09-6.deb
+L PPD-GS_1.DEB;1                    	ppd-gs_1.1-1.deb	../../binary-all/text/ppd-gs_1.1-1.deb
+L PSGML_1A.DEB;1                    	psgml_1a12-1.deb	../../binary-all/text/psgml_1a12-1.deb
+L PSPTOOLS.DEB;1                    	psptools_1.2.2-2.deb	../../binary-all/text/psptools_1.2.2-2.deb
+F PSUTILS_.DEB;1                    	psutils_1.16-3.deb
+F PTX_0_4-.DEB;1                    	ptx_0.4-4.deb
+F RECODE_3.DEB;1                    	recode_3.4.1-9.deb
+F RGREP_0_.DEB;1                    	rgrep_0.98.2-2.deb
+F SDC_1_0_.DEB;1                    	sdc_1.0.7beta-2.deb
+L SGML-DAT.DEB;1                    	sgml-data_0.02.deb	../../binary-all/text/sgml-data_0.02.deb
+F SGML-TOO.DEB;1                    	sgml-tools_0.99.7-3.deb
+L SGMLSPM_.DEB;1                    	sgmlspm_1.03ii-3.deb	../../binary-all/text/sgmlspm_1.03ii-3.deb
+F SGREP_0_.DEB;1                    	sgrep_0.99-4.deb
+L SPELLPRO.DEB;1                    	spellprogs_1.11-1.deb	../../binary-all/text/spellprogs_1.11-1.deb
+F SPELL_1_.DEB;1                    	spell_1.0-1.deb
+F SP_1_1_1.DEB;1                    	sp_1.1.1-3.deb
+F TCS_1-2.DEB;1                     	tcs_1-2.deb
+L TKDIFF_1.DEB;1                    	tkdiff_1.0p-1.deb	../../binary-all/text/tkdiff_1.0p-1.deb
+F VGRIND_5.DEB;1                    	vgrind_5.7-10.deb
+F VTPRINT_.DEB;1                    	vtprint_2.0.2-3.deb
+F WDIFF_0_.DEB;1                    	wdiff_0.5-3.deb
+L WENGLISH.DEB;1                    	wenglish_1.0-6.deb	../../binary-all/text/wenglish_1.0-6.deb
+L WGERMAN_.DEB;1                    	wgerman_2-5.deb	../../binary-all/text/wgerman_2-5.deb
+L WSPANISH.DEB;1                    	wspanish_1.0-6.deb	../../binary-all/text/wspanish_1.0-6.deb
+L WSWEDISH.DEB;1                    	wswedish_1.1-3.deb	../../binary-all/text/wswedish_1.1-3.deb
+F XLESS_1_.DEB;1                    	xless_1.7-4.deb
+F XPDF_0_6.DEB;1                    	xpdf_0.6-1.deb

@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Keeping Your Debian System Up To Date </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-8.html">Previous</A>
+<A HREF="debian-faq-10.html">Next</A>
+<A HREF="debian-faq.html#toc9">Table of Contents</A>
+<HR>
+<H2><A NAME="Uptodate"></A> <A NAME="s9">9. Keeping Your Debian System Up To Date </A></H2>
+
+<H2><A NAME="ss9.1">9.1 How can I upgrade my Debian 0.93 (or earlier) distribution, based on a.out format binaries, to 1.1 (or later), based on ELF binaries?</A></H2>
+
+<P>The directory <CODE>upgrades/</CODE> contains files needed by users upgrading 
+from Debian 0.93R6 to Debian 1.1 (or later).  There are two ways to upgrade:
+<UL>
+<LI>the manual way, installing the packages by hand. Instructions are
+in <CODE>upgrade_manual.doc</CODE>.  You will also need the files 
+<CODE>UpGrade</CODE>, <CODE>base_list</CODE>, and <CODE>dpkg-*.deb</CODE>.</LI>
+<LI>using dselect to upgrade all the packages <I>en masse</I>.
+Instructions are in <CODE>upgrade_dselect.doc</CODE>.  You will also need
+<CODE>dpkg-*.deb</CODE>.</LI>
+</UL>
+</P>
+<P>Note that the version of <CODE>dpkg</CODE> in this directory has the 
+a.out binary format.  The versions of <CODE>dpkg</CODE> in the development 
+and stable trees have the ELF format.</P>
+
+
+<H2><A NAME="ss9.2">9.2 How can I keep my Debian system current?</A></H2>
+
+<P>One could simply execute an anonymous ftp call to a Debian archive, then
+peruse the directories until he finds the desired file, and then fetch it,
+and finally install it using <CODE>dpkg</CODE>.  Note that <CODE>dpkg</CODE> 
+will install upgrade files in place, even on a running system.  
+Sometimes, a revised package will require the
+installation of a newly revised version of another package, in which case
+the installation will fail until/unless the other package is installed.</P>
+
+<P>Many people find this approach much too time-consuming, since
+Debian evolves so quickly---typically, a dozen or more new
+packages are uploaded every week.  This number is larger just before a
+new major release.  To deal with this avalanche, many people prefer to
+use an automated programs.  Three different packages are available for
+this purpose:
+<UL>
+<LI><CODE>dpkg-ftp</CODE>
+<A NAME="dpkgftp"></A> 
+.
+This is an access method for <CODE>dselect</CODE>. It can be invoked from within
+<CODE>dselect</CODE>, thereby allowing a user the ability to download files 
+and install them directly in one step.  To do this, bring up the 
+<CODE>dselect</CODE> program, choose option &quot;0&quot; (&quot;Choose
+the access method to use&quot;), highlight the option &quot;ftp&quot;
+then specify the remote hostname and directory.  
+<CODE>dpkg-ftp</CODE> will then automatically download the files that are
+selected (either in this session of <CODE>dselect</CODE> or earlier ones).
+<P>Note that, unlike the <CODE>mirror</CODE> program,  
+<CODE>dpkg-ftp</CODE> does not grab everything at a mirror site.
+Rather, it downloads only those files which you have selected (when first
+starting up <CODE>dpkg-ftp</CODE>), and which need to be updated.</P>
+<P><CODE>dpkg-ftp</CODE> is available in the directory 
+<CODE>stable/binary-all/net/</CODE> on any Debian archive.</P>
+
+</LI>
+<LI><CODE>mirror</CODE>.  This Perl script, and its (optional) manager program
+called <CODE>mirror-master</CODE>, can be used to fetch user-specified parts
+of a directory tree from a specified host <I>via</I> anonymous ftp.  
+<CODE>mirror</CODE> is particularly useful
+for downloading large volumes of software.  After the first time files have
+been downloaded from a site, a file called <CODE>.mirrorinfo</CODE> is
+stored on the local host.  Changes to the remote filesystem are
+tracked automatically by <CODE>mirror</CODE>, which compares this file to
+a similar file on the remote system and downloads only changed files.  
+<P>The <CODE>mirror</CODE> program is generally useful for updating local copies of
+remote directory trees.  The files fetched need not be Debian files.
+(Since <CODE>mirror</CODE> is a Perl script, it can also run on non-Unix systems.)
+Though the <CODE>mirror</CODE> program provides mechanisms for excluding files whose
+names match user-specified strings, this program is most useful when
+the objective is to download whole directory trees, rather than selected
+packages.</P>
+<P>The <CODE>mirror</CODE> program has been packaged for Debian, and is
+found in the directory
+<CODE>stable/binary-all/net</CODE> in the Debian FTP archive.</P>
+
+</LI>
+<LI><CODE>dftp</CODE>
+<A NAME="dftp"></A> 
+.  This Perl script can 
+be used to fetch user-specified Debian packages from a specified host.  
+It begins by downloading the Packages.gz files for the directories 
+specified by the user (e.g. stable, contrib, non-free) and presents him 
+with a list of packages.  These are placed in
+various sections: new upgrades, downgrades, new packages, ignored
+upgrades, and ignored packages.  The user then selects the packages he wants 
+and dftp downloads and installs them.  This makes it very easy to have
+your Debian system 100% current all the time without downloading
+packages that you are not going to install.  
+<P><CODE>dftp</CODE> can be used to call 
+<A HREF="debian-faq-7.html#dselect">dselect</A>,
+thereby providing an integrated way to fetch and update the Debian packages
+on one's system.  When the installation is finished, another <CODE>dftp</CODE> 
+command can be used to remove the package archive (&quot;.deb&quot;) files.
+Changes to the remote filesystem are tracked automatically by 
+<CODE>dftp</CODE>, which compares the local Packages.gz file to the files on 
+the remote system.</P>
+<P>The dftp program is available as a script in the directory
+<CODE>project/misc</CODE> in the Debian FTP archive.</P>
+</LI>
+</UL>
+</P>
+
+
+<H2><A NAME="ss9.3">9.3 Must I go into single user mode in order to upgrade a package?</A></H2>
+
+<P>No.  Packages can be upgraded in place, even in running systems.
+Debian has a <CODE>start-stop-daemon</CODE> program
+that is invoked to stop, then restart running process if necessary during
+a package upgrade. </P>
+
+
+<H2><A NAME="ss9.4">9.4 Do I have to keep all those .deb archive files on my disk?</A></H2>
+
+<P>No.  If you have downloaded the files to your disk (which is not absolutely
+necessary (see 
+<A HREF="#dpkgftp">dpkg-ftp</A> or 
+<A HREF="#dftp">dftp</A>)), 
+then after you have installed the packages, you can remove
+them from your system.</P>
+
+
+<H2><A NAME="ss9.5">9.5 How can I keep a log of the packages I added to the system?</A></H2>
+
+<P><CODE>dpkg</CODE> keeps a record of the packages that have been unpacked,
+configured, removed, and/or purged, but does not (currently) keep a log
+of terminal activity that occured while a package was being so manipulated.
+Some users overcome this simply by using <CODE>tee</CODE>:
+<BLOCKQUOTE><CODE>
+<PRE>
+dpkg -iGOEB -R stable/binary non-free/binary contrib/binary | \
+    tee -a /root/dpkg.log
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>The same command written using long options:
+<BLOCKQUOTE><CODE>
+<PRE>
+dpkg --install --refuse-downgrade --selected-only \
+  --skip-same-version --auto-deconfigure \
+  --recursiv estable/binary non-free/binary contrib/binary | \
+    tee -a /root/dpkg.log
+</PRE>
+</CODE></BLOCKQUOTE>
+
+</P>
+
+
+<HR>
+<A HREF="debian-faq-8.html">Previous</A>
+<A HREF="debian-faq-10.html">Next</A>
+<A HREF="debian-faq.html#toc9">Table of Contents</A>
+</BODY>
+</HTML>

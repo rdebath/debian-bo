@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: The Debian Bug Report System</TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-12.html">Previous</A>
+<A HREF="debian-faq-14.html">Next</A>
+<A HREF="debian-faq.html#toc13">Contents</A>
+<HR>
+<H2><A NAME="Bugs"></A> <A NAME="s13">13. The Debian Bug Report System</A></H2>
+
+<H2><A NAME="Buglogs"></A> <A NAME="ss13.1">13.1 Are there logs of known bugs?</A>
+</H2>
+
+<P>The Debian Linux distribution has a bug tracking system which files 
+details of bugs reported by users and developers. Each bug is given a 
+number, and is kept on file until it is marked as having been dealt with. 
+<P>Copies of this information are available at 
+<A HREF="http://www.debian.org/Bugs/">http://www.debian.org/Bugs/</A>.
+<P>
+<P>A mail server provides access to the bug tracking system database via
+e-mail.  In order to get the instructions send an e-mail to
+request@bugs.debian.org with "help" in the body.
+<P>
+<P>
+<H2><A NAME="bugrpt"></A> <A NAME="ss13.2">13.2 How do I report a bug in Debian?</A>
+</H2>
+
+<P>If you have found a bug in Debian, please read the instructions for reporting
+a bug in Debian.  These instructions can be obtained in one of several ways:
+<UL>
+<LI>By anonymous ftp.  Debian mirror sites contain the instructions in the
+file <CODE>doc/bug-reporting.txt</CODE>.  </LI>
+<LI>From the WWW.  A copy of the instructions is shown at
+<A HREF="http://www.debian.org/Bugs/Reporting.html">http://www.debian.org/Bugs/Reporting.html</A></LI>
+<LI>On any Debian system with the <CODE>doc-debian</CODE> package installed.
+The instructions are in the file <CODE>/usr/doc/debian/bug-reporting.txt</CODE>.  </LI>
+</UL>
+<P>Use these mail addresses for bugs:
+<UL>
+<LI>submit@bugs.debian.org:  for general bug reports.  Expect to
+get an automatic acknowledgement of your bug report.  It will also be
+automatically given a bug tracking number, entered into the bug log 
+and forwarded to the debian-devel mailing list.</LI>
+<LI>maintonly@bugs.debian.org:  to send bug reports to the maintainer
+only. It will not be forwarded to the debian-devel mailing list.
+For example, if one were to identify a bug that was common to many programs,
+then rather than entering dozens of bug reports, one might prefer to
+send individual bugs to maintonly, then send a summary report to 
+debian-devel.</LI>
+<LI>quiet@bugs.debian.org:  to submit bug reports to the bug log only, 
+without having them sent either to debian-devel or to the maintainer.</LI>
+</UL>
+
+<P>
+<HR>
+<A HREF="debian-faq-12.html">Previous</A>
+<A HREF="debian-faq-14.html">Next</A>
+<A HREF="debian-faq.html#toc13">Contents</A>
+</BODY>
+</HTML>

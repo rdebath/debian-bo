@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+
+ec984644c3093a6c2543b0c14b81cd28  ./X11_release_note.txt
+a71127ef71c5709cc9c37dbd2829de96  ./cfdisk.txt
+a1db9f0ec3ceb025cd53fe8b83d9b790  ./dselect.beginner.8.txt
+97c7ea5a1f5a8ff0aaa06cf3c3167232  ./install.txt
+72093daef86c110c97866841ddb99684  ./dselect.beginner.8.html
+07491bcf81c46e203ba4684d93194fb9  ./base-1.bin
+2ce1c8c00664ad56e5e4b5907f17f10e  ./root.bin
+e6302d29ab660b00dcfc041175bf69dd  ./install.html
+a7eb205c5c9090f82bcfc90aff82ae12  ./base-2.bin
+84103012c5921c704e0c24efa86c4154  ./base-3.bin
+d580b1019a4b274f4c5185ef43b42004  ./base-4.bin
+dc851e93b1f2a1babcf00b8811a59a32  ./base-5.bin
+42654c6e5a23ac8b1dd71387816f0437  ./drv1200.bin
+7553aa51cc40c7c6b38528ce69fb898a  ./drv1440.bin
+36a7f2fd176ad548d9aa9762259d4ef6  ./lmemroot.bin
+1f58a48fe199db88a3825c192ca1a458  ./resc1200.bin
+e3fe36eb001d09ff51a1c88c87f914b5  ./resc1440.bin
+8aba5bfdfbec21f69edc883a2154c4e5  ./base1_3.tgz
+2a3a6a2c04fa25e4e78db02b789ad456  ./tecra/resc1440.bin
+b67d33983c22d24dce1031a71b07ecf6  ./tecra/drv1440.bin
+8868d361e1841f3631883a91e18ea8c5  ./linux
+d8a0e813566f75d6208b7376c9d9fc18  ./rawrite2.exe
+9eaa2b84c0e6e5fc6da673626cec9f06  ./rawrite2.txt
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.3ia
+Charset: noconv
+
+iQCVAwUBM47eVvcN927BSdxBAQEi/gQApiDeFS+FrrNERPlKpWMwkmBHIhw5kHPb
+M/xg7r4BFuqN6ZG3UUKoMCWlcXprbRcYJknRzNtavmew713dhiQtDvLXY5Q52rs7
+N5YAe7MPmqpBhSLkKtY+XV1QgzS4vbp+gBLYoywjqMB9cjQ6N7MJEIycIqimGpec
+Y6R6eCeOrC4=
+=qV4J
+-----END PGP SIGNATURE-----

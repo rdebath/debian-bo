@@ -1,0 +1,34 @@
+F ABUSE_1_.DEB;1                    	abuse_1.10-8.deb
+F ACROREAD.DEB;1                    	acroread_3.0-1.deb
+L COMPRESS.DEB;1                    	compress-package_1.3-1.deb	../binary-all/compress-package_1.3-1.deb
+F FERRET_1.DEB;1                    	ferret_1.2.1-1.deb
+F FILERUNN.DEB;1                    	filerunner_2.2.1-1.deb
+F GIMP-DMO.DEB;1                    	gimp-dmotif_0.54.1-6.deb
+F GIMP-PLU.DEB;1                    	gimp-plugins_1.0-1.deb
+F GIMP-SMO.DEB;1                    	gimp-smotif_0.54.1-6.deb
+L JAVA-CUP.DEB;1                    	java-cup_0.10b-1.deb	../binary-all/java-cup_0.10b-1.deb
+F KAFFE_0_.DEB;1                    	kaffe_0.7.1-2.deb
+F KOULES_1.DEB;1                    	koules_1.3-2.deb
+F LOGWRITE.DEB;1                    	logwrites_1.1-3.deb
+F LYX_0_10.DEB;1                    	lyx_0.10.7-3.deb
+L METROX_3.DEB;1                    	metrox_3.1.2-1.deb	../binary-all/metrox_3.1.2-1.deb
+F NEDIT-DM.DEB;1                    	nedit-dmotif_4.0.3-1.deb
+F NEDIT-SM.DEB;1                    	nedit-smotif_4.0.3-1.deb
+F NETSCAPE.DEB;1                    	netscape_3.01-4.deb
+F NPASSWD-.DEB;1                    	npasswd-boulder_1.2.2-2.deb
+F PACKAGES.;1                       	Packages
+F PACKAGES.GZ;1                     	Packages.gz
+F PASH_2_2.DEB;1                    	pash_2.2-1.deb
+F PICASM_1.DEB;1                    	picasm_1.5-2.deb
+L PINEPGP_.DEB;1                    	pinepgp_1.11.deb	../binary-all/pinepgp_1.11.deb
+F SWI-PROL.DEB;1                    	swi-prolog_2.8.0-2.deb
+F XEPHEM-S.DEB;1                    	xephem-smotif_3.0-1.deb
+F XFORMS-D.DEB;1                    	xforms-dev_0.81-6.deb
+F XFORMS0_.DEB;1                    	xforms0_0.81-6.deb
+F XGMOD_3_.DEB;1                    	xgmod_3.0.5-1.deb
+F XIRC_1_1.DEB;1                    	xirc_1.17-2.deb
+F XISP_1_3.DEB;1                    	xisp_1.3-1.deb
+F XLDLAS_0.DEB;1                    	xldlas_0.80-1.deb
+F XOSVIEW_.DEB;1                    	xosview_1.3.2-6.deb
+F XTAR-DMO.DEB;1                    	xtar-dmotif_1.4-2.deb
+F XTAR-SMO.DEB;1                    	xtar-smotif_1.4-2.deb

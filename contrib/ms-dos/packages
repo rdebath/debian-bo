@@ -1,0 +1,34 @@
+Package: dosemu
+priority: extra
+section: contrib
+maintainer: Mike Deisher <deisher@dspsun.eas.asu.edu>
+version: 0.60.3-1
+depends: xbaseR6 | X11R6
+filename: contrib/binary/dosemu-0.60.3-1.deb
+size: 573764
+md5sum: e98940e47567db647536ebb03714c0f7
+description: The Linux DOS Emulator
+
+Package: tin
+priority: extra
+section: contrib
+maintainer: Kenny Wickstrom <kenny@kennet.com>
+version: 1.30b-4
+recommends: cnews | inn, smail | sendmail
+filename: contrib/binary/tin-1.30b-4.deb
+size: 143595
+md5sum: c09bbb25680965e18f8a49f3d267f22e
+description: tin - Threaded Internet News reader
+ It has a powerful full screen text mode user interface, where
+ most actions are available at the press of a single key.  It is
+ highly configurable.
+ .
+ tin can read news from a news server via NNTP (the Network News Transfer 
+ Protocol) or from the local host (/var/spool/news).  You must have either
+ a news server available - large sites usually provide a site-wide server, 
+ or the articles local on the host in /var/spool/news.
+ .
+ If you install a news server on your system (either containing
+ just local newsgroups or with a partial or full USENET feed) you
+ can configure tin to access it.
+

@@ -1,0 +1,11 @@
+Colophon
+
+All of the software used to produce this CD is part of the Debian system,
+and is distributed on this CD. The scripts used to create the CD are in
+the "debian-cd" package. Other packages used are "mkisofs", for constructing
+the ISO 9660 filesystem images, and "cdwrite" for writing the ISO images
+to a CD-writable disc.
+
+If you have a CD-writer compatible with "cdwrite", you should be able to
+write a Debian CD as good as this one, using only the software on your
+Debian system.

@@ -1,0 +1,52 @@
+
+                         Mail servers' reference card
+                                       
+   Full documentation of the mail servers is available on the WWW, in the
+   files bug-log-mailserver.txt and bug-maint-mailcontrol.txt or by
+   sending the word help to each mailserver.
+   
+Synopsis of commands available at request@bugs.debian.org
+
+     * send bugnumber
+     * send-detail bugnumber
+     * index [full]
+     * index-summary by-package
+     * index-summary by-number
+     * index-maint
+     * index maint maintainer-substring
+     * send-unmatched [this|0]
+     * send-unmatched last|-1
+     * send-unmatched old|-2
+     * getinfo filename _(see below)_
+     * help
+     * refcard
+     * quit|stop|thank...|--...
+     * #... _(comment)_
+     * debug level
+       
+  List of info files for getinfo
+  
+     * maintainers
+     * override.stable
+     * override.development
+     * override.contrib
+     * override.non-free
+     * override.experimental
+     * override.codeword
+     * pseudo-packages.description
+     * pseudo-packages.maintainers
+       
+Synopsis of extra commands available at control mailserver
+
+     * close bugnumber _(you must separately tell originator why)_
+     * reassign bugnumber package
+     * reopen bugnumber [originator-address|=]
+     * forwarded bugnumber address
+     * notforwarded bugnumber
+     * retitle bugnumber new-title
+     * merge bugnumber bugnumber ...
+     * unmerge bugnumber
+       
+     _________________________________________________________________
+                                      
+    Ian Jackson / owner@bugs.debian.org. 20th July 1996.

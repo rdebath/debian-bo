@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Hardware Requirements </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-2.html">Previous</A>
+<A HREF="debian-faq-4.html">Next</A>
+<A HREF="debian-faq.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="Hardware"></A> <A NAME="s3">3. Hardware Requirements </A></H2>
+
+<P>
+<P>
+<H2><A NAME="architectures"></A> <A NAME="ss3.1">3.1 On what architectures/systems does Debian GNU/Linux run?</A>
+        </H2>
+
+<P> 
+Debian GNU/Linux includes complete source-code for
+all of the included programs, so it should work on all systems which
+are supported by the Linux Kernel; see the 
+<A HREF="http://www.cl.cam.ac.uk/users/iwj10/linux-faq/">Linux FAQ</A> for details.
+<P>The current Debian GNU/Linux release contains a complete, binary
+distribution for the i386 architecture; this covers PCs based on
+Intel-compatible processors, including Intel's80386, 80486, Pentium,
+and Pentium Pro, and compatible processors by AMD, Cyrix and others.
+<P>The development of binary distributions of Debian 1.3 for the m68k
+architecture (Motorola 680x0 processors for x>=2; with MMU) is
+currently underway, and ports to Alpha, SPARC, and MIPS processors are
+expected to follow.
+<P>
+<H2><A NAME="boot disks"></A> <A NAME="ss3.2">3.2 What hardware is assumed by the stock Debian GNU/Linux boot disks?</A>
+        </H2>
+
+<P>The configuration file used to build Debian GNU/Linux'  
+standard distribution kernel assumes an 80386 CPU, 
+and includes support for PCMCIA cards  SCSI cards for which there 
+exist Linux drivers. Support for network interface card is provided
+by loadable modules, so there is no need to compile these drivers into
+the kernel.
+<P>
+<H2><A NAME="disk space"></A> <A NAME="ss3.3">3.3 What amount of disk space is recommended?</A>
+        </H2>
+
+<P>A generous installation, sufficient to accommodate a few users, X Window System
+software, and several large applications, might require disk partitions
+at least as large as:
+<UL>
+<LI>50 MBytes for the root directory (/)</LI>
+<LI>500 MBytes for /usr</LI>
+<LI>50 MBytes for swap space </LI>
+<LI>50 MBytes for each home directories</LI>
+<LI>100 MBytes for /tmp</LI>
+<LI>100 MBytes for /var</LI>
+</UL>
+<P>The optimum disk space allocated for swap depends critically on the way the
+system will be used.  Many people just choose to set aside twice as much
+disk space as they have RAM space.  Systems with large RAM may not need so
+much swap space, especially if there are only a few users.
+The installation process supports systems with no swap space.
+<P>
+<H3>But how much RAM and disk space are absolutely essential?</H3>
+
+<P>These <EM>minimal</EM> requirements are sufficient for a system without
+X11 and only 1 or 2 users:
+<UL>
+<LI>15 MBytes of disk space for the <CODE>base</CODE> system; 
+this provides a minimally-functioning Unix system, but includes 
+no application programs and no network support.</LI>
+<LI>100 MBytes of disk space for a standard system running applications 
+on the console (i.e., without an X11 interface).</LI>
+<LI>150 MBytes of disk space for a standard system running 
+applications with the X Window System.</LI>
+<LI>300 MBytes and more for all the optional programs (You probably 
+do not need all of these programs.)</LI>
+</UL>
+<P>Debian Linux can be installed on systems with only 4 MBytes of RAM.
+The latest installation disks are especially organized to provide an
+easy installation path for machines with small memories.  
+Some users report success at using Debian Linux to convert PCs 
+having limited RAM (and disk space) into X terminals.  An
+80386-based system with only 4 MBytes of RAM and 40 MBytes disk space
+has been used to run Debian Linux in this way; i.e., both 
+networking and basic X11 server functions operated satisfactorily.
+This mode of operation even works if 1 MByte of the RAM is used as
+a ramdisk when the machine is booted, implying that only 3 Mbytes of RAM
+is absolutely essential for using Debian Linux on a PC in order to use it
+as an X server.  This mode of operation requires a swap partition; without
+it, the system will not even go into multi-user mode.
+<P>
+<H2><A NAME="partitioning"></A> <A NAME="ss3.4">3.4 How should I partition my drive?</A>
+        </H2>
+
+<P>Partitioning a drive has the disadvantage that drive space can be used
+much less flexibly than an unpartitioned drive.  Most users find, however,
+that this disadvantage is more than offset by the 
+fact that damage to a filesystem on a partitioned disk is usually
+limited to a single partition.
+Furthermore, backups of a partitioned hard disk 
+can be more easily managed because the files that change most 
+frequently are likely to be localized to a single partition.
+<P>A user with a 1.6 GByte drive has concluded after a survey of Debian users
+that it is reasonable to design a partitioning scheme that closely follows the
+<A HREF="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</A>.
+For his 1.6 GByte disk, he chose these partitions: 
+<UL>
+<LI>30 MBytes for the root directory (<CODE>/</CODE>)</LI>
+<LI>450 MBytes for <CODE>/usr</CODE></LI>
+<LI>50 MBytes for swap space</LI>
+<LI>1000 MBytes for home directories (some of this could be used for <CODE>/usr/local/</CODE>)</LI>
+<LI>0 MBytes for <CODE>/tmp</CODE>; make <CODE>/tmp</CODE> 
+a symbolic link to <CODE>/var/tmp</CODE></LI>
+<LI>40 MBytes for <CODE>/var</CODE></LI>
+</UL>
+<P>
+<P>
+<P>It is possible to use a swap file instead of a swap
+partition. However this usually is a bad solution, so we suggest to
+use a swap partition.
+<P>
+<H2><A NAME="large disks"></A> <A NAME="ss3.5">3.5 Are very large disks supported?</A>
+        </H2>
+
+<P>There is an upper limit on the size of the disk partition that is used for
+booting.  This limit applies to all operating systems, not just Linux.
+Basically, the BIOSs typically available 
+on PCs cannot access disk partitions larger than 1024 cylinders or tracks.
+Thus, <I>any</I> operating system used on a PC cannot be booted from 
+a disk partition larger than 1 GByte.  It is worth emphasizing that
+this restriction only applies to the partition from which Linux is booted.
+Other partitions can be larger.  One solution to this limitation is
+to place the directory <CODE>/boot/</CODE> (and usually the whole root partition) 
+in its own (very small) partition,
+entirely within the first 1024 blocks of the disk.
+<P>Support for large non-bootable partitions varies with the driver.  
+Detailed information is provided in the 
+<A HREF="http://sunsite.unc.edu/mdw/HOWTO/mini/Large-Disk">Large-Disk mini-HOWTO</A>.
+<P>The Linux kernel includes the Multi-Device disk
+driver ('md'), which provides plain concatenation of drives (called
+linear mode) or striping support (also known as RAID 0) in software.
+<P>
+<H2><A NAME="PCMCIA"></A> <A NAME="ss3.6">3.6 (How) Does Debian provide PCMCIA support?</A>
+        </H2>
+
+<P>Utilities that provide PCMCIA card services have been developed
+by David Hinds.  These utilities are provided in Debian
+by the package
+<CODE>pcmcia-cs-KKK_VVV-RRR.deb</CODE>, where the components 'VVV'
+and 'RRR' follow the usual conventions on 
+<A HREF="debian-faq-6.html#pkgname">Debian package names</A>, and the component 'KKK' refers to the
+kernel version for which the <CODE>pcmcia-cs</CODE> package was built.
+<P>The <CODE>pcmcia-modules-KKK</CODE> package must be rebuilt for systems
+not using the default Debian kernel.  The
+<CODE>pcmcia-source_VVV-RRR.deb</CODE> package is provided for users
+who need to recompile the PCMCIA modules or utilities.  It unpacks the
+source files for the PCMCIA utilities into the
+<CODE>/usr/src/modules/pcmcia-cs/</CODE> directory.  See the
+<CODE>/usr/src/modules/pcmcia-cs/README.gz</CODE> file; it contains
+instructions for rebuilding the PCMCIA packages.
+<P>PCMCIA cards that include IDE drives have to be supported by the kernel.
+The version of the kernel distributed with the Debian installation
+disks includes support for such  PCMCIA cards.  That is, 
+its <CODE>.config</CODE> file includes the line:
+<CODE>CONFIG_BLK_DEV_IDE_PCMCIA=y</CODE>.
+<P>
+<HR>
+<A HREF="debian-faq-2.html">Previous</A>
+<A HREF="debian-faq-4.html">Next</A>
+<A HREF="debian-faq.html#toc3">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Definitions and Overview </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-1.html">Previous</A>
+<A HREF="debian-faq-3.html">Next</A>
+<A HREF="debian-faq.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="Defs"></A> <A NAME="s2">2. Definitions and Overview </A></H2>
+
+<H2><A NAME="WhatIsDebian"></A> <A NAME="ss2.1">2.1 What is Debian GNU/Linux? </A>
+</H2>
+
+<P>Debian GNU/Linux is a particular <EM>distribution</EM> of the Linux operating
+system, and numerous packages that run on it.  
+In principle, users could obtain the Linux kernel via the Internet or 
+from elsewhere,
+and compile it themselves.  They could then obtain source code for many 
+applications in the same way, compile the programs, then install them
+into their systems.  For complicated programs, this process can be
+not only time-consuming but error-prone.  To avoid it, users often
+choose to obtain the operating system and the application
+packages from one of the Linux distributors.   What distinguishes the
+various Linux distributors are the software, protocols, and practices they
+use for packaging, installing, and tracking applications packages on
+users' systems, combined with installation and maintenance tools, 
+documentation, and other services.  
+<P>Debian GNU/Linux is the result of a volunteer effort to create a
+free, high-quality Unix-compatible operating system, complete with
+a suite of applications.  The idea of a free Unix-like system 
+originates from the GNU project, and many of the applications that make 
+Debian GNU/Linux so useful were developed by the GNU project.
+<P>Debian was created by Ian Murdock in 1993, initially under the sponsorship
+of the Free Software Foundation's GNU project.
+Today, Debian's developers think of it as a direct descendent of 
+the GNU project.
+<P>Debian GNU/Linux is 
+<UL>
+<LI><B>full featured</B>:  Debian includes more than 900
+software packages at present.  Users can select which packages to install; 
+Debian provides a tool for this purpose.  You can find a list and descriptions 
+of the packages currently available in Debian  at any of the 
+Debian
+<A HREF="http://www.debian.org/ftplist.html">mirror sites</A>.
+</LI>
+<LI><B>free to use and redistribute</B>:  There is no consortium 
+membership or
+payment required to participate in its distribution and development.
+All packages that are formally part of Debian GNU/Linux are free
+to redistribute, usually under terms specified by the GNU General 
+Public License.
+The Debian FTP archives also carry approximately 100 software 
+packages (in the <CODE>non-free</CODE> and <CODE>contrib</CODE> directories at the FTP
+archives), which are distributable under specific terms included with 
+each package.
+</LI>
+<LI><B>dynamic</B>:  With about 160 volunteers constantly 
+contributing new and improved code, Debian is evolving rapidly.
+New releases are planed to be made about every three months, and
+the FTP archives are updated daily.</LI>
+</UL>
+<P>
+<P>Though Debian itself is free software, it is a base upon which value-added 
+Linux distributions can be built. By providing a reliable, full-featured 
+base system, Debian provides Linux users with increased compatibility, 
+and allows Linux distribution creators to eliminate duplication-of-effort 
+and focus on the things that make their distribution special.
+<P>
+<H2><A NAME="linux"></A> <A NAME="ss2.2">2.2 OK, now I know what Debian is...what is Linux!?</A>
+</H2>
+
+<P>In short, Linux is the kernel of a Unix-like operating system.  It was
+originally designed for 386/486/Pentium PCs; now, ports to other systems, 
+including multi-processor systems, are under development. Linux is written 
+by Linus Torvalds and many computer scientists around the world.  
+<P>Besides its kernel, a &quot;Linux&quot; system usually has:
+<UL>
+<LI>a file system that follows the Linux Filesystem Hierarchy Standard 
+<A HREF="http://www.pathname.com/fhs/">http://www.pathname.com/fhs/</A>.</LI>
+<LI>a wide range of Unix utilities, many of which have been
+developed by the GNU project and the Free Software Foundation.</LI>
+</UL>
+<P>The combination of the Linux kernel, the filesystem, the GNU and FSF 
+utilities, and the other utilities are designed to achieve compliance with
+the POSIX (IEEE 1003.1) standard;
+see 
+<A HREF="debian-faq-4.html#other Unices">source code compatibility</A>.
+<P>For more information about Linux, see Michael K. Johnson's
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/docs/HOWTO/INFO-SHEET">INFO-SHEET</A> and
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/docs/HOWTO/META-FAQ">META-FAQ</A>.
+<P>
+<H2><A NAME="difference"></A> <A NAME="ss2.3">2.3 What is the difference between Debian and other Linux distributions?</A>
+</H2>
+
+<P>Three key features distinguish Debian from other Linux distributions:
+<P>
+<DL>
+<DT><B>The Debian package maintenance system:</B><DD><P>The entire system, or any individual component of it, can be upgraded in 
+place without reformatting, without losing custom configuration files, and 
+(in most cases) without rebooting the system.  Most Linux distributions
+available today have some kind of package maintenance system; the 
+<A HREF="debian-faq-6.html#pms">Debian package maintenance system</A>
+is unique and particularly robust.  
+<P>
+<P>
+<DT><B>Open development:</B><DD><P>Whereas other Linux distributions are developed by individuals, small,
+closed groups, or commercial vendors, Debian is the only Linux
+distribution that is being developed cooperatively by many individuals 
+through the Internet, in the same spirit as Linux and other free software.  
+More than 120 volunteer package maintainers are working on over 700 packages 
+and improving Debian GNU/Linux.  The Debian developers 
+contribute to the project
+not by writing new applications (in most cases), but by
+packaging existing software according to the standards of the project, 
+by communicating bug reports to upstream developers, and by providing user
+support.  See also additional information on 
+<A HREF="debian-faq-14.html#contrib">how to become a contributor</A>.
+<P>
+<DT><B>The Bug Tracking System:</B><DD><P>The geographical dispersion of the Debian developers required sophisticated 
+tools and quick communication of bugs and bug-fixes to accelerate the 
+development of the system.  
+Users are encouraged to send bugs in a formal style, which are quickly 
+accessible by WWW archives or via e-mail.
+See additional information in this FAQ on the management of the 
+<A HREF="debian-faq-13.html#Bugs">Bug Log</A>.
+<P>
+</DL>
+<P>
+<H2><A NAME="GNU"></A> <A NAME="ss2.4">2.4 How does the Debian project fit in or compare with the Free Software Foundation's GNU project? </A>
+</H2>
+
+<P>The Debian system builds on the ideals of free software first
+championed by the Free Software Foundation 
+<A HREF="http://www.gnu.ai.mit.edu/">http://www.gnu.ai.mit.edu/</A> and in particular by Richard
+Stallman.  FSF's powerful system development tools, utilities, and
+applications are also a key part of the Debian system.
+<P>The Debian Project is a separate entity from the FSF, however we
+communicate regularly and cooperate on various projects. The FSF
+explicitly requested that we call our system "Debian GNU/Linux", and
+we are happy to comply with that request.
+<P>The FSF's long-standing objective is to develop a new operating system
+called GNU based on HURD (
+<A HREF="http://www.gnu.ai.mit.edu/software/hurd/hurd.html">http://www.gnu.ai.mit.edu/software/hurd/hurd.html</A>),
+<P>
+<P>
+<H2><A NAME="pronunciation"></A> <A NAME="ss2.5">2.5 How does one pronounce Debian and what does this word mean?</A>
+        </H2>
+
+<P>The project name is pronounced Deb'-ian, with a short e, and emphasis on 
+the first syllable.  This word is a contraction of the names of Debra and
+Ian Murdock, who founded the project.  (Dictionaries seem to offer some
+ambiguity in the pronunciation of Ian (!), but Ian prefers ee'-an.)
+<P>
+<P>
+<HR>
+<A HREF="debian-faq-1.html">Previous</A>
+<A HREF="debian-faq-3.html">Next</A>
+<A HREF="debian-faq.html#toc2">Contents</A>
+</BODY>
+</HTML>

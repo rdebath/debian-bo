@@ -1,0 +1,62 @@
+There are four mailing lists for discussion of the Debian Linux system.
+They are:
+
+    debian-announce@lists.debian.org  General announcements. Moderated.
+
+    debian-changes@lists.debian.org   Announcements of new versions of Debian
+                                      packages.  Unmoderated.
+
+    debian-user@lists.debian.org      User discussion, and user questions to
+                                      developers.  Unmoderated.
+
+    debian-devel@lists.debian.org     Developer-to-developer discussion.
+                                      Restricted membership.
+
+If you have a World Wide Web browser such as Mosaic or Netscape, you can
+subscribe to debian-announce, debian-changes, and debian-user by using
+the WWW form `http://www.rahul.net/perens/Debian/MailingLists.html'. You
+can also unsubscribe using that form.
+
+TO SUBSCRIBE by E-MAIL:
+
+    debian-announce    Send mail to debian-announce-REQUEST@lists.debian.org
+                       with the word "subscribe" in the message body.
+
+    debian-changes     Send mail to debian-changes-REQUEST@lists.debian.org
+                       with the word "subscribe" in the message body.
+
+    debian-user        Send mail to debian-user-REQUEST@lists.debian.org
+                       with the word "subscribe" in the message body.
+
+    debian-devel       Send mail to Bruce@Pixar.com with a one-line
+                       explanation of what you want to develop or test.
+
+TO UNSUBSCRIBE
+
+Send mail to the corresponding -REQUEST address with the word "unsubscribe"
+in the message body.
+
+MAILING LIST ADVERTISING POLICY
+
+This policy is intended to fight mailing-list "spamming".
+
+The Debian Linux mailing lists accept commercial advertising for
+payment. We offer a fee waiver if you can show us the cancelled check
+for a $1000 (U.S.) or more donation to the Free Software Foundation
+earmarked for "Debian". One donation per advertisement, please. If you
+don't wish to donate, simply post your advertisement to the list, and
+the operator of the mailing lists will bill $1999 (U.S). The list
+operator will donate this amount, minus the expense of collecting it,
+to FSF. Please note that the lists are distributed automaticaly - messages
+are generally not read or checked in any way before they are distributed.
+
+By the act of posting your advertisement you agree to accept
+responsibility for the fee, you agree to indemnify the mailing-list
+operator against any legal claims from you or others in connection with
+your advertisement, and you agree to pay any legal and business
+expenses incurred in collecting late payment. Our liability to you is
+limited to a good-faith effort to deliver your message.
+
+Reduced rates and/or waiver of fee are available for Debian-related
+advertisements. You must consult the mailing-list operator in advance
+of posting for any reduction or fee waiver.

@@ -1,0 +1,23 @@
+What's in /debian/doc?
+
+--- General Documentation
+debian-faq.txt                Debian FAQ List in plaintext.
+FAQ/                          Debian FAQ List in html, info, and postscript
+debian_manifesto              How it all started...  
+mailing-lists.txt             How to subscribe to the Debian mailing lists
+mirrors.txt                   Some mirrors of ftp.debian.org.
+source-unpack.txt             How to unpack a Debian source package
+debian-keyring.tar.gz         PGP keys of all the developers.
+
+
+--- The Bug Tracking System for users
+bug-reporting.txt             How to report a bug in Debian
+bug-log-mailserver.txt        Introduction to the bug system request server 
+bug-log-access.txt            Accessing bug reports in the tracking system
+bug-mailserver-refcard.txt    Mail server's reference card     
+
+
+--- Debian Developer's Information
+package-developer/            Lots of documentation for developers
+bug-maint-info.txt            Developer's information re the bug system
+bug-maint-mailcontrol.txt     Introduction to the bug control mailserver

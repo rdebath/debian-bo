@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Compatibility issues </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-3.html">Previous</A>
+<A HREF="debian-faq-5.html">Next</A>
+<A HREF="debian-faq.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="Compatibility"></A> <A NAME="s4">4. Compatibility issues </A></H2>
+
+<P>
+<H2><A NAME="other distribs"></A> <A NAME="ss4.1">4.1 How compatible is Debian with other distributions of Linux?</A>
+        </H2>
+
+<P>Debian developers communicate with other Linux distribution creators 
+in an effort to maintain binary compatibility across Linux distributions. 
+Most commercial Linux products run as well under Debian as they do on the
+system upon which they were built. 
+<P>
+<P>Debian GNU/Linux adheres strictly to the 
+<A HREF="http://www.pathname.com/fhs/">Linux File System Structure</A>
+(now known as the FHS).  
+However, there is room for interpretation in some of
+the rules within this standard, so there may be differences between a 
+Debian system and other Linux systems.
+<P>
+<H2><A NAME="other Unices"></A> <A NAME="ss4.2">4.2 How source code compatible is Debian with other Unix systems?</A>
+        </H2>
+
+<P>For most applications Linux source code is compatible
+with other  Unix systems. It supports almost everything that
+is available in System V Unix systems and the free and commercial BSD-
+derived systems. However in the Unix business such claim has nearly no
+value because there is no way to prove it. In the software
+development area complete compatibility is required instead of
+compatibility in &quot;about most&quot; cases. So years ago the need
+for standards arose, and nowadays POSIX.1 (IEEE Standard 1003.1-1990)
+is one of the major standards for source code compatibility in
+Unix-like operating systems.
+<P>Linux is intended to adhere to POSIX.1, but the POSIX standards cost
+real money and the POSIX.1 (and FIPS 151-2) certification is quite
+expensive; this made it more difficult for the Linux developers to
+work on complete POSIX conformance. The certification costs make it
+unlikely that Debian will get an official conformance certification
+even if it completely passed the validation suite. (The
+validation suite is now freely available, so it is expected that
+more people will work on POSIX.1 issues.)
+<P>
+<P>
+<P>Unifix GmbH (Braunschweig, Germany) developed a Linux system that has
+been certified to conform to FIPS 151-2 (a superset of POSIX.1). This
+technology is available in Unifix' own distribution called Unifix
+Linux 2.0 and in Lasermoon's 
+<A HREF="http://www.lasermoon.co.uk/linux-ft/linux-ft.html">Linux-FT</A>. Currently Unifix merges its patches into the Linux
+kernel, gcc and other tools; so it is expected that their fixes
+towards POSIX.1 conformance will be available in Debian (and other
+distributions).
+<P>
+<H2><A NAME="other packages"></A> <A NAME="ss4.3">4.3 Can I use Debian packages (&quot;.deb&quot; files) on my RedHat/Slackware/... Linux system?</A>
+Can I use RedHat packages (&quot;.rpm&quot; files) on my Debian GNU/Linux system?        </H2>
+
+<P>Different Linux distributions use different package formats and different
+package management programs.  
+<P>
+<DL>
+<DT><B>You probably can:</B><DD><P>A program to unpack a Debian package 
+onto a Linux host that is been built from a `foreign' distribution
+is available, and will generally work, in the sense that files will be
+unpacked.  The converse is probably also true, that is, a program to
+unpack a RedHat or Slackware package on a host that is based on Debian Linux
+will probably succeed in unpacking the package and placing most files in
+their intended directories.  This is largely a consequence of the existence
+(and broad adherence to) the Linux File System Standard.
+<P>
+<DT><B>You probably do not want to:</B><DD><P>Most package managers write 
+administrative files when they
+are used to unpack an archive.  These administrative files are generally
+not standardized.  Therefore, the effect of unpacking a Debian package
+on a `foreign' host will have unpredictable (certainly not useful) effects 
+on the package manager on that system.  Likewise, utilities from other 
+distributions might succeed in unpacking their archives on Debian systems,
+but will probably cause the Debian package management system to fail when the
+time comes to upgrade or remove some packages, or even simply to report
+exactly what packages are present on a system.
+<P>
+<DT><B>A better way:</B><DD><P>The Linux File System Standard (and therefore 
+Debian GNU/Linux) requires that subdirectories under <CODE>/usr/local/</CODE> be 
+entirely under the user's discretion.  Therefore, users can unpack 
+`foreign' packages into this directory, and then manage their configuration, 
+upgrade and removal individually.
+</DL>
+<P>
+<P>
+<P>
+<H2><A NAME="a.out"></A> <A NAME="ss4.4">4.4 Is Debian able to run my old &quot;a.out&quot; programs?  </A>
+</H2>
+
+<P>
+<P>
+<P>To <EM>execute</EM> a program whose binary is in <CODE>a.out</CODE>
+(i.e., QMAGIC or ZMAGIC) format, 
+<UL>
+<LI>Make sure your kernel has <CODE>a.out</CODE>
+support built into it, either directly (CONFIG_BINFMT_AOUT=y) or as a 
+module (CONFIG_BINFMT_AOUT=m).  (Debian's kernel-image package contains 
+the module <CODE>binfmt_aout</CODE>.)  
+<P>If your kernel supports <CODE>a.out</CODE> binaries by a module, then be
+sure that the <CODE>binfmt_aout</CODE> module is loaded.  You can do this
+at boot time by entering the line <CODE>binfmt_aout</CODE> into the file
+<CODE>/etc/modules</CODE>.  You can do it from the command line by 
+executing the command <CODE>insmod DIRNAME/binfmt_aout.o</CODE> where 
+<CODE>DIRNAME</CODE> is the name of the directory where the modules that
+have been built for the version of the kernel now running are stored.
+On a system with the 2.0.27 version of the kernel, 
+<CODE>DIRNAME</CODE> is likely to be <CODE>/lib/modules/2.0.27/fs/</CODE>.
+<P>
+</LI>
+<LI>install the package <CODE>libc4</CODE>.
+</LI>
+<LI>If the program you want to execute is an <CODE>a.out</CODE> X client, then
+install the <CODE>xcompat</CODE> package.</LI>
+</UL>
+<P>
+<P>If you have a commercial application in <CODE>a.out</CODE> format, now would 
+be a good time to ask them to send you an <CODE>ELF</CODE> upgrade.
+<P>
+<P>
+<H2><A NAME="ss4.5">4.5 Can Debian be used to compile &quot;a.out&quot; programs? </A>
+</H2>
+
+<P>To <EM>compile</EM> programs in the <CODE>a.out</CODE> binary format,
+<UL>
+<LI>install the Debian <CODE>a.out</CODE> developer's packages, which are
+<UL>
+<LI><CODE>libc4-dev</CODE></LI>
+<LI><CODE>aout-binutils</CODE></LI>
+<LI><CODE>aout-librl</CODE></LI>
+<LI><CODE>aout-gcc</CODE></LI>
+</UL>
+
+</LI>
+<LI>place the <CODE>a.out</CODE> tools ahead of the <CODE>ELF</CODE>
+tools in your path.  That is, execute the command
+<CODE>export PATH=/usr/i486-linuxaout/bin:$PATH</CODE>
+(This is not essential, just advantageous.)
+If you are only going to do this once, you could execute:
+<CODE>PATH=/usr/i486-linuxaout/bin:$PATH make [target]</CODE>.
+</LI>
+</UL>
+<P>
+<H2><A NAME="non-Debian programs"></A> <A NAME="ss4.6">4.6 How should I install a non-Debian package?</A>
+        </H2>
+
+<P>Files under the directory <CODE>/usr/local/</CODE> are not under the control
+of the Debian package management system.  Therefore, it is good practice 
+to place the source code for your program in /usr/local/src/.  For example,
+you might extract the files for a package named &quot;foo.tar&quot;
+into the directory <CODE>/usr/local/src/foo</CODE>.  After you compile them,
+place the binaries in <CODE>/usr/local/bin/</CODE>, the libraries in
+<CODE>/usr/local/lib/</CODE>, and the configuration files in
+<CODE>/usr/local/etc/</CODE>.  
+<P>If your programs and/or files really must be placed
+in some other directory, you could still store them in <CODE>/usr/local/</CODE>,
+and build the appropriate symbolic links from the required location 
+to its location in <CODE>/usr/local/</CODE>, e.g., you could make the link
+<PRE>
+ln -s /usr/local/bin/foo /usr/bin/foo
+</PRE>
+<P>In any case, if you obtain a package whose copyright allows
+redistribution, you should consider making a Debian package of it, and
+uploading it for the Debian system.  Guidelines for becoming a package
+developer are included in the 
+<A HREF="debian-faq-12.html#DebianDocs">Debian policy manual</A>.
+<P>
+<H2><A NAME="termcap"></A> <A NAME="ss4.7">4.7 Why can't I compile programs that require libtermcap?</A>
+        </H2>
+
+<P>Debian uses the <CODE>terminfo</CODE> database and the <CODE>ncurses</CODE> library
+of terminal interface routes, rather than the <CODE>termcap</CODE> database
+and the <CODE>termcap</CODE> library.  Users who are compiling programs that
+require some knowledge of the terminal interface should replace references
+to <CODE>libtermcap</CODE> with references to <CODE>libncurses</CODE>.
+<P>To support binaries that have already been linked with the <CODE>termcap</CODE>
+library, and for which you do not have the source,
+Debian provides a package called <CODE>termcap-compat</CODE>.  This provides
+both <CODE>libtermcap.so.2</CODE> and <CODE>/etc/termcap</CODE>.  Install this
+package if the program fails to run with the error message 
+&quot;can't load library 'libtermcap.so.2'&quot;, or
+complains about a missing <CODE>/etc/termcap</CODE> file.
+<P>
+<H2><A NAME="AccelX"></A> <A NAME="ss4.8">4.8 Why can't I install AccelX?</A>
+        </H2>
+
+<P>AccelX uses the <CODE>termcap</CODE> library for installation. See 
+<A HREF="#termcap">about termcap</A> above.
+<P>
+<H2><A NAME="ss4.9">4.9 Why do I get &quot;Can't find libX11.so.6&quot; errors when I try to run <CODE>foo</CODE>?</A>
+</H2>
+
+<P>This error message could mean that the program is in <CODE>a.out</CODE>
+format. In this case you need to install the <CODE>xcompat</CODE>
+package.
+<P>
+<H2><A NAME="ss4.10">4.10 Can I install and compile a kernel without some Debian-specific tweaking?</A>
+</H2>
+
+<P>Yes.  But you have to understand the Debian policy with respect to headers.
+<P>The Debian C libraries are built with the most recent <EM>stable</EM> 
+releases of the <CODE>gcc</CODE> headers.  For example, the Debian-1.2 release
+used version 5.4.13 of the headers.  This practice contrasts with the Linux 
+kernel source packages distributed at all Linux FTP archive sites, 
+which uses even more recent versions of the headers.  The kernel headers 
+distributed with the kernel source are located in 
+<CODE>/usr/include/linux/include/</CODE>.
+<P>If you need to compile a program with kernel headers that are newer
+than those provided by <CODE>libc5-dev</CODE>, then you must add 
+<CODE>-I/usr/src/linux/include/</CODE> to your command line when compiling.
+This came up at one point, for example, with the packaging of the 
+automounter daemon (<CODE>amd</CODE>).  When new kernels changed some 
+internals dealing with NFS, <CODE>amd</CODE> needed to know about them.  This
+required the inclusion of the latest kernel headers.
+<P>
+<P>
+<P>
+<HR>
+<A HREF="debian-faq-3.html">Previous</A>
+<A HREF="debian-faq-5.html">Next</A>
+<A HREF="debian-faq.html#toc4">Contents</A>
+</BODY>
+</HTML>

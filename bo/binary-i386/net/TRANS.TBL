@@ -1,0 +1,68 @@
+F AMD_UPL1.DEB;1                    	amd_upl102-11.deb
+F BIND_4_9.DEB;1                    	bind_4.9.5-1.4.deb
+F BING_1_0.DEB;1                    	bing_1.0.4-4.deb
+F BITCHX-B.DEB;1                    	bitchx-bin_0.70-2.deb
+L BITCHX-D.DEB;1                    	bitchx-doc_0.70-2.deb	../../binary-all/net/bitchx-doc_0.70-2.deb
+L BITCHX-L.DEB;1                    	bitchx-lib_0.70-2.deb	../../binary-all/net/bitchx-lib_0.70-2.deb
+F BRIDGEX_.DEB;1                    	bridgex_0.22.deb
+F BRIDGE_0.DEB;1                    	bridge_0.1-4.deb
+F CFINGERD.DEB;1                    	cfingerd_1.3.2-2.deb
+L COURTNEY.DEB;1                    	courtney_1.3-1.deb	../../binary-all/net/courtney_1.3-1.deb
+F CTI-IFHP.DEB;1                    	cti-ifhp_1.3.1-1.deb
+F DHCPCD_0.DEB;1                    	dhcpcd_0.6-1.deb
+F DHCPD_0_.DEB;1                    	dhcpd_0.5.14-2.deb
+F DIALD_0_.DEB;1                    	diald_0.16.4-1.deb
+F DNSUTILS.DEB;1                    	dnsutils_970203-0.1.deb
+F FSP_2_71.DEB;1                    	fsp_2.71-7.deb
+L FTPWATCH.DEB;1                    	ftpwatch_1.1.deb	../../binary-all/net/ftpwatch_1.1.deb
+F FWTK_1_3.DEB;1                    	fwtk_1.3-1.deb
+F IPLOGGER.DEB;1                    	iplogger_1.00-2.deb
+F IPROUTE_.DEB;1                    	iproute_961225-2.deb
+F IPXRIPD_.DEB;1                    	ipxripd_0.7-1.deb
+F IPX_1_0-.DEB;1                    	ipx_1.0-1.deb
+F IRCD_2_9.DEB;1                    	ircd_2.9.32-3.deb
+F IRCII_2_.DEB;1                    	ircii_2.9.3roof-1.deb
+F ISDNUTIL.DEB;1                    	isdnutils_2.0-7.deb
+L LAMBDACO.DEB;1                    	lambdacore_02feb97-1.deb	../../binary-all/net/lambdacore_02feb97-1.deb
+F LAMBDAMO.DEB;1                    	lambdamoo_1.8.0p5-2.deb
+F LFTP_0_1.DEB;1                    	lftp_0.10.0-1.deb
+F LIBATALK.000;1                    	libatalk14_1.4b2-4.deb
+F LIBATALK.DEB;1                    	libatalk-dev_1.4b2-4.deb
+F LPRNG_3_.DEB;1                    	lprng_3.2.1-1.deb
+F LPR_5_9-.DEB;1                    	lpr_5.9-13.1.deb
+L MIME-SUP.DEB;1                    	mime-support_2.12-1.deb	../../binary-all/net/mime-support_2.12-1.deb
+L MIRROR_2.DEB;1                    	mirror_2.8-9.deb	../../binary-all/net/mirror_2.8-9.deb
+F MODEMU_0.DEB;1                    	modemu_0.0.1-1.deb
+F NCPFS_0_.DEB;1                    	ncpfs_0.23-1.deb
+F NET-ACCT.DEB;1                    	net-acct_0.4-1.deb
+F NETATALK.DEB;1                    	netatalk_1.4b2-4.deb
+F NETBASE_.DEB;1                    	netbase_2.13-1.deb
+F NETBOOT_.DEB;1                    	netboot_0.4-1.deb
+F NETCAT_1.DEB;1                    	netcat_1.10-3.deb
+F NETDIAG_.DEB;1                    	netdiag_0.4-3.deb
+F NETSTD_2.DEB;1                    	netstd_2.13-1.deb
+F NFSROOT_.DEB;1                    	nfsroot_0.5.deb
+F NIS_2_20.DEB;1                    	nis_2.20-1.deb
+F OPIE_2_3.DEB;1                    	opie_2.3-1.deb
+F PPP_2_2_.DEB;1                    	ppp_2.2.0f-23.deb
+F RADIUSD-.000;1                    	radiusd-livingston_1.16-2.deb
+F RADIUSD-.DEB;1                    	radiusd-merit_2.4.23-2.deb
+F REDIR_0_.DEB;1                    	redir_0.7-3.deb
+F RLPR_1_4.DEB;1                    	rlpr_1.43-1.deb
+F RSYNC_1_.DEB;1                    	rsync_1.6.2-1.deb
+F SAMBA_1_.DEB;1                    	samba_1.9.16p11-3.deb
+F SCOTTY_2.DEB;1                    	scotty_2.0.2-4.deb
+F SENDFILE.DEB;1                    	sendfile_1.5-3.deb
+F SLIPHANG.DEB;1                    	sliphangup_1.4-1.deb
+F SNMP_3_2.DEB;1                    	snmp_3.2-2.deb
+F SOCKET_1.DEB;1                    	socket_1.1-1.deb
+F TCPDUMP_.DEB;1                    	tcpdump_3.3.1a2-1.deb
+F TKINED_1.DEB;1                    	tkined_1.3.4-2.deb
+F TRANSPRO.DEB;1                    	transproxy_0.2-1.deb
+F WU-FTPD_.DEB;1                    	wu-ftpd_2.4-27.deb
+F XFTP_2_2.DEB;1                    	xftp_2.2-1.deb
+F XINETD_2.DEB;1                    	xinetd_2.1.7-3.deb
+L XNTP3-DO.DEB;1                    	xntp3-doc_5.89-1.deb	../../binary-all/net/xntp3-doc_5.89-1.deb
+F XNTP3_5_.DEB;1                    	xntp3_5.89-1.deb
+F YTALK_3_.DEB;1                    	ytalk_3.0.2-4.deb
+F ZIRCON_1.DEB;1                    	zircon_1.17p3-4.deb

@@ -1,0 +1,8 @@
+/debian/tools contains DOS tools for installing and booting Linux.
+
+fips15.zip     DOS binaries to non-destructively shorten a FAT patition
+gzip124.exe    gzip for DOS
+lodlin16.zip   load Linux kernel from DOS
+rawrite2.*     source, executable, & documentation for rawrite - used to
+               make Debian boot disks.
+unz512x3.exe   Info-ZIP's free UnZipper for DOS

@@ -1,0 +1,59 @@
+F AFIO_2_4.DEB;1                    	afio_2.4.2-2.deb
+F ASCII_2_.DEB;1                    	ascii_2.0-1.deb
+F BASH-BUI.DEB;1                    	bash-builtins_2.0-3.deb
+F BONNIE_1.DEB;1                    	bonnie_1-1.deb
+F BSDMAINU.DEB;1                    	bsdmainutils_3.2-0.deb
+L BUG_2_95.DEB;1                    	bug_2.95.deb	../../binary-all/utils/bug_2.95.deb
+F CPIO_2_4.DEB;1                    	cpio_2.4.2-10.deb
+F DDS2TAR_.DEB;1                    	dds2tar_2.4.13-2.deb
+F DEBMAKE_.DEB;1                    	debmake_3.3.1.deb
+L DPKG-CRO.DEB;1                    	dpkg-cross_0.1.deb	../../binary-all/utils/dpkg-cross_0.1.deb
+L DPKG-DEV.DEB;1                    	dpkg-dev_1.4.0.8.deb	../../binary-all/utils/dpkg-dev_1.4.0.8.deb
+F DUMP_0_3.DEB;1                    	dump_0.3-14.deb
+L DUPLOAD_.DEB;1                    	dupload_1.14.deb	../../binary-all/utils/dupload_1.14.deb
+F FDUTILS_.DEB;1                    	fdutils_4.3-6.deb
+F FILE_3_2.DEB;1                    	file_3.20.1-3.deb
+F GIT_4_3_.DEB;1                    	git_4.3.16-2.deb
+F GRMONITO.DEB;1                    	grmonitor_0.53-2.deb
+F HEXTYPE_.DEB;1                    	hextype_3.0-2.deb
+F HWTOOLS_.DEB;1                    	hwtools_0.2-5.deb
+F KON2_0_2.DEB;1                    	kon2_0.2.1-5.deb
+L KONFONT_.DEB;1                    	konfont_0.1-3.deb	../../binary-all/utils/konfont_0.1-3.deb
+F LDE_2_3_.DEB;1                    	lde_2.3.4-1.deb
+F LEAVE_1_.DEB;1                    	leave_1.4-2.deb
+F LOCKVC_2.DEB;1                    	lockvc_2.0b-3.deb
+F LSOF_3_6.DEB;1                    	lsof_3.65-5.deb
+F MC_3_5_1.DEB;1                    	mc_3.5.17-1.deb
+F MMV_1_01.DEB;1                    	mmv_1.01b-1.deb
+F OFFIX-CL.DEB;1                    	offix-clipboard_2.4-1.deb
+F OFFIX-ED.DEB;1                    	offix-editor_2.4-1.deb
+F OFFIX-EX.DEB;1                    	offix-execute_2.4a-1.deb
+F OFFIX-FI.DEB;1                    	offix-files_2.4e-1.deb
+F OFFIX-TR.DEB;1                    	offix-trash_2.4-1.deb
+F PATCH_2_.DEB;1                    	patch_2.1-11.deb
+F PAX_2_1-.DEB;1                    	pax_2.1-2.deb
+F PERFORAT.DEB;1                    	perforate_1.0-6.deb
+F PROCMETE.DEB;1                    	procmeter_2.2a-1.deb
+F PSCOL_1_.DEB;1                    	pscol_1.6-2.deb
+F REMIND_3.DEB;1                    	remind_3.0.16-0.deb
+F SHARUTIL.DEB;1                    	sharutils_4.2-2.deb
+F STATSERI.DEB;1                    	statserial_1.1-13.deb
+F STRACE_3.DEB;1                    	strace_3.1-8.deb
+F SYMLINKS.DEB;1                    	symlinks_1.0-5.deb
+F SYSUTILS.DEB;1                    	sysutils_1.2-1.deb
+F TAPER_6_.DEB;1                    	taper_6.7.4-4.deb
+F TIME_1_6.DEB;1                    	time_1.6-7.deb
+L TKPS_1_6.DEB;1                    	tkps_1.6.deb	../../binary-all/utils/tkps_1.6.deb
+L TOB_0_14.DEB;1                    	tob_0.14-2.deb	../../binary-all/utils/tob_0.14-2.deb
+F TREE_1_2.DEB;1                    	tree_1.2-3.deb
+F UNARJ_2_.DEB;1                    	unarj_2.41a-5.deb
+F UNITS_1_.DEB;1                    	units_1.53-2.deb
+F UNZIP_5_.DEB;1                    	unzip_5.20-3.deb
+F UUDEVIEW.DEB;1                    	uudeview_0.5.9-2.deb
+F VLOCK_1_.DEB;1                    	vlock_1.0-4.deb
+F XMCPUSTA.DEB;1                    	xmcpustate_3-1.deb
+F XPROC_1_.DEB;1                    	xproc_1.11.6.deb
+F XSYSINFO.DEB;1                    	xsysinfo_1.5-1.deb
+F XVMOUNT_.DEB;1                    	xvmount_3.6-2.deb
+F ZIP_2_10.DEB;1                    	zip_2.10-4.deb
+F ZOO_2_10.DEB;1                    	zoo_2.10-3.deb

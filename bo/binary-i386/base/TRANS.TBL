@@ -1,0 +1,54 @@
+L ADDUSER_.DEB;1                    	adduser_3.2.deb	../../binary-all/base/adduser_3.2.deb
+F AE_962-1.DEB;1                    	ae_962-14.deb
+L BASE-FIL.DEB;1                    	base-files_1.3.5.deb	../../binary-all/base/base-files_1.3.5.deb
+L BASE-PAS.DEB;1                    	base-passwd_1.3.1.deb	../../binary-all/base/base-passwd_1.3.1.deb
+F BASH_2_0.DEB;1                    	bash_2.0-3.deb
+F BSDUTILS.DEB;1                    	bsdutils_3.1.3.deb
+F CFGTOOL_.DEB;1                    	cfgtool_1.5-1.deb
+F DEBIANUT.DEB;1                    	debianutils_1.5.deb
+F DIALOG_0.DEB;1                    	dialog_0.9a-10.deb
+F DIFF_2_7.DEB;1                    	diff_2.7-13.deb
+L DPKG-FTP.DEB;1                    	dpkg-ftp_1.4.8.deb	../../binary-all/base/dpkg-ftp_1.4.8.deb
+F DPKG_1_4.DEB;1                    	dpkg_1.4.0.8.deb
+F E2FSPROG.DEB;1                    	e2fsprogs_1.10-2.deb
+F ELVIS-TI.DEB;1                    	elvis-tiny_1.4-3.deb
+F FDFLUSH_.DEB;1                    	fdflush_1.0.0-7.deb
+F FILEUTIL.DEB;1                    	fileutils_3.16-2.deb
+F FINDUTIL.DEB;1                    	findutils_4.1-22.deb
+F GETTY_1_.DEB;1                    	getty_1.45a-3.deb
+F GREP_2_0.DEB;1                    	grep_2.0-11.deb
+F GZIP_1_2.DEB;1                    	gzip_1.2.4-15.deb
+F HOSTNAME.DEB;1                    	hostname_2.01.deb
+F KBD_0_92.DEB;1                    	kbd_0.92-3.1.deb
+F KERNEL-I.000;1                    	kernel-image-2.0.29_2.0.29-7.deb
+F KERNEL-I.DEB;1                    	kernel-image-2.0.30_2.0.30-7.deb
+F LDSO_1_8.DEB;1                    	ldso_1.8.10-2.deb
+F LIBC5_5_.DEB;1                    	libc5_5.4.33-3.deb
+F LIBDB1_1.DEB;1                    	libdb1_1.85.4-3.deb
+F LIBGDBM1.DEB;1                    	libgdbm1_1.7.3-19.deb
+F LIBREADL.DEB;1                    	libreadline2_2.1-2.deb
+F LILO_19-.DEB;1                    	lilo_19-2.deb
+F LOGIN_96.DEB;1                    	login_961025-2.deb
+F MAKEDEV_.DEB;1                    	makedev_1.6-4.deb
+F MAWK_1_3.DEB;1                    	mawk_1.3.3-1.deb
+F MBR_1_0_.DEB;1                    	mbr_1.0.0-5.deb
+L MODCONF_.DEB;1                    	modconf_0.2.12.deb	../../binary-all/base/modconf_0.2.12.deb
+F MODUTILS.DEB;1                    	modutils_2.1.34-5.deb
+F MOUNT_2_.DEB;1                    	mount_2.6d-1.deb
+L NCURSES-.000;1                    	ncurses-base_1.9.9e-1.deb	../../binary-all/base/ncurses-base_1.9.9e-1.deb
+F NCURSES-.DEB;1                    	ncurses-bin_1.9.9e-1.deb
+F NCURSES3.DEB;1                    	ncurses3.0_1.9.9e-1.deb
+F PASSWD_9.DEB;1                    	passwd_961025-2.deb
+F PROCPS_1.DEB;1                    	procps_1.11.6.deb
+F README.;1                         	README
+F SED_2_05.DEB;1                    	sed_2.05-12.deb
+F SETSERIA.DEB;1                    	setserial_2.12-2.deb
+F SHELLUTI.DEB;1                    	shellutils_1.16-2.deb
+F SYSKLOGD.DEB;1                    	sysklogd_1.3-17.deb
+F SYSLINUX.DEB;1                    	syslinux_1.30-2.deb
+F SYSVINIT.DEB;1                    	sysvinit_2.71-2.deb
+F TAR_1_11.DEB;1                    	tar_1.11.8-11.deb
+F TEXTUTIL.DEB;1                    	textutils_1.22-1.deb
+L TIMEZONE.DEB;1                    	timezone_7.55-2.deb	../../binary-all/base/timezone_7.55-2.deb
+F UPDATE_1.DEB;1                    	update_1.2-1.deb
+F UTIL-LIN.DEB;1                    	util-linux_2.5-12.deb

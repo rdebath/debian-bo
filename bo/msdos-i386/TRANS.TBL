@@ -1,0 +1,27 @@
+D ADMIN                             	admin
+D BASE                              	base
+D COMM                              	comm
+D DEVEL                             	devel
+D DOC                               	doc
+D EDITORS                           	editors
+D ELCTRNCS                          	elctrncs
+D GAMES                             	games
+D GRAPHICS                          	graphics
+D HAMRADIO                          	hamradio
+D INTRPRTR                          	intrprtr
+D LIBS                              	libs
+D MAIL                              	mail
+D MATH                              	math
+D MISC                              	misc
+D NET                               	net
+D NEWS                              	news
+D OTHROSFS                          	othrosfs
+L PACKAGES.;1                       	packages	../binary-i386/Packages
+L PACKAGES.GZ;1                     	packages.gz	../binary-i386/Packages.gz
+D SHELLS                            	shells
+D SOUND                             	sound
+D TEX                               	tex
+D TEXT                              	text
+D UTILS                             	utils
+D WEB                               	web
+D X11                               	x11

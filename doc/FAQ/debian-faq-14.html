@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Contributing to the Debian project </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-13.html">Previous</A>
+<A HREF="debian-faq-15.html">Next</A>
+<A HREF="debian-faq.html#toc14">Contents</A>
+<HR>
+<H2><A NAME="Contributing"></A> <A NAME="s14">14. Contributing to the Debian project </A></H2>
+
+<P>Donations of time (to develop new packages, maintain existing
+packages, or provide user support), resources (to mirror the FTP and WWW
+archives), and money (to pay for new testbeds as well as hardware for
+the archives) can help the project.
+<P>
+<H2><A NAME="contrib"></A> <A NAME="ss14.1">14.1 How can I become a Debian software developer?</A>
+</H2>
+
+<P>The development of Debian is open to all, and new users
+with the right skills and/or the willingness to learn are needed to
+maintain existing packages which have been &quot;orphaned&quot; by
+their previous maintainers, to develop new packages, and to provide user
+support.
+<P>To develop a Debian package, you should:
+<UL>
+<LI>(of course) download Debian and install it on your 
+system.</LI>
+<LI>find a program you would like to package that is not presently part
+of Debian.  In this regard, the  Work Needing and Prospective Packages document
+(available as 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/prospective-packages.txt">/debian/doc/package-developer/prospective-packages.txt</A> at the Debian FTP server) should serve as a useful guide.
+</LI>
+<LI>Subscribe to debian-devel.
+<P>To do this execute   
+<BLOCKQUOTE><CODE>
+<PRE>
+        mail debian-devel-REQUEST@lists.debian.org -s Subscribe
+</PRE>
+</CODE></BLOCKQUOTE>
+
+That is, send mail to the above address with the subject set to 'Subscribe'.
+<P>
+</LI>
+<LI>Publish your plan in debian-devel.
+<P>Send a mail to debian-devel that explains what you plan to do. So other 
+developers can give some hints.
+<P>
+</LI>
+<LI>Set up your PGP key.
+<P>Install the PGP package; read /usr/doc/pgp/; generate a 
+public-secret key pair by typing <CODE>pgp -kg</CODE>
+and answering the questions.  (Be prepared to write some arbitrary text 
+when asked.  PGP generates its true random numbers by measuring the 
+intervals between your keystrokes.)
+<P>
+</LI>
+<LI>Shake hands with the project administration:
+<P>Send an e-mail to 
+<A HREF="mailto:new-maintainer@debian.org">new-maintainer@debian.org</A><P>with this content:
+<UL>
+<LI> what you have done,</LI>
+<LI> who you are, </LI>
+<LI> request for an account on master,</LI>
+<LI> request to be subscribed to debian-private (the developers-only 
+mailing list). </LI>
+<LI> your PGP key, obtained by executing 'pgp -kxa'.</LI>
+</UL>
+<P>
+</LI>
+<LI>Make the programs:  .deb, .diff, .tar.gz, .changes.
+<P>Use the <CODE>hello*deb</CODE> and <CODE>dpkg*deb</CODE> packages as guides,
+and read the <I>policy manual</I> and <I>dpkg programmers manual</I>.
+<P>
+</LI>
+<LI>Upload the files to
+<P>
+<UL>
+<LI><CODE>ftp://master.debian.org/home/Debian/ftp/private/project/Incoming/</CODE>
+using your user-name and password, or</LI>
+<LI><CODE>ftp://ftp.chiark.greenend.org.uk/</CODE> using anonymous ftp.
+<P>For instructions to upload to chiark, read this file at chiark:
+<CODE>/pub/debian/private/project/README.how-to-upload</CODE>.
+<I>chiark</I> then sends the files it gets to master.
+</LI>
+</UL>
+</LI>
+</UL>
+<P>
+<H3>Are there additional information resources for developers?</H3>
+
+<P>Besides <CODE>debian-devel</CODE>, there are these mailing lists:
+<UL>
+<LI>The SPARC port developers list:  debian-sparc@lists.debian.org.</LI>
+<LI>The Alpha port developers list: debian-alpha@lists.debian.org.</LI>
+<LI>The Motorola 680x0 port developers list: debian-68k@lists.debian.org.</LI>
+<LI>The dpkg development list: debian-dpkg@lists.debian.org.</LI>
+<LI>Debian for Hams: debian-hams@lists.debian.org.</LI>
+<LI>Debian package maintainers only: debian-private@lists.debian.org.</LI>
+</UL>
+<P>To subscribe to debian-devel, or other developers' list, send a
+message to 
+<A HREF="mailto:listmaster@lists.debian.org">listmaster@lists.debian.org</A>
+with a one-line explanation of what you would like to test or develop.
+<P>
+<H2><A NAME="ss14.2">14.2 How can I contribute resources to the Debian project?</A>
+</H2>
+
+<P>Since the project aims to make a substantial body of software rapidly
+and easily accessible throughout the globe, mirrors are urgently needed.
+It is desirable but not absolutely necessary to mirror all of the archive.
+The current components amount to just over 1.4 GBytes, broken down roughly
+as follows:
+<P>
+<UL>
+<LI>non-free: 120 MBytes.</LI>
+<LI>contrib: 30 MBytes.</LI>
+<LI>Debian-1.3 (including updates): 850 MBytes.</LI>
+<LI>unstable: 450 MBytes.</LI>
+</UL>
+<P>Most of the mirroring is accomplished entirely automatically by scripts, 
+without any human intervention.  However, the occasional glitch or system
+change occurs which requires human intervention.
+<P>If you have a high-speed connection to the Internet, the resources to
+mirror all or part of the distribution, and are willing to
+take the time (or find someone) who can provide regular maintenance of
+the system, then please contact Bruce Perens (E-Mail: 
+<A HREF="mail:bruce@pixar.com">bruce@pixar.com</A>;
+Voice (work):  510-215-3502).
+<P>
+<P>
+<H2><A NAME="SupportingOrganizations"></A> <A NAME="ss14.3">14.3 How can I contribute financially to the Debian project?</A>
+</H2>
+
+<P>One can make individual donations to one of two organizations that
+are critical to the development of the Debian project.
+<P>
+<H3><A NAME="SPI"></A> Software in the Public Interest</H3>
+
+<P>
+<P>Software in the Public Interest (SPI) is a non-profit organization 
+formed when FSF withdrew their sponsorship of Debian.  We are currently 
+incorporating as an IRS 501(c)(3) non-profit organization. The purpose 
+of the organization is
+to develop and distribute free software. Our goals are very much like
+those of FSF, and we encourage programmers to use the GNU General
+Public License on their programs. However, we have a slightly different
+focus in that we are building and distributing a Linux system that
+diverges in many technical details from the GNU system planned by FSF.
+We still communicate with FSF, and we cooperate in sending them changes
+to GNU software and in asking our users to donate to FSF and the GNU
+project.                        
+<P>SPI can be reached at:
+<UL>
+<LI>E-Mail: 
+<A HREF="mail:bruce@pixar.com">bruce@pixar.com</A></LI>
+<LI>Postal address: 
+<BLOCKQUOTE><CODE>
+<PRE>
+
+        Software in the Public Interest
+        P.O. Box 70152
+        Pt. Richmond, CA 94807-0152
+
+   
+</PRE>
+</CODE></BLOCKQUOTE>
+</LI>
+<LI>Phone: 510-215-3502 (Bruce Perens at work)</LI>
+</UL>
+<P>
+<P>
+<H3><A NAME="FSF"></A> Free Software Foundation</H3>
+
+<P>At this time there is no formal connection between Debian and the Free
+Software Foundation. However, the Free Software Foundation is
+responsible for some of the most important software components in
+Debian, including the GNU C compiler, GNU Emacs, and much of the C
+run-time library that is used by all programs on the system. FSF pioneered
+much of what free software is today: they wrote the General Public
+License that is used on much of the Debian software, and they invented
+the "GNU" project to create an entirely free Unix system. Debian should
+be considered a descendent of the GNU system.
+<P>When you make a donation to FSF, please be sure to tell them that you
+are a Debian user. Please contact them at:
+<P>
+<UL>
+<LI>E-mail:
+<A HREF="mailto:gnu@prep.ai.mit.edu">gnu@prep.ai.mit.edu</A></LI>
+<LI>Postal address:
+<BLOCKQUOTE><CODE>
+<PRE>
+    Free Software Foundation
+    59 Temple Place - Suite 330
+    Boston, MA  02111-1307
+    USA
+   
+</PRE>
+</CODE></BLOCKQUOTE>
+</LI>
+<LI>Phone number: +1-617-542-5942</LI>
+<LI>Fax (including Japan): +1-617-542-2652</LI>
+<LI>Free Dial Fax (in Japan): 0031-13-2473 (KDD), 0066-3382-0158 (IDC)</LI>
+<LI>On the WWW :
+<A HREF="http://www.gnu.ai.mit.edu/">http://www.gnu.ai.mit.edu/</A></LI>
+</UL>
+<P>
+<P>
+<HR>
+<A HREF="debian-faq-13.html">Previous</A>
+<A HREF="debian-faq-15.html">Next</A>
+<A HREF="debian-faq.html#toc14">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,77 @@
+Brian C. White <bcwhite@verisim.com> has formed a dpkg-development
+group, `deity'
+
+It is my pleasure to announce the formation of the dselect
+replacement project, code-named "deity".  The project will be made
+up of the following 7 people:
+
+
+Project Leader:       Brian White <bcwhite@verisim.com>
+ - General organization, dispute resolution, final say on
+   "capabilities"
+
+
+Chief Programmer:   Peter Iannarelli <peter@pisys.com>
+ - Code organization, task breakdown, final say on "code"
+
+Mechanic(*):      Jason Gunthorpe <jgg@gpu.srv.ualberta.ca>
+ - Low-level class and library design
+
+Dpkg Consultant:  Tom Lees <tom@lpsg.demon.co.uk>
+ - Expert on compatibility with existing dpkg, dependency
+   algorithms, etc.
+
+Web Designer:     Mark Constable <markc@vv.com.au>
+ - Work on HTML and CGI interfaces
+
+
+Chief Designer:     Behan Webster <behanw@verisim.com>
+ - Screen layout, ease of use, final say on "user interface"
+
+Documentation:    Che Fox <che@imsa.edu>
+ - high & low level design docs, idea tracking, user manuals
+
+
+(*) Someone who likes to work on low-level "engines".  (I get called
+this. :-)
+
+
+A new list "deity@lists.debian.org" has been created with these
+people subscribed to it.  I'm sure I speak for the whole team when I
+say that we would like to hear everybody's ideas for this new tool.
+As the design progresses, we will be presenting it back to the devel
+& user lists for feedback.
+
+
+About the people:
+
+* Brian White has been working within the Debian project for about 2
+  years now and is current the vice president of engineering.  He
+  has 14 years of intense software development and knows C and C++
+  very well.
+
+* Peter Iannarelli is fairly new to Debian but is anxious to
+  contribute.  He has 13 years of experience with Unix and C, plus 7
+  years of C++.  He also has a background in java, motif, and
+  curses, along with strong design and documentation skills.
+
+* Jason Gunthorpe has 4 years of experience with C/C++ and enjoys
+  working at the class-level of designs.  He has already started
+  working out how some of the underlying problems can be solved
+  efficiently.
+
+* Tom Lees has experience with C/C++ and has spent time studying the
+  existing dpkg system.  He also has a background in text-mode user
+  interfaces and sgml documentation.
+
+* Behan Webster has 14 years of experience with C programming and
+  Unix, plus 5 years of C++.  He has worked extensively on user
+  interfaces (mostly the graphical kind) and has a good feel for
+  what is intuitive and easy to use.
+
+* Che Fox is a whiz at linuxdoc-sgml and will be managing the
+  documentation.  He also has experience with Tk interfaces.
+
+* Mark Constable has a good background in web/cgi interaction and
+  will be working to make that a viable interface.
+

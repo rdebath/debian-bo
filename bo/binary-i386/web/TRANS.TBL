@@ -1,0 +1,22 @@
+F ANALOG_2.DEB;1                    	analog_2.0-1.deb
+L APACHE-D.DEB;1                    	apache-dev_1.1.3-6.deb	../../binary-all/web/apache-dev_1.1.3-6.deb
+F APACHE-M.DEB;1                    	apache-modules_1.1.4.deb
+F APACHE_1.DEB;1                    	apache_1.1.3-6.deb
+F ARENA_1_.DEB;1                    	arena_1.0b3-1.deb
+F BOA_0_92.DEB;1                    	boa_0.92-4.deb
+F CERN-HTT.DEB;1                    	cern-httpd_3.0-7.deb
+L CGI-MODU.DEB;1                    	CGI-modules_2.75-13.deb	../../binary-all/web/CGI-modules_2.75-13.deb
+F CGI-SCRI.DEB;1                    	cgi-scripts_1.0.2.deb
+F CGIEMAIL.DEB;1                    	cgiemail_1.2-1.deb
+F DHTTPD_1.DEB;1                    	dhttpd_1.02-4.deb
+F HYPERMAI.DEB;1                    	hypermail_1.02-2.deb
+F ISITE_1_.DEB;1                    	isite_1.08-2.deb
+F LYNX_2_7.DEB;1                    	lynx_2.7.1-1.deb
+F NCSA_1_4.DEB;1                    	ncsa_1.4.2-6.deb
+F PHP_2_0B.DEB;1                    	php_2.0b10-5.deb
+F SQUID_1_.DEB;1                    	squid_1.1.1-1.deb
+L W3-EL_2_.DEB;1                    	w3-el_2.2.26-1.deb	../../binary-all/web/w3-el_2.2.26-1.deb
+L WEBLINT_.DEB;1                    	weblint_1.017-1.deb	../../binary-all/web/weblint_1.017-1.deb
+F WGET_1_4.DEB;1                    	wget_1.4.4-6.deb
+F WN_1_17_.DEB;1                    	wn_1.17.0-5.deb
+F WWW-SEAR.DEB;1                    	www-search_1.007-1.deb

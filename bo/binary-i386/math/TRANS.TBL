@@ -1,0 +1,28 @@
+F BC_1_03-.DEB;1                    	bc_1.03-14.deb
+F CALCTOOL.DEB;1                    	calctool_2.4.9-4.deb
+L CALC_2_0.DEB;1                    	calc_2.02f-1.deb	../../binary-all/math/calc_2.02f-1.deb
+F DC_1_03-.DEB;1                    	dc_1.03-14.deb
+F DOME_4_6.DEB;1                    	dome_4.60-1.deb
+F FREELIP_.DEB;1                    	freelip_1.0-2.deb
+F GNUPLOT_.DEB;1                    	gnuplot_3.5beta6.328-1.deb
+F JGRAPH_8.DEB;1                    	jgraph_83-9.deb
+F NETCDF-B.DEB;1                    	netcdf-bin_2.4.3-5.deb
+F NETCDF-D.000;1                    	netcdf-dev_2.4.3-5.deb
+L NETCDF-D.DEB;1                    	netcdf-doc_2.4.3-5.deb	../../binary-all/math/netcdf-doc_2.4.3-5.deb
+F NETCDF-P.DEB;1                    	netcdf-perl_1.1-4.deb
+F NETCDF2_.DEB;1                    	netcdf2_2.4.3-5.deb
+F NETCDF_2.DEB;1                    	netcdf_2.4.3-4.deb
+F OCTAVE-D.DEB;1                    	octave-doc_2.0.5-2.deb
+F OCTAVE_2.DEB;1                    	octave_2.0.5-2.deb
+F OLEO_1_6.DEB;1                    	oleo_1.6-8.deb
+L PARIDOC_.DEB;1                    	paridoc_1.39.03-6.deb	../../binary-all/math/paridoc_1.39.03-6.deb
+F PARI_1_3.DEB;1                    	pari_1.39.03-6.deb
+F PGAPACK_.DEB;1                    	pgapack_1.0-6.deb
+F RPNCALC_.DEB;1                    	rpncalc_1.15-2.deb
+F SEESAT5_.DEB;1                    	seesat5_0.90.4-0.deb
+F SLSC_0_2.DEB;1                    	slsc_0.2.3-2.deb
+F SPLINE_1.DEB;1                    	spline_1.0-3.deb
+F XSPREAD_.DEB;1                    	xspread_3.1.1c-1.deb
+F YORICK-D.DEB;1                    	yorick-dev_1.4-1.deb
+F YORICK-G.DEB;1                    	yorick-gist_1.4-1.deb
+F YORICK_1.DEB;1                    	yorick_1.4-1.deb

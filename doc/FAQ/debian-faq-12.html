@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Getting support for Debian Linux </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-11.html">Previous</A>
+<A HREF="debian-faq-13.html">Next</A>
+<A HREF="debian-faq.html#toc12">Contents</A>
+<HR>
+<H2><A NAME="Support"></A> <A NAME="s12">12. Getting support for Debian Linux </A></H2>
+
+<P>
+<H2><A NAME="DebianDocs"></A> <A NAME="ss12.1">12.1 What other documentation exists on and for a Debian system?</A>
+</H2>
+
+<P>
+<UL>
+<LI>Installation instructions for the current release:  see  
+<A HREF="http://www.debian.org/1.1/install.html">http://www.debian.org/1.1/install.html</A>.
+<P>
+</LI>
+<LI>dpkg programmer's manual and Debian policy manual
+<UL>
+<LI>The 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/programmer.ps.gz">dpkg programmer's manual</A> is the primary documentation on the
+technical aspects of creating Debian binary and source packages.
+<P>The 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/policy.ps.gz">Debian policy manual</A> documents the policy requirements for a
+package to be included in Debian.
+<P>These documents are also included in the latest <CODE>dpkg-dev</CODE> package.
+</LI>
+</UL>
+
+
+<P>
+</LI>
+<LI>Documentation on installed Debian packages:  
+Most packages have files that are unpacked into 
+<CODE>/usr/doc/</CODE> and <CODE>/usr/doc/examples/</CODE>.  
+
+<P>
+</LI>
+<LI>Documentation on the Linux project:
+The Debian package <CODE>doc-linux_VVV-RRR.deb</CODE> installs all of the most
+recent versions of the HOWTOs and mini-HOWTOs from the 
+<A HREF="http://www.linux.locus.halcyon.com/">Linux Documentation Project</A>.
+This package is in the <CODE>stable/binary-all/doc/</CODE> section 
+in the FTP archives. 
+<P>
+</LI>
+<LI>Unix-style 'man' pages:  Most commands have 
+manual pages written in the style of the original Unix 'man' files.
+They are referenced by the section of the 'man' directory where they
+reside:  e.g., foo(3) refers to a manual page which resides in /usr/man/man3/,
+and it can be called by executing the command: 
+<CODE>man 3 foo</CODE>, or just <CODE>man foo</CODE> if section 3 is the only one
+containing a page on <CODE>foo</CODE>.
+One can learn which directory of <CODE>/usr/man/</CODE> contains a certain
+manual page by executing <CODE>man -w foo</CODE>.
+<P>New Debian users should note that the 'man' pages of many general system 
+commands are not available until they install these packages (both of
+which are normally stored in the <CODE>stable/binary-all/doc/</CODE>
+directory of the Debian FTP archive:
+<UL>
+<LI><CODE>manpages_VVV-RRR.deb</CODE>
+(see 
+<A HREF="debian-faq-5.html#nonEngl">support for non-English languages</A>).</LI>
+<LI><CODE>man_VVV-RRR.deb</CODE>, which contains the <CODE>man</CODE> program 
+itself, and other programs for manipulating the manual pages.  
+<P>
+</LI>
+</UL>
+<P>
+</LI>
+<LI>GNU-style 'info' pages:  User documentation for many commands,
+particularly GNU tools, is available not in 'man' pages, but in 'info' 
+files which can be read by the GNU tool <CODE>info</CODE> or by running 
+<CODE>M-x info</CODE> within GNU Emacs.
+Its main advantage over the original
+'man' pages are that it is a hypertext system.  It does <EM>not</EM>
+require the WWW, however; <CODE>info</CODE> can be run from a plain text
+console.  It was designed by Richard Stallman and preceded the WWW.  
+The program that manipulates `info' files is installed
+as a separate package <CODE>info_VVV-RRR.deb</CODE>, usually stored in 
+the directory <CODE>stable/binary-all/doc/</CODE> on the FTP archive.  </LI>
+</UL>
+<P>
+<P>
+<P>
+<H2><A NAME="resources"></A> <A NAME="ss12.2">12.2 Are there any on-line resources for discussing Debian?</A>
+</H2>
+
+<P>
+<P>There are several Debian-related mailing lists:
+<UL>
+<LI><B>debian-announce@lists.debian.org (moderated)</B>.
+(Usually) major system announcements.  On average,
+fewer than one message per week are posted here.
+</LI>
+<LI><B>debian-changes@lists.debian.org</B>.
+Announcements of new package uploads for the Debian system. 
+This list may carry several announcements in a day.     
+</LI>
+<LI><B>debian-user@lists.debian.org 
+<A NAME="debian-user"></A> </B>.
+A mailing list where users can ask for and receive advice on the
+use or configuration of Debian packages or other aspects of Debian Linux.
+This list is an invaluable learning resource;
+there can be 50 messages a day or more on this list.     
+</LI>
+<LI><B>debian-sparc@lists.debian.org 
+<A NAME="debian-sparc"></A> </B>.
+This list is for those involved in porting Debian software to the SPARC
+platform.
+</LI>
+<LI><B>debian-alpha@lists.debian.org 
+<A NAME="debian-alpha"></A> </B>.
+This list is for those involved in porting Debian software to DEC alpha
+platforms.
+</LI>
+<LI><B>debian-68k@lists.debian.org 
+<A NAME="debian-68k"></A> </B>.
+This list is for those involved in porting Debian software to Motorola 680x0
+platforms; currently this means the Atari and Amiga only.
+</LI>
+<LI><B>debian-talk@lists.debian.org 
+<A NAME="debian-talk"></A> </B>.
+</LI>
+</UL>
+<P>To subscribe to debian-X (for X in announce, changes, user, talk), 
+send mail to 
+debian-X-request@lists.debian.org with the word &quot;subscribe&quot; in 
+the Subject: header.
+If you have a forms-capable World Wide Web browser, you can
+subscribe to debian-announce and debian-user by using the 
+<A HREF="http://www.rahul.net/perens/Debian/MailingLists.html">WWW form</A>. 
+You can also un-subscribe using that form.
+<P>The list manager's e-mail address is 
+<A HREF="mailto:listmaster@lists.debian.org">listmaster@lists.debian.org</A><P>Archives of the Debian mailing lists are available via WWW at 
+<A HREF="http://www.debian.org/Lists-Archives/">http://www.debian.org/Lists-Archives/</A> and via FTP from 
+<A HREF="ftp://ftp.debian.org/debian/debian-lists/">ftp://ftp.debian.org/debian/debian-lists/</A>.
+<P>Users can address questions to individual package maintainers, since their
+e-mail addresses are provided in the Debian control file (see section
+<A HREF="debian-faq-6.html#CtlFile">Debian control file</A>)
+that is included within each package.  One can also learn the maintainers' 
+names and e-mail addresses by searching the &quot;Packages&quot; file, since
+this file is just a concatenation of all the available package control files 
+in a particular directory tree. To extract a control file from a 
+particular Debian package, use the command,
+<BLOCKQUOTE><CODE>
+<PRE>
+dpkg --info packageName_VVV-RRR.deb
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Another related mailing list, <B>debiangame</B>, is being run by Gary Moore 
+(
+<A HREF="mailto:gary@ssc.com">mailto:gary@ssc.com</A>)
+at the University of Washington.  As the name suggests, it is devoted
+to the discussion of games that have been (or might be) packaged for Debian.
+To subscribe, send mail to <CODE>listproc@u.washington.edu</CODE>, putting in
+the message body: 
+<BLOCKQUOTE><CODE>
+<PRE>
+  subscribe debiangame FirstName LastName
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Both FirstName and LastName are required for ListProc.
+<P>
+<P>Users should post non-Debian-specific questions to one of
+the Linux Usenet groups, which are named comp.os.linux.* or
+linux.*.  Specialized Systems Consultants (a.k.a. SSC) maintains a 
+<A HREF="http://www.ssc.com/linux/news.html">list of Linux, Unix, X, and networking newsgroups</A>
+on their WWW site.
+<P>
+<P>
+<H2><A NAME="MailingListConduct"></A> <A NAME="ss12.3">12.3 What is the code of conduct for the mailing lists? </A>
+</H2>
+
+<P>
+<P>When using the Debian mailing lists, please follow these rules:
+<UL>
+<LI>Do not flame; it is not polite.  Besides the people developing Debian
+are all volunteers, donating their time, energy and money in an
+attempt to bring the Debian project together.</LI>
+<LI>Do not use foul language; some people receive the lists via packet
+radio, where swear words are illegal.</LI>
+<LI>Make sure that you are using the proper list.</LI>
+<LI>Do not try posting unless you are subscribed.  Posting by 
+non-subscribers was turned off to make the mailing lists usable.
+Thus, only postings from e-mail addresses matching those of a subscriber 
+are accepted. If you often post from other addresses than the one 
+you subscribe with, mail the list manager
+<A HREF="mailto:listmaster@lists.debian.org">listmaster@lists.debian.org</A>
+with the subject &quot;please add subscriber alias&quot;.</LI>
+<LI>See section 
+<A HREF="debian-faq-13.html#bugrpt">reporting bugs</A>
+for notes on reporting bugs.</LI>
+</UL>
+<P>
+<P>
+<H2><A NAME="Searchtools"></A> <A NAME="ss12.4">12.4 Is there a quick way to search for information on Debian GNU/Linux?</A>
+</H2>
+
+<P> 
+There are a variety of search engines that serve documentation related
+to Debian. 
+<P>
+<UL>
+<LI> 
+<A HREF="http://insite.verisim.com/search/debian/simple">Verism's search site</A>.  To obtain information on how to submit
+a debian bug report, enter the words <CODE>debian bug submit</CODE>
+and search for &quot;all of these words&quot;.
+
+</LI>
+<LI> 
+<A HREF="http://www.dejanews.com/forms/dnquery.html">DejaNews news search service</A>.  To find out what experiences people
+have had with finding drivers for Western Digital controllers, try searching
+on this phrase:
+<BLOCKQUOTE><CODE>
+<PRE>
+linux & WD
+</PRE>
+</CODE></BLOCKQUOTE>
+
+This tells DejaNews to report any postings containing both the 
+string &quot;linux&quot; AND the string &quot;WD&quot;
+When I used it, I discovered that my WD card (which I have only had for
+6 months) has been declared outmoded by Adaptec, now that they have bought
+WD. So there are no drivers available.  (Bless Adaptec's hearts.)
+</LI>
+<LI> The 
+<A HREF="http://altavista.digital.com/">AltaVista Search Engine</A> can also be used to search Usenet
+(although it appears to be not quite as up to date as DejaNews).
+For example, searching on the string "cgi-perl" gives a more detailed
+explanation of this package than the brief description field in its
+control file.
+</LI>
+</UL>
+
+<P>
+<HR>
+<A HREF="debian-faq-11.html">Previous</A>
+<A HREF="debian-faq-13.html">Next</A>
+<A HREF="debian-faq.html#toc12">Contents</A>
+</BODY>
+</HTML>

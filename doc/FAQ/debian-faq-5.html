@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Software available in the Debian system </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-4.html">Previous</A>
+<A HREF="debian-faq-6.html">Next</A>
+<A HREF="debian-faq.html#toc5">Contents</A>
+<HR>
+<H2><A NAME="Software"></A> <A NAME="s5">5. Software available in the Debian system </A></H2>
+
+<P> 
+<H2><A NAME="ss5.1">5.1 What types of applications and development software are available for Debian GNU/Linux?</A>
+</H2>
+
+<P>Like most Linux distributions, Debian GNU/Linux provides:
+<UL>
+<LI>the major GNU applications for software development, 
+file manipulation, and text processing, including gcc, libc, 
+g++, make, texinfo, gnuplot, the Bash shell and numerous upgraded 
+Unix utilities,</LI>
+<LI>Perl and its libraries,</LI>
+<LI>TeX, LaTeX, and dvips,</LI>
+<LI>the X Window System, which provides a networked graphical user 
+interface for Linux, and numerous X applications,</LI>
+<LI>a full suite of other networking applications, including WWW servers,
+browsers, and development tools.</LI>
+</UL>
+
+Nearly 700 packages, ranging from news servers and readers to sound support,
+FAX programs, database and spreadsheet programs, image processing programs,
+communications, net, and mail utilities, Web servers, and 
+even ham-radio programs are included in the distribution.
+Another 50 software suites are available as Debian packages, but are not
+formally part of Debian due to license restrictions.
+<P>
+<H2><A NAME="ss5.2">5.2 Who wrote all that software?</A>
+</H2>
+
+<P>
+<UL>
+<LI>For each package the <EM>authors</EM> of this program are
+credited in the file <CODE>/usr/doc/PACKAGE/copyright</CODE>, where
+PACKAGE is to be substituted with the package's name. (Packages
+conforming to an older Debian Packaging Standard have this in the file
+<CODE>/usr/doc/copyright/PACKAGE</CODE> instead.)</LI>
+<LI><EM>Maintainers</EM> who package this software for the Debian Linux system
+are listed in the 
+<A HREF="debian-faq-6.html#CtlFile">Debian control file</A> that comes 
+with each package.</LI>
+</UL>
+<P>
+<H2><A NAME="ss5.3">5.3 How can I get a current list of programs that have been packaged for the Debian project?</A>
+</H2>
+
+<P>A complete list is available from any of the 
+Debian 
+<A HREF="http://www.debian.org/ftplist.html">mirrors</A>.
+<P>
+<P>The file <CODE>indices/Packages-Master-i386.gz</CODE> provides a list,
+including short descriptions, of all packages that are available for
+computers with 80386 (or more advanced) chips.
+The file <CODE>indices/Packages-Master-m68k.gz</CODE> provides a similar list
+of packages that are available for computers with Motorola 68k0x0 CPUs.
+<P>
+<P>The 
+<A HREF="http://www.debian.org/FTP/">WWW interface to the Debian packages</A> conveniently summarizes the packages in each of about twenty
+&quot;sections&quot; of the Debian archive, as well as the 10 most
+recently uploaded packages.
+<P>
+<H2><A NAME="ss5.4">5.4 What is missing from Debian GNU/Linux?</A>
+</H2>
+
+<P>A list of packages which are most urgently needed for Debian
+is maintained by Sven Rudolph.  For more details, see the section
+<A HREF="debian-faq-14.html#contrib">on contributing to the Debian project</A>.
+<P>
+<H2><A NAME="ss5.5">5.5 (How) Does Debian support Java?</A>
+</H2>
+
+<P>The Java Development Kit from Sun is currently available as a Debian
+package (<CODE>jdk_VVV-RRR.deb</CODE>).  The JDK will allow you to run 
+Java programs and applets, and write your own.  If your kernel is 
+properly configured (see below), the JDK will allow you to 
+<EM>run</EM> Java programs just like other 
+executables.  The JDK package also includes a number of demo programs.
+<P>Debian's kernel is configured with Java support built in as a module (i.e.,
+CONFIG_BINFMT_JAVA=m).  Users who wish to build their own 
+<A HREF="debian-faq-10.html#custker">custom kernel</A> can of course omit this if 
+they choose.  Once module support is available in the kernel, you
+need to make sure the module is loaded.  You can do it at boot time
+by inserting the line <CODE>binfmt_java</CODE> in the file 
+<CODE>/etc/modules</CODE>.
+Alternatively, you can install the module from the command line by
+executing the command <CODE>insmod DIRNAME/binfmt_java.o</CODE> where 
+<CODE>DIRNAME</CODE> is the name of the directory where the modules that
+have been built for the version of the kernel now running are stored.
+On a system with the 2.0.0 version of the kernel, 
+<CODE>DIRNAME</CODE> is likely to be <CODE>/lib/modules/2.0.0/fs/</CODE>.
+You can check that a module is loaded using the command
+<CODE>lsmod</CODE>.
+<P>Running a Java applet requires a browser with the capability to 
+recognize and execute them.  The Netscape browser that can be installed 
+as a Debian package will run Java applets.  (The Netscape source code 
+is not publicly available.  The Debian netscape package provides 
+a wrapper which aids the installation
+and management of Netscape on a Debian system.  This is actually a good
+example of the integration of commercial packages with the Debian system.)
+<P>
+<P>A final note of mixed blessings:  
+Sun's licensing policies on the JDK are becoming more restricted with time,
+so this package may not be available as part of Debian soon.
+It is possible that it may be available in the same way that Netscape is
+available for Debian Linux.  Better news is that a number of programs are 
+currently being developed with may provide attractive publicly-available 
+alternatives.
+<P>
+<H2><A NAME="dirtree"></A> <A NAME="ss5.6">5.6 What are all those directories (stable/development/non-free/contrib/project) at the Debian FTP archives?</A>
+</H2>
+
+<P>The software that has been packaged for Debian GNU/Linux is
+available in one of several directory trees on each Debian mirror site.
+<P>
+<H3>Top-level Directories</H3>
+
+<P>
+<DL>
+<DT><B>The Major Package Trees:</B><DD><P>
+<UL>
+<LI>Debian-1.3/:
+This directory contains the packages which formally constitute the most
+recent release of the Debian Linux system.  
+The contents of this directory do not change.  
+</LI>
+<LI>Debian-1.3-updates/:
+Updates to the current release are in this directory.
+</LI>
+<LI>Debian-1.3.x/, a.k.a. &quot;stable/&quot;:
+A copy of the current release with the updates applied.  The
+minor number is changed whenever new updates are added. 
+</LI>
+<LI>&quot;non-free/&quot;:  This directory contains packages 
+whose distribution is restricted in a way which requires that
+distributors take careful account of the specified copyright requirements.  
+For example, some packages have licenses which prohibit commercial
+distribution.  Others can be redistributed but are in fact shareware 
+and not freeware.  The licenses of each of these packages must be
+studied, and possibly negotiated, before the packages are included in
+any redistribution (e.g., in a CD-ROM). 
+</LI>
+<LI>&quot;contrib/&quot;: This directory contains packages which 
+are <EM>freely distributable</EM>, but do not meet the policy requirements for 
+distribution by the Debian project for some reason, e.g., the packages
+have some unusual restriction on modification by other users, or are
+only available in binary form.  For such packages, the project cannot given
+the user any means to assure that they are free of Trojan horses, and 
+cannot port them to other architectures.  Binary-only packages which
+are not freely redistributable are placed in the <CODE>non-free</CODE> directory.
+</LI>
+</UL>
+<P>
+<DT><B>Supplementary directories:</B><DD><P>
+<UL>
+<LI>&quot;tools/&quot;:  DOS utilities for creating boot disks, partitioning
+your disk drive, compressing/decompressing files, and booting Linux.
+</LI>
+<LI>&quot;upgrades/&quot;: Files needed for upgrading a debian-0.93 system
+(based on <CODE>a.out</CODE> binary format files) to Debian-1.1 (or later, 
+based on <CODE>ELF</CODE> binary files).
+Included are instructions for upgrading (either &quot;manually&quot; using
+<CODE>dpkg</CODE>, or more automatically, using <CODE>dselect</CODE>),
+along with a copy of the particular version of the package management 
+tool, <CODE>dpkg</CODE> that must be used in <CODE>a.out</CODE> systems to 
+start the upgrade, 
+and a list of files that will be needed in order to do the upgrade.
+</LI>
+<LI>&quot;doc/&quot;:  Documentation, instructions on how to submit 
+bug reports.
+</LI>
+</UL>
+<P>
+<DT><B>Of particular interest to developers:</B><DD><P>
+<UL>
+<LI>&quot;development/&quot;:  A snapshot  of the current development
+system.  Users are welcome to use and test these packages, but are 
+warned about their state of readiness.
+</LI>
+<LI>&quot;project/experimental/&quot;: This directory contains packages
+and tools which are being developed specifically for the Debian project,
+and are still in the testing stage.  Users are welcome to use and test these
+packages, but warned about their state of readiness. 
+</LI>
+<LI>&quot;private/project/Incoming/&quot;:  Packages that have been
+uploaded by developers, and which are awaiting placement in the directory
+hierarchy by the distribution maintainer.  
+</LI>
+<LI>&quot;indices/&quot;:  Various lists, including the 
+<CODE>Packages-Master</CODE> file.
+</LI>
+</UL>
+<P>
+</DL>
+<P>
+<H3>Sub-directories</H3>
+
+<P>Within each of the major directory trees (<CODE>stable/</CODE>,
+<CODE>non-free/</CODE>, <CODE>contrib/</CODE>, and <CODE>development/</CODE>, but 
+not <CODE>project/experimental/</CODE>), which is too small to subdivide), 
+the binary packages reside in sub-directories whose names indicate the 
+chip architecture for which they were compiled:  
+<UL>
+<LI>binary/, which is normally a link to binary-i386/.
+</LI>
+<LI>binary-all/, for packages which are architecture-independent.  These
+include, for example, Perl scripts.
+</LI>
+<LI>binary-i386/, for packages which execute on 80x86 machines.
+</LI>
+<LI>binary-m68k/, for packages which execute on machines based on one 
+of the Motorola 680x0 processors.  Currently this is done mainly for 
+Atari and Amiga computers, and also for some VME based industry standard 
+boards.  There is no port of Linux to the old m68k based Macintoshes,
+because Apple did not supply the needed hardware information.
+</LI>
+<LI>binary-sparc/, for packages which execute on Sun Sparcstations.
+</LI>
+<LI>binary-alpha/, for packages which execute on DEC Alpha machines.</LI>
+</UL>
+<P>
+<P>
+<H2><A NAME="ss5.7">5.7 Is source code included with the system?</A>
+</H2>
+
+<P>Source code is included for everything in the Debian system. 
+Most of the license terms of programs in the system <EM>require</EM> that 
+source code be distributed along with the programs, or that an offer to provide
+the source code accompany the programs.  
+<P>Source code may or may not be available for packages in the 
+&quot;contrib&quot; and &quot;non-free&quot; directories, which are
+not formally part of the Debian system.
+<P>
+<H2><A NAME="ss5.8">5.8 How can I check that I am using a Debian system? </A>
+</H2>
+
+<P>The existence of the program <CODE>dpkg</CODE> shows that you should be able to install Debian packages on your system. 
+<P>In order to make sure that your system has been installed from the
+real Debian base disks check for the existence of
+<CODE>/etc/debian_version</CODE>.
+<P>
+<H2><A NAME="ss5.9">5.9 How can I tell what &quot;version&quot; of the Debian system I am using?</A>
+</H2>
+
+<P>There is a file, <CODE>/etc/debian_version</CODE>, which contains
+a single one-line entry giving the version number of the release,
+as defined by the package <CODE>base</CODE>.
+<P>Users should be aware, however, that the Debian system consists
+of many parts, each of which can be updated (almost) independently.
+Each Debian &quot;release&quot; contains well defined and unchanging
+contents.  Updates are separately available.  For a one-line description
+of the installation status of package <CODE>foo</CODE>, use the command
+<CODE>dpkg --list foo</CODE>.  (With no arguments, this command prints out
+versions of all installed packages.)  For a more verbose description,
+use <CODE>dpkg --status foo</CODE>.
+<P>
+<H2><A NAME="nonEngl"></A> <A NAME="ss5.10">5.10 How does Debian support non-English languages? </A>
+</H2>
+
+<P>
+<UL>
+<LI>Debian GNU/Linux is distributed with keymaps for nearly two dozen 
+keyboards, and with utilities (in the <CODE>kbd</CODE> package) to install, view, 
+and modify the tables.
+The installation prompts the user to specify the keyboard he will use.
+<P>
+</LI>
+<LI>Support for French-, German-, Italian- and Spanish-language manual pages is
+provided through the <CODE>manpages-fr</CODE>, <CODE>manpages-de</CODE>, <CODE>manpages-it</CODE> and
+<CODE>manpages-es</CODE> packages.  To access an NLS manual page, the user
+must set LC_MESSAGES to the appropriate string.  In the case of the
+German-language manual pages, LC_MESSAGES must be set to 'de_DE'.  The
+<CODE>man</CODE> program will then search for German manual pages under
+<CODE>/usr/man/de_DE/</CODE>.  </LI>
+</UL>
+<P>
+<H2><A NAME="ss5.11">5.11 What about the US export regulation limitations?</A>
+</H2>
+
+<P>US laws place restrictions on the export of defense articles, which
+includes some types of cryptographic software. PGP and ssh fall into
+this category.
+<P>To prevent anyone from taking unnecessary legal risks, certain Debian
+GNU/Linux packages are only available from a non-US site 
+<A HREF="ftp://os.inf.tu-dresden.de:/pub/debian-non-US/">ftp://os.inf.tu-dresden.de:/pub/debian-non-US/</A>, there is a list of
+mirror sites 
+<A HREF="ftp://os.inf.tu-dresden.de/pub/debian-non-US/README.mirrors">ftp://os.inf.tu-dresden.de/pub/debian-non-US/README.mirrors</A>
+<P>
+<HR>
+<A HREF="debian-faq-4.html">Previous</A>
+<A HREF="debian-faq-6.html">Next</A>
+<A HREF="debian-faq.html#toc5">Contents</A>
+</BODY>
+</HTML>

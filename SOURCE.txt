@@ -1,0 +1,15 @@
+This is the Debian GNU/Linux Binary CD. It is part of a two-CD set, the
+other CD containing the source. If you purchased this CD without the
+source code, the person or company from whom you purchased the CD is
+obligated to provide you with the corresponding source-code for no
+more than a reasonable charge for copying and distribution media. For
+details of the software licenses and the provisions in them requiring
+source-code distribution, see the copyrights of the individual software
+packages in /usr/doc/*/copyright on the installed system.
+
+A complete Debian system, including source code, is always available on
+most Debian FTP sites. Two such sites are ftp.debian.org and
+debian.crosslink.net . The file /pub/debian/README.mirrors on those systems
+contains the current list of Debian FTP sites.
+
+For current information, please see our web site http://www.debian.org/ .

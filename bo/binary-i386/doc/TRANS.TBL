@@ -1,0 +1,43 @@
+F BIBLE-KJ.DEB;1                    	bible-kjv_4.00-2.deb
+L DEBIAN-P.DEB;1                    	debian-policy_2.1.3.2.deb	../../binary-all/doc/debian-policy_2.1.3.2.deb
+L DOC-DEBI.DEB;1                    	doc-debian_1.5-0.deb	../../binary-all/doc/doc-debian_1.5-0.deb
+L DOC-IANA.DEB;1                    	doc-iana_1997.05-1.deb	../../binary-all/doc/doc-iana_1997.05-1.deb
+L DOC-LINU.000;1                    	doc-linux-fr_97.05-1.deb	../../binary-all/doc/doc-linux-fr_97.05-1.deb
+L DOC-LINU.001;1                    	doc-linux-it_97.02-1.deb	../../binary-all/doc/doc-linux-it_97.02-1.deb
+L DOC-LINU.002;1                    	doc-linux-es_97.03-2.deb	../../binary-all/doc/doc-linux-es_97.03-2.deb
+L DOC-LINU.DEB;1                    	doc-linux_97.03-1.deb	../../binary-all/doc/doc-linux_97.03-1.deb
+L DOC-RFC_.DEB;1                    	doc-rfc_1997.05-1.deb	../../binary-all/doc/doc-rfc_1997.05-1.deb
+F DWWW_1_4.DEB;1                    	dwww_1.4.1-1.deb
+L ECHO-LIN.DEB;1                    	echo-linux_96.12-1.deb	../../binary-all/doc/echo-linux_96.12-1.deb
+L EMACS-LI.DEB;1                    	emacs-lisp-intro_1.04-1.deb	../../binary-all/doc/emacs-lisp-intro_1.04-1.deb
+L GLIBCDOC.DEB;1                    	glibcdoc_1.92-1.deb	../../binary-all/doc/glibcdoc_1.92-1.deb
+L INFO2WWW.DEB;1                    	info2www_1.2.2.9-5.deb	../../binary-all/doc/info2www_1.2.2.9-5.deb
+F INFO_3_9.DEB;1                    	info_3.9-4.deb
+L JARGON_4.DEB;1                    	jargon_4.0.0-2.deb	../../binary-all/doc/jargon_4.0.0-2.deb
+L LG-BASE_.DEB;1                    	lg-base_17-1.deb	../../binary-all/doc/lg-base_17-1.deb
+L LG-ISSUE.000;1                    	lg-issue16_1-3.deb	../../binary-all/doc/lg-issue16_1-3.deb
+F LG-ISSUE.001;1                    	lg-issue15_1-4.deb
+L LG-ISSUE.002;1                    	lg-issue17_1-1.deb	../../binary-all/doc/lg-issue17_1-1.deb
+L LG-ISSUE.003;1                    	lg-issue09_1-1.deb	../../binary-all/doc/lg-issue09_1-1.deb
+L LG-ISSUE.004;1                    	lg-issue10_1-2.deb	../../binary-all/doc/lg-issue10_1-2.deb
+L LG-ISSUE.005;1                    	lg-issue11_1-1.deb	../../binary-all/doc/lg-issue11_1-1.deb
+L LG-ISSUE.006;1                    	lg-issue13_1-2.deb	../../binary-all/doc/lg-issue13_1-2.deb
+L LG-ISSUE.007;1                    	lg-issue01to08_1-1.deb	../../binary-all/doc/lg-issue01to08_1-1.deb
+L LG-ISSUE.008;1                    	lg-issue12_1-3.deb	../../binary-all/doc/lg-issue12_1-3.deb
+L LG-ISSUE.DEB;1                    	lg-issue14_1-4.deb	../../binary-all/doc/lg-issue14_1-4.deb
+F MAN-DB_2.DEB;1                    	man-db_2.3.10-38.deb
+F MAN2HTML.DEB;1                    	man2html_1.5-13.deb
+L MANPAGES.000;1                    	manpages-it_0.1b-2.deb	../../binary-all/doc/manpages-it_0.1b-2.deb
+L MANPAGES.001;1                    	manpages_1.15-4.deb	../../binary-all/doc/manpages_1.15-4.deb
+L MANPAGES.002;1                    	manpages-fr_0.1-5.deb	../../binary-all/doc/manpages-fr_0.1-5.deb
+L MANPAGES.003;1                    	manpages-de_0.1-6.deb	../../binary-all/doc/manpages-de_0.1-6.deb
+L MANPAGES.DEB;1                    	manpages-es_0.1-4.deb	../../binary-all/doc/manpages-es_0.1-4.deb
+L PJ-BASE_.DEB;1                    	pj-base_1-2.deb	../../binary-all/doc/pj-base_1-2.deb
+L PJ96N04_.DEB;1                    	pj96n04_1-2.deb	../../binary-all/doc/pj96n04_1-2.deb
+L PJ96N05_.DEB;1                    	pj96n05_2-2.deb	../../binary-all/doc/pj96n05_2-2.deb
+L PJ96N06_.DEB;1                    	pj96n06_2-3.deb	../../binary-all/doc/pj96n06_2-3.deb
+L PJ96N07_.DEB;1                    	pj96n07_1-2.deb	../../binary-all/doc/pj96n07_1-2.deb
+L PJ97N08_.DEB;1                    	pj97n08_2.deb	../../binary-all/doc/pj97n08_2.deb
+L PJ97N09_.DEB;1                    	pj97n09_2.deb	../../binary-all/doc/pj97n09_2.deb
+F TKINFO_1.DEB;1                    	tkinfo_1.3-2.deb
+F VERSE_0_.DEB;1                    	verse_0.15.deb

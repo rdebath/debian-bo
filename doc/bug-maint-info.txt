@@ -1,0 +1,136 @@
+
+          Developers' information regarding the bug processing system
+                                       
+   Initially, a bug report is submitted by a user as an ordinary mail
+   message to submit@bugs.debian.org. This will then be given a number,
+   acknowledged to the user, and forwarded to the debian-devel list. If
+   the submitter included a Package line listing a package with a known
+   maintainer the maintainer will get a copy too.
+   
+   The Subject line will have Bug#nnn: added, and the Reply-To will be
+   set to include both the submitter of the report and
+   nnn@bugs.debian.org.
+   
+Closing bug reports
+
+   A developer who sees a bug on debian-devel and takes responsibility
+   for it should hit Reply in their favourite mailreader, and then edit
+   the To field to say nnn-done@bugs.debian.org instead of nnn@bugs
+   (nnn-close is provided as an alias for nnn-done).
+   
+   The address of the original submitter of the bug report will be
+   included in the default To field, because the bug system included it
+   in the Reply-To.
+   
+   `Done' messages are not automatically forwarded to the mailing list,
+   so it may sometimes be worthwhile including the debian-devel mailing
+   list if the other developers are likely to be interested.
+   
+   The person closing the bug and the person who submitted it will each
+   get a notification about the change in status of the report.
+   
+Followup messages
+
+   If a developer wishes to reply to a bug report without marking the bug
+   as done they may simply reply to the message. Their reply will (by
+   default) go to nnn@bugs and to the original submitter of the bug
+   report. The bug tracking system will file the reply with the rest of
+   the logs for that bug report and forward it to debian-devel. The bug
+   will not be marked as done.
+   
+   If you wish to send a followup message which is not appropriate for
+   debian-devel you can do so by sending it to nnn-quiet@bugs or
+   nnn-maintonly@bugs, which only file it (not forwarding it anywhere)
+   and send it on only to the maintainer of the package in question,
+   respectively.
+   
+   Do _not_ use the `reply to all recipients' or `followup' feature of
+   your mailer unless you intend to edit down the recipients
+   substantially. In particular, don't send a followup message both to
+   nnn@bugs.debian.org and to submit@bugs.debian.org, because the bug
+   system will then get two copies of it and each one will be forwarded
+   to debian-devel separately.
+   
+Recording that you have passed on a bug report
+
+   When a developer forwards a bug report to the developer of the general
+   source package from which the Debian package is derived, they should
+   note this in the bug tracking system as follows:
+   
+   Make sure that the To field of your message to the author to has only
+   the author(s) address(es) in it; put both the person who reported the
+   bug and nnn-forwarded@bugs.debian.org in the CC field.
+   
+   Ask the author to preserve the CC to nnn-forwarded@bugs when they
+   reply, so that the bug tracking system will file their reply with the
+   original report.
+   
+   When the bug tracking system gets a message at nnn-forwarded it will
+   mark the relevant bug as having been forwarded to the address(es) in
+   the To field of the message it gets.
+   
+   You can also manipulate the `forwarded to' information by sending
+   messages to control@bugs.
+   
+Summary postings to debian-devel
+
+   Every Friday a list of outstanding bug reports is posted to
+   debian-devel, sorted by age of report; every Tuesday a list of bug
+   reports that have gone unanswered too long is posted, sorted by
+   package maintainer.
+   
+   If the maintainer of a package is listed incorrectly this is usually
+   because the maintainer has changed recently, and the new maintainer
+   hasn't yet uploaded a new version of the package with a changed
+   Maintainer control file field. This will be fixed when the package is
+   uploaded; alternatively, there is an override file which the
+   distribution maintainers can edit to record the change in maintainer,
+   for example if a rebuild and reupload of the package is not expected
+   to be needed soon. Contact iwj-mastercron@master.debian.org for
+   changes to the override file.
+   
+Reopening, reassigning and manipulating bugs
+
+   It is possible to reassign bug reports to other packages, to reopen
+   erroneously-closed ones, to modify the information saying to where, if
+   anywhere, a bug report has been forwarded, to change the titles of
+   reports and to merge and unmerge bug reports. This is done by sending
+   mail to control@bugs.debian.org.
+   
+   The format of these messages is described in another document
+   available on the World Wide Web or in the file
+   bug-maint-mailcontrol.txt. A plain text version can also be obtained
+   by mailing the word help to the server at the address above.
+   
+More-or-less obsolete subject-scanning feature
+
+   Messages that arrive at submit or bugs whose Subject starts Bug#nnn
+   will be treated as having been sent to nnn@bugs. This is both for
+   backwards compatibility with mail forwarded from the old addresses,
+   and to catch followup mail sent to submit by mistake (for example, by
+   using reply to all recipients).
+   
+   A similar scheme operates for maintonly, done, quiet and forwarded,
+   which treat mail arriving with a Subject tag as having been sent to
+   the corresponding nnn-whatever@bugs address.
+   
+   Messages arriving at plain forwarded and done - ie, with no bug report
+   number in the address - and without a bug number in the Subject will
+   be filed under `junk' and kept for a few weeks, but otherwise ignored.
+   
+Future plans
+
+   At some point the Package: secondary header field may become mandatory
+   - at the moment omitting it just produces a warning message.
+   
+Obsolete X-Debian-PR: quiet feature
+
+   It used to be possible to prevent the bug tracking system from
+   forwarding anywhere messages it received at debian-bugs, by putting an
+   X-Debian-PR: quiet line in the actual mail header.
+   
+   This header line is now ignored. Instead, send your message to quiet
+   or nnn-quiet (or maintonly or nnn-maintonly).
+     _________________________________________________________________
+                                      
+    Ian Jackson / owner@bugs.debian.org. 20th July 1996.

@@ -1,0 +1,8 @@
+If your CD driver doesn't understand long file names, you might have some
+trouble reading this CD. This might be the case for some DOS and Windows 3.1
+users. The easiest thing to do in this case is to use the files in the
+"bo\boot" directory to boot your system up to Linux, which will then be able
+to read the CD. Windows 95 and NT seem to handle the long filenames fine as
+well. If you want to find some files without first installing Linux, read the
+"TRANS.TBL" file you will find in each directory. This is a map of the long
+file names to the short DOS filenames you'll see on your disk.

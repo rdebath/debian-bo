@@ -1,0 +1,115 @@
+
+              AUTHORITATIVE LIST OF VIRTUAL PACKAGE NAMES
+
+	                     May 29, 1997
+
+
+Below is an authoritative list of virtual package names currently
+in-use or proposed and not objected to.  Please check the list below
+for things relevant to your packages.
+
+New packages MUST use virtual package names where appropriate (this
+includes making new ones - read on).
+
+Packages MUST NOT use virtual package names (except privately, amongst
+a cooperating group of packages) unless they have been agreed upon and
+appear in this list.
+
+The latest version of this file can be found in
+        doc/package-developer/virtual-package-names-list.text
+on your local Debian FTP site.
+
+The procedure for updating the list is as follows:
+
+1. Post to debian-devel saying what names you intend to use or what
+   other changes you wish to make.
+
+2. Wait a few days for comment.
+
+3. Mail the maintainer of the virtual package name list (Christian
+   Schwarz <schwarz@debian.org>) notifying him of the consensus reached (or
+   your suggestions if noone objected).  Please include a proposed brief
+   description of the new virtual name(s) for the list.  The list
+   maintainer will then post the new list to debian-devel and upload it
+   to the FTP site.
+
+4. Go and use the new or changed names.
+
+Chris.
+(based on earlier version by Warwick and Ian J.)
+
+
+Now, the list:
+
+X Windows:
+----------
+X11R5                   XFree86 R5, including base system (obsolete)
+xR5shlib                XFree86 R5 shared library only
+X11R6                   XFree86 R6, including base system
+xR6shlib                XFree86 R6 shared library only
+xlibraries              XFree86 R6 shared library or stub library
+xserver                 Any X server (used by other X packages)
+
+Miscellaneous:
+--------------
+libc.so.4               An a.out shared C library, version 4.x.x.
+info-browser            Something that can browser GNU Info files
+kernel-source           Kernel source code
+kernel-headers          Kernel header files (<linux/*.h>, <asm/*.h>)
+kernel-image            Kernel image (vmlinuz, System.map, modules)
+httpd                   Any HTTP server
+postscript-viewer       Anything that can display Postscript files
+postscript-preview      Any preprocessor that creates Postscript output
+www-browser             Something that can browse html files
+awk                     Anything providing suitable /usr/bin/{awk,nawk}
+c-shell                 Anything providing a suitable /usr/bin/csh
+pdf-viewer              Anything that can display PDF files
+pdf-preview             Any preprocessor that creates PDF output
+compress                Anything that provides a true BSD compress command
+emacs                   Anything that provides the emacs editor
+sgmls                   An SGML parser which produces output compatible
+                        with James Clark's sgmls and nsgmls parsers
+wordlist                Anything that provides /usr/dict/words
+dotfile-module          Anything that provides a module for the
+                        Dotfile Generator
+ups-monitor             Anything that is capable of controlling an UPS
+tcl-interpreter         Anything that provides /usr/bin/tclsh
+tk-interpreter          Anything that provides /usr/bin/wish
+
+News and Mail:
+--------------
+mail-transport-agent    Mail transport agents (Smail, Sendmail, &c)
+mail-reader             Mail user agents (Pine, Elm, mailx, &c)
+news-transport-system   Local news system (INN, C News or B News)
+news-reader             Any news reader (trn, tin, &c)
+inews                   /usr/bin/inews - local or remote news poster
+pgp                     A version of PGP (International or US)
+imap-client             Any mail reader capable of accessing remote mail
+                        folders using the IMAP protocol (e.g. Pine)
+imap-server             Any IMAP mail server
+
+Names of superseded packages Provided by the current ones:
+----------------------------------------------------------
+gs_x, gs_svga, gs_both  Provided by Ghostscript (gs).  Use gs.
+xpmR6                   Provided by xpm.  Use xpm.
+
+Change history:
+---------------
+22 Sep 1995 Ian Jackson         Initial revision.
+26 Mar 1996 Andrew Howell       Added www-browser.
+11 May 1996 Manoj Srivastava    Added kernel-image, added new location of
+                                this file
+19 May 1996 Warwick Harvey      Took over maintenance of list, changed
+                                instructions for updating list
+25 Jul 1996 Warwick Harvey      Added awk as per Chris Fearnley's suggestion
+                                Added c-shell, which seemed to have dropped
+                                off at some stage
+ 2 Aug 1996 Added pdf-{viewer,preview}, compress, emacs
+ 5 Aug 1996 Added imap-{client,server}
+ 8 Aug 1996 Added editor
+20 Aug 1996 Added sgmls, removed metafont, dvilj, dvips
+25 Nov 1996 Removed editor (should have done this a long time ago)
+29 Apr 1997 Christian Schwarz   New maintainer of this list
+ 5 May 1997 Added wordlist
+29 May 1997 Added dotfile-module, ups-monitor, tcl-interpreter, tk-interpreter
+

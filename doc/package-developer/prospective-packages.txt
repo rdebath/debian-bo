@@ -1,0 +1,391 @@
+Work-Needing and Prospective Packages for Debian GNU/Linux
+Sven Rudolph, sr1@inf.tu-dresden.de
+$Id: packages.sgml,v 1.43 1997/06/08 22:50:25 sr1 Exp sr1 $
+
+
+1.  General Questions
+
+1.1.  Before reading this document
+
+You should have read the Debian GNU/Linux FAQ
+<http://www.debian.org/FAQ/>.
+
+1.2.  Purpose of this document
+
+This document is intended to identify areas that need your
+contributions. It provides information that hopefully changes quite
+often, so it supplements the Debian GNU/Linux FAQ.
+
+1.3.  Getting newer versions of this document
+
+Newer versions of this document will be available via FTP and HTTP:
+
+o  <http://www.debian.org/Documentation/Debian/packages.html>
+
+o  <ftp://ftp.debian.org/debian/doc/package-developer/prospective-
+   packages.txt>
+
+1.4.  Feedback
+
+Please send additions, corrections, suggestions and wishes to Sven
+Rudolph sr1@inf.tu-dresden.de <mailto:sr1@inf.tu-dresden.de>.  Please
+mention to which version of this document your comments refer.
+
+
+2.  Orphaned packages
+
+(An orphaned package is a package that has no current maintainer.)
+
+Please inform me via e-mail:
+
+o  when you find that you need to orphan a package
+o  when you believe that the following list is incomplete
+o  when you would like to maintain one of these packages.
+
+orphaned :
+o  libc4 (a.out compatibility)
+o  postgres95
+o  mgetty
+
+Orn E. Hansen :
+o  dialdcost
+o  hextype
+o  speak-freely
+o  xega
+o  xmailtool
+o  xspread
+
+Yves Arrouye :
+o  compress-package
+o  ppd-adobe-common, ppd-adobe-extra, ppd-adobe-misc, ppd-gs
+o  psptools
+
+llucius llucius@millcomm.com :
+o  dialog
+
+Dominik Kubla dominik@debian.org :
+o  arpd
+o  cflow
+o  csh
+o  lsof
+o  open
+o  ptx
+o  spell
+o  sysnews
+o  vlock
+
+
+3.  Packages needing a new maintainer
+
+Please inform me via e-mail:
+o  when you find that you'd like to discontinue maintaining a package
+
+Please inform the mainatiner of the package:
+o  when you would like to maintain one of the packages.
+
+Christian Linhart chris@cosy.sbg.ac.at :
+o  statserial
+o  xarchie
+
+Michael Meskes meskes@Informatik.RWTH-Aachen.DE :
+o  html2latex
+o  icmake
+o  ntfs
+o  xftp
+o  xautolock
+
+Jim Robinson jimr@simons-rock.edu :
+o  mh-papers
+o  term
+o  witalian
+o  pari, paridoc
+o  wnorwegian
+
+Sven Rudolph sr1@inf.tu-dresden.de :
+o  enscript
+o  seyon
+o  lpr
+o  mosaic (requires Motif development tools)
+o  rcs
+o  xonix
+o  xpat2
+o  xsok
+
+Martin Schulze joey@infodrom.north.de :
+o  xarclock
+o  xdaliclock
+o  lha
+o  dosfstools
+o  sendfile
+
+Stuart Lamble lamble@yoyo.cc.monash.edu.au :
+o  fsp
+o  lyx
+
+Doug Geiger runexe@ntplx.net :
+o  apsfilter
+
+Michael Nonweiler mrn20@cam.ac.uk :
+o  e2fsprogs
+o  ipx
+o  nas
+o  ncpfs
+
+Joe Kirby kirby@utk.edu :
+o  lxtools
+
+Erick Branderhorst branderh@debian.IAEhv.nl :
+o  glibcdoc (will be replaced by libc6-doc)
+o  id-utils
+o  mathpad
+o  idutch
+o  wdutch
+o  wenglish
+
+Christoph Lameter clameter@waterf.org :
+o  adbbs (needs a better setup of pre-customized files)
+o  berolist
+o  bridge/bridgex (Bridging Tools for Kernel 2.0.X/2.1.X)
+o  defrag
+o  freefont
+o  genromfs
+o  isite
+o  loadlin
+o  ncsa (new Webstandards need to be implemented)
+o  netdiag
+o  newsx
+o  pash
+o  poppassd
+o  sharefont
+o  syslinux
+o  transproxy
+o  upsd
+
+Karl Ferguson karl@tower.net.au :
+o  sysutils
+
+Christian Schwarz schwarz@monet.m.isar.de :
+o  dvi2tty
+o  hyperlatex
+o  info2www
+o  latex2rtf
+
+Shaya Potter spotter@CapAccess.org :
+o  opie
+
+Erik Andersen andersee@debian.org :
+o  elvis
+
+Vincent Renardias vincent@waw.com :
+o  ftplib
+o  lde
+o  libdnd1
+o  libdnd1-dev
+o  macutils
+o  mcvert
+o  offix-clipboard
+o  offix-editor
+o  offix-execute
+o  offix-files
+o  offix-trash
+o  xabacus
+o  xfishtank
+o  xgalaga
+o  xmcpustate
+o  xodo
+
+John Goerzen jgoerzen@complete.org :
+o  mgetty
+
+Brian C. White bcwhite@verisim.com :
+o  zyxel
+
+
+4.  Packages that someone is working on
+
+Programs listed in this section aren't yet available as Debian
+packages, but someone is working on providing a package.
+
+If you would like to work on one of these packages please contact the
+responsible person listed below.
+
+krs@caos.aamu.edu (Karl R. Sackett) :
+o  swarm - Objective-C based artificial life research tool
+o  GNU Smalltalk
+o  utf-mailx: scripts to add UTF support to mailx.
+o  SATAN - net security scanner
+o  courtney - detects SATAN scans
+o  gabriel - detects SATAN scans
+o  drone - automatically runs batch jobs of simulation programs.
+o  empire - Wolfpack Empire war simulation
+o  togl - a Tk widget for OpenGL rendering
+o  nanocad - a freeware CAD system for nanotechnology
+o  WISE - WWW-based project management and metrics system
+
+Darren torin@daft.com :
+o  giftool
+
+Brian Sulcer bsulcer@gibson.com :
+o  vile (vi-like editor)
+o  rogue
+o  umoria
+
+Martin Schulze joey@infodrom.north.de :
+o  vtwm: Virtual Window Manager for X11
+o  yodl
+o  w3-msql (W3 frontend for mSQL)
+
+Christian Lynbech lynbech@daimi.aau.dk :
+o  ilisp (emacs interface to a number of lisp systems)
+o  hyperbole (emacs hypertext/info management system)
+o  oobr (emacs package for browsing OO programs)
+o  STk (Scheme Tk, a scheme interpreter with Tk support)
+
+Dermot Bradley bradley@debian.org :
+o  Umich LDAP
+o  Nocol (network admin/monitoring)
+
+Vincent Renardias vincent@odin.waw.com :
+o  FWF (Free Widget Foundation) - A pretty good set of graphic widgets
+o  Aero (A Physically Based Simulation and Animation System -
+   <http://www.informatik.uni-stuttgart.de/ipvr/bv/aero/> )
+
+Klee Dienes klee@sedona.com :
+o  NIST's POSIX validation suite
+
+Yoshiaki Yanagihara yosiaki@bsd2.kbnes.nec.co.jp :
+o  japanese packages (mule, kon, kterm, canna, Japanese Extended less)
+
+Boris D. Beletsky borik@isracom.co.il :
+o  MIT scheme
+o  Freedom Desktop <ftp://fsw.com/pub/fdlite/FDlite1.32.tar.gz>
+
+Christian Leutloff leutloff@sundancer.tng.oche.de :
+o  newtl (accessing Apple Newton Messagepad)
+
+Todd Graham Lewis tlewis@mindspring.com :
+o  Kerberos ver. V (crypto) (non-US maintainer still needed)
+o  socks
+
+Bill Bumgarner bbum@friday.com :
+o  GnuStep-related packages
+
+Stephen Pitts pitts2@memphisonline.com :
+o  xmailbox
+
+Kai Henningsen kai@khms.westfalen.de :
+o  sather
+
+Lukas Nellen lukas@teorica0.ifisicacu.unam.mx :
+o  thttpd
+
+Johnie Ingram johnie@netgod.tln.lib.mi.us :
+o  scion
+o  sniffit
+o  radiusd-merit-las
+o  phpfi
+o  xssi
+
+Loic Prylli lprylli@graville.fdn.fr :
+o  jove
+
+John Goerzen jgoerzen@complete.org :
+o  WorldVU-Atlantis BBS package
+o  midiplay (MIDI player)
+
+Tristan McCann trismcc@nh.ultranet.com :
+o  Linux phone
+
+Martin Alonso Soto Jacome masoto@uniandes.edu.co :
+o  jazz midi sequencer <http://rokke.grm.hia.no/per/jazz.html>
+
+Christian Meder christian.meder@utoronto.ca :
+o  flying (Pool billiards game)
+
+Milan Zamazal pdm@fi.muni.cz :
+o  Stanford Graph Base
+
+Christian Meder christian.meder@utoronto.ca :
+o  MuPAD
+o  amanda
+
+Andy Mortimer andy.mortimer@poboxes.com :
+o  TinyMUSH
+
+
+5.  Programs that aren't available yet in Debian
+
+Programs listed in this section aren't yet available as Debian
+packages, but there has been an expressed desire to include them.
+
+If you want to create a Debian package, send me an e-mail.
+
+5.1.  Programming and development:
+
+o  UPS - the X-based debugger. (There are Linux-specific patches
+   around.)
+o  Scheme->C
+o  CLISP - Common Lisp interpreter
+o  ECoLisp - a Common Lisp compiler that produces faster code but
+   isn't as widely used as GCL
+o  CLiCC - Common Lisp compiler that generates stand-alone apps
+   (rather large ones, though)
+o  CLX - Common Lisp Xlib implementation
+o  PCL - Portable Common Loops for GCL
+o  Cross-compilation environments for alpha, m68k, SPARC
+o  Modula-3
+   <http://www.research.digital.com/SRC/modula-3/html/home.html>
+   (building this requires up to 200MB hard disk space!)
+o  DJGPP
+o  omniORB <http://www.orl.co.uk/omniORB/omniORB.html>
+
+5.2.  USENET news software:
+
+o  strn.
+
+5.3.  Graphics:
+
+o  Kubota Graphics Corporation's now-PD 3-D visualization system,
+   Dore'.
+
+5.4.  Games:
+
+o  rocks and diamonds
+o  xgammon
+
+5.5.  X11:
+
+o  Andrew
+o  grok (database with many functions)
+o  xidle
+
+5.6.  Networking/Communication
+
+o  Roxen <http://www.roxen.com/> (WWW server)
+o  ftptool
+o  Speakerphone/Answering Machine for USR and Rockwell Modems
+   <http://www.mindspring.com/~bnaylor/spk/>
+o  mars_nwe <ftp://ftp.gwdg.de/pub/linux/misc/ncpfs> (Netware server )
+
+5.7.  Text utilities
+
+o  HTML editors (tkHTML, auc-html.el)
+o  Virtual Paper
+   <http://www.research.digital.com:80/SRC/virtualpaper/>
+o  JADE <http://www.jclark.com/jade/>
+
+5.8.  Misc
+
+o  Artificial Life Programs ( http://alife.santafe.edu )
+
+
+6.  Programs that someone should write
+
+This section contains suggestions/wishes for programs. There is no
+known implementation of such a program for Linux.
+
+o  amspell (ms-dos) like spell checker, i.e. a spell checker what
+   checks the complete text first, searching for alternatives (on the
+   fly) and asking for user action at the very end of the checking
+   process. This saves much time on low memory machines.
+

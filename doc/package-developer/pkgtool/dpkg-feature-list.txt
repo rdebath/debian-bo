@@ -1,0 +1,280 @@
+Feature-list for dpkg &c
+========================
+
+Last modified: Apr 12 1997
+
+This document should bring to everyones mind that dpkg lacks some
+features.  There is a group working on dpkg.  This text shall bring
+to our minds what exactly is missing.
+
+This list is maintained by Joey (Martin Schulze <joey@debian.org>).
+Comments and additions should be mailed to him in private mail (a Cc:
+from a list might get lost).
+
+
+Table of contents
+
+1. dselect should capture output while installing
+2. Prune some directories while installation
+3. dpkg should not overwrite files from other packages without replaces
+4. Divide dpkg
+5. dpkg should use cache fils
+6. dselect should shorten its list
+7. We need a new user interface
+8. Network aware dpkg.
+
+
+Although I include From:, Date: and some other headers this doesn't
+imply that the person has written the following text exactly.  It
+should only be a hint on who did submit this request and where you
+might get further information on this particular request.
+
+1. dselect should capture output while installing
+
+   From: joey@debian.org (Martin Schulze)
+
+   While installing a list of packages - you normally perform this
+   action during the first installation - messages such as 'file xxx
+   not found' rush through the screen.
+
+   At the moment there's no possibility to get this messages and
+   correct something.
+
+   dselect should somehow try to capture these messages to allow the
+   user to browse through them at the end of the installation.
+
+2. Prune some directories while installation
+
+   From: Philippe Troin <phil@fifi.org>
+   Date: Thu, 10 Apr 1997 23:27:57 -0700
+
+   At the moment it is very difficult to install Debian GNU/Linux on
+   machines that have parts of their filesystem mounted read-only via NFS.
+
+   What about a configuration file for dpkg which would allow
+   unpacking with pruning ?
+
+   Let me explain, a file /etc/dpkg.prune could contain a list a
+   directories not to extract into !
+
+   Rationale: If one wants to have a NFS mounted /usr, he should be
+   able to install the full packages on the NFS server, and install
+   the same packages on the NFS client machines, but with pruning
+   anything under /usr. The packages would still install the needed
+   file in /var, /etc,... but nothing under /usr.  This would be a
+   killer feature for network installs, and must be straightforward to
+   implement !
+
+   As a side effect, this would end the /usr/local complaints...
+
+3. dpkg should not overwrite files from other packages without replaces
+
+   From: Christoph <debian@waterf.org>
+   From: Rob Browning <osiris@cs.utexas.edu>
+
+   The habit of dpkg to have --force-overwrite as a default has always
+   puzzled me. IMHO it is a bug if a package overwrites files without a
+   replaces: field in control. --force-overwrite should never be
+   automatically enabled as it is right now.
+
+   It's a historical artifact.  When the ability to detect and abort
+   on this condition was first introduced, it was on by default, but
+   it broke the installation of so many packages at the time (mostly
+   man page problems) that it was "temporarily" disabled.  Temporarily
+   was not supposed to become permanently...
+
+4. Divide dpkg
+
+   From: Tom Lees <tom@lpsg.demon.co.uk>
+   From: Martin Schulze <joey@debian.org>
+   From: Jason Gunthorpe <jgg@gpu.srv.ualberta.ca>
+
+   The whole dpkg system should be divided in at least the following
+   parts:
+
+   o backend library/libraries
+   o commandline utilities: dpkg, dpkg-deb &c
+   o some user interfaces: new dselect, X11 dselect, web-frontend
+
+   Having split the library from the frontend(s) it is possible to
+   invent new user frontends.  The library has to provide a clear and
+   powerful API.
+
+   The library that dselect needs to begin to function is thankfully
+   pretty simple, so it can be pounded out in about a week or
+   less. After that they would hopefully be totally separate,
+   functions being added to the library as new needs are discovered,
+   etc..
+
+   Maybe we should split the dselect effort into two groups: one group
+   to design and implement a library with an simple elegant API to
+   interface with the dpkg-libraries. This should start with a
+   C-library and could later be extended with a C++-wrapper. The
+   second group should work on the interface. Using this method it is
+   possible to start with adapting the current dpkg-code to the new
+   API. Changes (or new implementations) of the library code can then
+   be used as drop-in replacements so no changes to the user interface
+   is necessary.
+
+   I suspect the old code will be used as a template from which to
+   write the next generation.
+
+   I recommend the use of C++ simply because it would result in a much
+   cleaner client side implementation, a reduced function C
+   translation library could be added at some later date if it is
+   really needed, in truth traditional C programers can realtively
+   easially make use of a C++ class library without a very big
+   learning curve.
+
+   As an example, an attractive reason is G Lib++'s bstring class, a
+   reference counted string. Using a class like this and carefully
+   parseing the status/avil files could easially cut memory use in
+   half. Doing something similar in C is.. Unpleasant.
+
+   Of course I'd much rather write Object Oriented C++ with clear
+   evidence of communication and control than write Object Oriented C
+   with nothing but comments to act as a guide. (I've long since given
+   up on procedural C)
+
+   There is only one compelling reason to ever choose C, and this is
+   if you do not know C++, or the people who are going to be using
+   your code do not understand enough C++ to make sense of
+   it. dpkg-lib is going to be simple enough C++ that nothing complex
+   like virtual functions, iheritance and whatnot will be a major
+   issue.
+
+5. dpkg should use cache fils
+
+   From: Tom Lees <tom@lpsg.demon.co.uk>
+   From: Martin Schulze <joey@debian.org>
+   From: Jason Gunthorpe <jgg@gpu.srv.ualberta.ca>
+
+   It could also be made a lot more optimal. For example, as far as I
+   know, not many packages except for dpkg itself absolutely DEPEND on
+   having the available and status files as text (menu, dpkg-ftp,
+   dftp? only), so why not reimplement them as btree-sorted,
+   ultra-efficient files (using Berkeley libdb, for example), to make
+   things easier. As someone said earlier, reimplementing the "dpkg"
+   utility itself to be an extra frontend, rather than a backend to
+   the interface, would fit especially well into this case.
+
+   I object.  I don't think you can easily correct the status file
+   after a failure with "vi /var/lib/dpkg/status" if it is not a plain
+   ascii file.  This is a feature which I have needed several times -
+   and normally I am careful with my systems...
+
+   Solution: libdpkg looks for status and status.db.  If the latter
+   exist and has the same date or newer it is taken, otherwise the
+   plain ascii file is used and a new .db is generated.  What about
+   this?
+
+   Exactly! Thats what I call a cache file.
+
+   Note also that libdb has a "recno" format which is "use db for fast
+   hash lookups but point to the flat file for the actual
+   data"... which I haven't used, but might be interesting in this
+   context.
+
+   The ideal database for dpkg data is a multi-teired thing (I'm not a
+   dbase expert so excuse the terminology ;>) We need a first teir
+   that has a list of all the packages and a second tier that has each
+   of the fields in the control file. Each package has about 8 fields
+   that need to be stored so we might be able to use some kind of
+   simple binary structure inside a larger database.
+
+6. dselect should shorten its list
+
+   From: Tom Lees <tom@lpsg.demon.co.uk>
+
+   Part of the inherent "horribleness" of dselect is inherent in the
+   design. This is also something that needs addressing - Suggests and
+   Recommends should _DEFINITELY_ be handled differently, there should
+   probably not be long listings of packages, etc.
+
+   If one wants to have one, he shall see one, but I agree it would be
+   much better if we could shorten the list for normal actions. :-)
+
+7. We need a new user interface
+
+   From: Jason Gunthorpe <jgg@gpu.srv.ualberta.ca>
+   From: "Brian C. White" <bcwhite@verisim.com>
+
+   Good idea, but since the UI can literally not be written until the
+   library has been, not very practical. Maybe a better idea would be
+   to extend the group after the initial library code has been
+   written, so the original group writing the library is 6, then is is
+   increased to 9, of which 3 (from the original crowd) maintain the
+   library, and 6 write the user-interface.
+
+   As part of the facelift for Debian 2.0, I'd like to offer an
+   improved interface as an alternative for "dselect".
+
+   To this end, I'm going to be putting together a team of people to
+   produce such a product.
+
+   If you would like to work on this, please let me know and tell me
+   what resources you have (machines, expertise, and especially time).
+   Serious replies, only, please; this will require a fair amount of
+   effort from all people involved.
+
+   The expertise still needed is mostly:
+    - gui design
+    - technical writing (html; tex,texinfo a plus)
+    - multi-lingual
+
+   The team will be small; probably 6 people at the most.
+
+   This will be done at least somewhat within the current group.  I
+   don't want to make two groups though.  I want to keep this to as
+   few people as possible just to reduce the overhead of communicating
+   with a large number of people.  Communication time is proportional
+   to the square of the number of people.
+
+   When you guys get around to wrapping an X-Windows GUI around your
+   new dpkg and dselect libraries, will you use Athena 3d widgets and
+   the XEmacs menubar for it?  I think that would be a really great
+   way to go.  `gv` has the look and feel I like the best.  I really
+   like the scrollbar free design.
+
+8. Network aware dpkg.
+
+   From: Nicolás Lichtmaier <nick@Feedback.com.ar>
+
+   It's very commonf for UNIX machines to be placed in labs, sharing
+   resources. However, to share applications through NFS is a non
+   supported task that requires knowledge about how dpkg works.. and
+   isn't a trivial thing. If I were a sysadmin looking for a Linux
+   distribution to install in 20 machines I would choose someone that
+   support this..
+
+   This is the idea:
+
+   Applications server:
+
+   Dpkg records the changes done by every package installed there
+   (maybe with a system switch, or per package) in
+   non-shared/conffiles filesystem components. e.g.: If a package
+   creates a /var/spool/tool.out, that is recorded by dpkg. If a
+   package installs a conffile in /etc, the confffile content are
+   saved (in /var/lib/dpkg/shared ? ), the content can be the modified
+   to adapt to current configuration...
+
+   Applications client:
+
+   client-dpkg periodically (boot time? cron?) queries the server for
+   new installed packages. dpkg-server informs the changes that newly
+   installed packages require. Here we use the current conffile
+   handling system: if the server has a new version of the conffile,
+   the new version is installed if the MD5 of the local file hasn't
+   changed.  The clients shouldn't have rw access to dpkg control
+   files... Perhaps they souldn't have dpkg at all.
+
+   Install a new client would be easy. Just performing all the local
+   changes the server has saved would do it.
+
+   Ugh... I don't know if all of this is clear... (Spanish version
+   available by private email.. =) )
+
+
+
+

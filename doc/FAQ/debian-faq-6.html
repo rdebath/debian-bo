@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Basics of the Debian Package Management System</TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-5.html">Previous</A>
+<A HREF="debian-faq-7.html">Next</A>
+<A HREF="debian-faq.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="pms"></A> <A NAME="s6">6. Basics of the Debian Package Management System</A></H2>
+
+<P>
+<P>
+<H2><A NAME="package"></A> <A NAME="ss6.1">6.1 What is a Debian package?</A>
+</H2>
+
+<P>Packages generally contain all of the files necessary
+to implement a set of related commands or features.  There are
+two types of Debian packages:
+<UL>
+<LI><EM>Binary packages</EM>, which contain executables, configuration 
+files, man/info pages, copyright
+information, and other documentation.   These packages 
+are distributed in a Debian-specific 
+<A HREF="#deb-format">archive format</A>; they are usually distinguished 
+by having a '.deb' file extension.
+Binary packages can be unpacked using the Debian utility <CODE>dpkg</CODE>;
+details are given in its manual page.
+</LI>
+<LI><EM>Source packages</EM>, which consist of a <CODE>.dsc</CODE> file
+describing the source package (including the names of the following
+files), a <CODE>.orig.tar.gz</CODE> file that contains the original
+unmodified source in gzip-compressed tar format and usually a 
+<CODE>.diff.gz</CODE> file that contains the Debian-specific changes to the 
+original source.  The utility <CODE>dpkg-source</CODE> packs and unpacks
+Debian source archives; details are provided in its manual page.</LI>
+</UL>
+<P>
+<P>Installation of software by the package system uses
+&quot;dependencies&quot; which are carefully designed by
+the package maintainers.  These dependencies are documented 
+in the <CODE>control</CODE> file associated
+with each package.  For example, the package containing the
+GNU C compiler (<CODE>gcc</CODE>) &quot;depends&quot; on the package
+<CODE>binutils</CODE> which includes the linker and assembler. 
+If a user attempts to install <CODE>gcc</CODE> without having first installed
+<CODE>binutils</CODE>,
+Debian's package system will send an error message that it also needs
+<CODE>binutils</CODE>, and will install <CODE>gcc</CODE> only if the user agrees 
+to install <CODE>binutils</CODE> first.  (However, this facility can be 
+overridden by the insistent user.)  See more
+<A HREF="#depends">details on package dependencies</A> below.
+<P>Debian's packaging tools can be used to:
+<UL>
+<LI>manipulate and manage packages or parts of packages, </LI>
+<LI>aid the user in the break-up of packages that must be transmitted 
+through a limited-size medium such as floppy disks,</LI>
+<LI>aid developers in the construction of package archives, and</LI>
+<LI>aid users in the installation of packages which reside on a remote
+FTP site.</LI>
+</UL>
+<P>
+<H2><A NAME="deb-format"></A> <A NAME="ss6.2">6.2 What is the format of a Debian binary package?</A>
+</H2>
+
+<P>A Debian &quot;package&quot;, or a Debian archive file, contains the 
+executable files, libraries, and documentation associated with a particular 
+suite of program or set of related programs.  Normally, a Debian archive 
+file has a filename that ends in <CODE>.deb</CODE>.
+<P>The internals of this Debian binary packages format are described in
+the <CODE>deb</CODE>(5) manual page. This internal format is subject
+to change, therefore always use <CODE>dpkg-deb</CODE>(8) for
+manipulating <CODE>.deb</CODE> files.
+<P>
+<H2><A NAME="pkgname"></A> <A NAME="ss6.3">6.3 Why are Debian package file names so long? </A>
+</H2>
+
+<P>The Debian binary package file names conform to the following convention:
+&lt;foo&gt;_&lt;VersionNumber&gt;-&lt;DebianRevisionNumber&gt;.deb
+<P>
+<P>Note that <CODE>foo</CODE> is supposed to be the package name.
+As a check, one can learn the package name associated with a 
+particular Debian archive file (.deb file) in one of these ways:
+<UL>
+<LI>inspect the &quot;Packages&quot; file in the directory
+where it was stored in a Debian FTP archive site.  This file contains
+a stanza describing each package; the first field in each stanza is the
+formal Package Name.</LI>
+<LI>use the command <CODE>dpkg --info foo_VVV-RRR.deb</CODE>.  This sends
+a message to STDOUT which gives, among other things, the
+Package Name corresponding to the archive file being unpacked.</LI>
+</UL>
+<P>
+<P>The <CODE>VVV</CODE> component is the version number specified by the 
+upstream developer.  There are no standards in place here, so the version 
+number may have formats as different as
+&quot;960428&quot; and &quot;2.7.2.l.3&quot;.
+<P>
+<P>The <CODE>RRR</CODE> component is the Debian revision number, and is 
+specified by the
+Debian developer (or an individual user if he chooses to build the package
+himself).  This number corresponds to the revision level of the Debian
+package (which includes the Debian-specific Makefile, called 
+<CODE>debian/rules</CODE>, as well as the Debian control file, usually called
+<CODE>debian/control</CODE>).  Thus, a new revision level usually signifies
+changes in the Debian Makefile, the Debian control file, the installation 
+or removal scripts, or in the configuration files used with the package.
+<P>
+<P>
+<H2><A NAME="CtlFile"></A> <A NAME="ss6.4">6.4 What is a Debian control file?</A>
+</H2>
+
+<P>Specifics regarding the contents of a Debian control file are provided
+in the 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/programmer.ps.gz">dpkg programmer's manual</A>.  Briefly,
+a sample control file is shown below for the Debian package hello:
+<BLOCKQUOTE><CODE>
+<PRE>
+Package: hello
+Version: 1.3-13
+Architecture: i386
+Depends: libc5 (&gt;= 5.2.18)
+Installed-Size: 31
+Maintainer: Ian Jackson &lt;ian@chiark.greenend.org.uk&gt;
+Description: The classic greeting, and a good example
+ The GNU hello program produces a familiar, friendly greeting.  It
+ allows nonprogrammers to use a classic computer science tool which
+ would otherwise be unavailable to them.
+ .
+ Seriously, though: this is an example of how to do a Debian package.
+ It is the Debian version of the GNU Project's `hello world' program
+ (which is itself an example for the GNU Project).
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The Package field gives the package name.  This is the name by which the
+package can be manipulated by the package tools, and usually similar
+to but not necessarily the same as the first component string in the
+Debian archive file name.
+<P>The version field gives both the upstream developer's 
+version number and (in the last component) the revision level of the Debian
+package of this program as explained in 
+<A HREF="#pkgname">pkgname</A>
+. 
+<P>The Architecture field specifies the chip for which this particular
+binary was compiled.
+<P>The Depends field gives a list of packages that have to be
+installed in order to install this package successfully.
+<P>The Installed-Size indicates how much disk space the installed package 
+will consume. This is intended to be used by installation front-ends in 
+order to show whether there is enough disk space available to install the 
+program .
+<P>The Maintainer field gives the e-mail address of the person who is 
+currently responsible for maintaining this package.
+<P>The Description field gives a brief summary of the package's features.
+<P>
+<P>
+<P>
+<H2><A NAME="conffile"></A> <A NAME="ss6.5">6.5 What is a Debian conffile?</A>
+</H2>
+
+<P>Conffiles are listings of configuration files, usually placed in 
+<CODE>/etc</CODE>, that the package management system will not overwrite
+when a package is upgraded.
+This ensures that local values for the contents of these files
+will be preserved, and is a critical feature enabling the in-place upgrade
+of packages on a running system.
+<P>To determine exactly which files are preserved during an upgrade, run<CODE> dpkg --status package</CODE>.
+<P>
+<H2><A NAME="PrePost"></A> <A NAME="ss6.6">6.6 What is a Debian preinst, postinst, prerm, and postrm script?  </A>
+</H2>
+
+<P>These files are executable scripts which are automatically run before
+or after a package is installed.
+Along with a file named <CODE>control</CODE>, all of these files are part 
+of the &quot;control&quot; section of a Debian archive file.
+<P>The individual files are:
+<DL>
+<DT><B>preinst</B><DD><P>This script executes before that  package 
+will be unpacked from its Debian archive 
+(&quot;.deb&quot;) file.
+Many 'preinst' scripts stop services for packages which are being 
+upgraded until their installation or upgrade is completed 
+(following the successful execution of the 'postinst' script).
+<P>
+<DT><B>postinst</B><DD><P>This script typically completes any required
+configuration of the package <CODE>foo</CODE> once <CODE>foo</CODE> has been unpacked 
+from its Debian archive (&quot;.deb&quot;) file.  
+Often, 'postinst' scripts ask the
+user for input, and/or warn the user that if he accepts default values,
+he should remember to go back and re-configure that package as the
+situation warrants.  Many 'postinst' scripts then execute any commands 
+necessary to start or restart a service once a new package has been 
+installed or upgraded.  <EM>It is a good idea to check the contents of
+the 'postinst' script for any configuration advice, when trying out a
+package for the first time.</EM>
+<P>
+<DT><B>prerm</B><DD><P>This script typically stops any daemons which
+are associated with a package.  It is executed before the removal
+of files associated with the package.  
+<P>
+<DT><B>postrm</B><DD><P>This script typically modifies links or other
+files associated with <CODE>foo</CODE>. (See notes on 
+<A HREF="#virtual">Virtual packages</A>.)
+<P>
+</DL>
+<P>Currently all of the control files can be found in <CODE>/var/lib/dpkg/info</CODE>.
+The files relevant to package <CODE>foo</CODE> begin with the name 
+&quot;foo&quot; and have file extensions of &quot;preinst&quot;, 
+&quot;postinst&quot;, etc., as appropriate.  The file <CODE>foo.list</CODE>
+in that directory
+lists all of the files that were installed with the package <CODE>foo</CODE>.
+(Note that the location of these files is a dpkg internal; you should not 
+rely on it.)
+<P>
+<H2><A NAME="ss6.7">6.7 What is a Required/Important/Standard/Optional/Extra package?  </A>
+</H2>
+
+<P>
+<P>Each Debian package is assigned a <EM>priority</EM> by the distribution
+maintainers, as an aid to the package management system.  The priorities 
+are:
+<P>
+<UL>
+<LI><B>Required</B> packages are necessary for the proper 
+functioning of the system. 
+This inludes all tools that are necessary to repair system defects.
+You must not remove these packages or your system may
+become totally broken and you may probably not even be able to use
+dpkg to put things back.  Systems with only the Required packages are
+probably unusable, but they do have enough functionality to allow
+the sysadmin to boot and install more software.
+</LI>
+<LI><B>Important</B> packages should be found on any Unix-like system.  
+Other packages which the system will not run well or be usable without 
+will be here.  
+This does <EM>NOT</EM> include Emacs or X11 or TeX or any other large 
+applications.  These packages only constitute the bare infrastructure.
+</LI>
+<LI><B>Standard</B> packages are standard on any Linux system,
+including a reasonably small but not too limited character-mode system.  
+This is what will install by default if users do not select anything else.  
+It does not include many large applications, but it does include Emacs 
+(this is more of a piece of infrastructure than an application) and 
+a reasonable subset of TeX and LaTeX (if this turns out to be possible 
+without X).
+</LI>
+<LI><B>Optional</B> packages include all those that you might reasonably 
+want to install if you did not know what it was or do not have specialized 
+requirements.  This includes X11, a full TeX distribution, and lots
+of applications.</LI>
+<LI><B>Extra</B> packages conflict with others with higher priorities,
+or are only likely to be useful if you already know what they are or
+have specialized requirements.</LI>
+</UL>
+<P>
+<H2><A NAME="virtual"></A> <A NAME="ss6.8">6.8 What is a Virtual Package?</A>
+</H2>
+
+<P>A virtual package is a generic name that applies to any one of a group
+of packages, all of which provide similar basic functionality.
+For example, both the <CODE>tin</CODE> and <CODE>trn</CODE> programs
+are both news readers, and should therefore satisfy any dependency of
+a program that required a news reader on a system in order to work
+or to be useful.
+They are therefore both said to provide the &quot;virtual package&quot;
+called <CODE>news-reader</CODE>.
+<P>
+<P>Similarly, <CODE>smail</CODE> and <CODE>sendmail</CODE> both provide the
+functionality of a mail transport agent.  They are therefore said to
+provide the virtual package, &quot;mail transport agent&quot;.
+If either one is installed, then any program depending on the 
+installation of a <CODE>mail-transport-agent</CODE> will be satisfied by 
+the existence of this virtual package.
+<P>
+<P>Debian provides a mechanism so that, if more than one package which 
+provide the same virtual package is installed on a system, 
+then system administrators can set one as the preferred package.
+The relevant command is <CODE>update-alternatives</CODE>, and is
+described further in the section on 
+<A HREF="debian-faq-11.html#diverse">diversions</A>. 
+<P>
+<H2><A NAME="depends"></A> <A NAME="ss6.9">6.9 What is meant by saying that a file Depends/Recommends/Suggests/Conflicts/Replaces/Provides another package </A>
+?</H2>
+
+<P>The Debian package system has a range of package &quot;dependencies&quot;
+which are designed to indicate (in a single flag) the level at which 
+Program A can operate independently of the existence of Program B on 
+a given system:
+<UL>
+<LI>Package A <EM>depends</EM> on Package B if B absolutely must 
+be installed in order to run A.  In some cases, A depends not only 
+on B, but on a version of B.  In this case, the version dependency is usually
+a lower limit, in the sense that A depends on any version of B more recent 
+than some specified version.</LI>
+<LI>Package A <EM>recommends</EM> Package B, if the package maintainer
+judges that most users would not want A without also having the 
+functionality provided by B.</LI>
+<LI>Package A <EM>suggests</EM> Package B if B contains files that 
+are related to (and usually enhance) the functionality of A.</LI>
+<LI>Package A <EM>conflicts</EM> with Package B when A will not 
+operate if B is installed on the system.  Most often, conflicts are
+cases where A contains files which are an improvement over those in B.
+&quot;Conflicts&quot; are often combined with &quot;replaces&quot;.</LI>
+<LI>Package A <EM>replaces</EM> Package B when files installed
+by B are removed and (in some cases) over-written by files in A.</LI>
+<LI>Package A <EM>provides</EM> Package B when all of the files and
+functionality of B are incorporated into A.  This mechanism provides
+a way for users with constrained disk space to get only that part of
+package A which they really need.</LI>
+</UL>
+<P>More detailed information on the use of these terms can be found in the 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/programmer.ps.gz">Debian programmer's manual</A>.
+<P>
+<H2><A NAME="ss6.10">6.10 What is meant by Pre-Depends? </A>
+</H2>
+
+<P>&quot;Pre-Depends&quot; is a special dependency.
+<P>In the case of most packages, <CODE>dpkg</CODE> will unpack its archive
+file (i.e., its <CODE>.deb</CODE> file) independently of whether or not the
+files on which it depends exist on the system.  Simplistically,
+unpacking means  that <CODE>dpkg</CODE> will extract the files from the archive
+file that were meant to be installed on your filesystem, and put them
+in place.  If those packages <EM>depend</EM> on the existence of some
+other packages on your system, <CODE>dpkg</CODE> will refuse to complete the
+installation by executing its &quot;configure&quot; action until the
+other packages are installed.
+<P>However, for some packages, <CODE>dpkg</CODE> will refuse even to unpack
+them until certain dependencies are resolved.  Such packages are said
+to &quot;Pre-depend&quot; on the presence of some other packages.
+The Debian project provided this mechanism to support the safe upgrading
+of systems from <CODE>a.out</CODE> format to <CODE>ELF</CODE> format, where
+the <EM>order</EM> in which packages were unpacked was critical.
+<P>More detailed information on the use of these terms can be found in the 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/programmer.ps.gz">Debian programmer's manual</A>.
+<P>
+<H2><A NAME="ss6.11">6.11 What is meant by unknown/install/remove/purge/hold in the package status?</A>
+</H2>
+
+<P>These &quot;want&quot; flags tell what the user wanted to do with
+a package (as indicated either by the user's actions in 
+the &quot;Select&quot; section of <CODE>dselect</CODE>, or by the user's
+direct invocations of <CODE>dpkg</CODE>).  Their meanings are:
+<UL>
+<LI>unknown  - the user has not said whether he wants the package</LI>
+<LI>install  - the user wants the package installed or upgraded</LI>
+<LI>remove   - the user wants the package removed, but does not want to 
+remove any existing configuration files.</LI>
+<LI>purge    - the user wants the package to be removed completely, including
+configuration files.</LI>
+<LI>hold     - the user wants this package not to be processed, i.e., he
+wants to keep the current version with the current status whatever that is.</LI>
+</UL>
+<P>
+<H2><A NAME="ss6.12">6.12 Where will I get detailed info on creating Debian packages?</A>
+</H2>
+
+<P>See 
+<A HREF="debian-faq-12.html#DebianDocs">the dpkg programmer's manual and the Debian policy manual</A><P>
+<P>
+<HR>
+<A HREF="debian-faq-5.html">Previous</A>
+<A HREF="debian-faq-7.html">Next</A>
+<A HREF="debian-faq.html#toc6">Contents</A>
+</BODY>
+</HTML>

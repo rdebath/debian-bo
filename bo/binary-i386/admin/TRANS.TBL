@@ -1,0 +1,48 @@
+F ACCT_6_2.DEB;1                    	acct_6.2-4.deb
+F ADJTIMEX.DEB;1                    	adjtimex_1.3-2.deb
+L ALIEN_3_.DEB;1                    	alien_3.3.deb	../../binary-all/admin/alien_3.3.deb
+L ANACRON_.DEB;1                    	anacron_1.0.2-1.deb	../../binary-all/admin/anacron_1.0.2-1.deb
+F APMD_2_4.DEB;1                    	apmd_2.4-5.deb
+F AT_3_1_7.DEB;1                    	at_3.1.7-3.deb
+F AUTOLOG_.DEB;1                    	autolog_0.34-2.deb
+L BOOT-FLO.DEB;1                    	boot-floppies_1.2.21.deb	../../binary-all/admin/boot-floppies_1.2.21.deb
+F CFENGINE.DEB;1                    	cfengine_1.3.19-1.deb
+F CRON_3_0.DEB;1                    	cron_3.0pl1-38.deb
+L DEBIAN-C.DEB;1                    	debian-cd_0.1.4.deb	../../binary-all/admin/debian-cd_0.1.4.deb
+F DEFRAG_0.DEB;1                    	defrag_0.61-1.deb
+L DFTP_3_0.DEB;1                    	dftp_3.0-3.deb	../../binary-all/admin/dftp_3.0-3.deb
+F DUNC_1_5.DEB;1                    	dunc_1.5.deb
+L FILE-RC_.DEB;1                    	file-rc_0.4.1.deb	../../binary-all/admin/file-rc_0.4.1.deb
+F GENPOWER.DEB;1                    	genpower_1.0.1-3.deb
+F GENROMFS.DEB;1                    	genromfs_0.1-2.deb
+F HDPARM_3.DEB;1                    	hdparm_3.1-2.deb
+F ISAPNPTO.DEB;1                    	isapnptools_1.9-1.deb
+F LOADLIN_.DEB;1                    	loadlin_1.6-2.deb
+F LSHELL_2.DEB;1                    	lshell_2.01-3.deb
+F MDUTILS_.DEB;1                    	mdutils_0.35-5.deb
+F MENU_1_3.DEB;1                    	menu_1.3-2.deb
+F MINGETTY.DEB;1                    	mingetty_0.9.4-3.deb
+F MKRBOOT_.DEB;1                    	mkrboot_0.6.deb
+L NCURSES-.DEB;1                    	ncurses-term_1.9.9e-1.deb	../../binary-all/admin/ncurses-term_1.9.9e-1.deb
+F OPEN_1_4.DEB;1                    	open_1.4-1.deb
+F P3NFS_5_.DEB;1                    	p3nfs_5.1-1.deb
+F PCMCIA-C.DEB;1                    	pcmcia-cs_2.9.5-3.deb
+F PCMCIA-M.000;1                    	pcmcia-modules-2.0.29_2.9.5-2.deb
+F PCMCIA-M.DEB;1                    	pcmcia-modules-2.0.30_2.9.5-3.deb
+F PCMCIA-S.DEB;1                    	pcmcia-source_2.9.5-3.deb
+F PWGEN_1-.DEB;1                    	pwgen_1-5.deb
+F QCRACK_1.DEB;1                    	qcrack_1.0.1-3.deb
+F QUOTA_1_.DEB;1                    	quota_1.55-8.deb
+F RPM_2_3_.DEB;1                    	rpm_2.3.8-1.deb
+F SAC_1_5-.DEB;1                    	sac_1.5-2.deb
+F SECURE-S.DEB;1                    	secure-su_961025-2.deb
+F SUDO_1_5.DEB;1                    	sudo_1.5.2-4.deb
+L SUIDMANA.DEB;1                    	suidmanager_0.6.deb	../../binary-all/admin/suidmanager_0.6.deb
+F SUPER_3_.DEB;1                    	super_3.10.6-2.deb
+F SVGATEXT.DEB;1                    	svgatextmode_1.4-10.deb
+F SYSNEWS_.DEB;1                    	sysnews_0.8-6.deb
+F TERMCAP-.DEB;1                    	termcap-compat_1.1.0.deb
+F TIMEOUTD.DEB;1                    	timeoutd_1.5-1.deb
+F UPSD_1_0.DEB;1                    	upsd_1.0-3.deb
+F WATCHDOG.DEB;1                    	watchdog_2.1-2.deb
+L WG15-LOC.DEB;1                    	wg15-locale_2-5.deb	../../binary-all/admin/wg15-locale_2-5.deb

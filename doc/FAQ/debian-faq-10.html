@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Debian and the kernel </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-9.html">Previous</A>
+<A HREF="debian-faq-11.html">Next</A>
+<A HREF="debian-faq.html#toc10">Contents</A>
+<HR>
+<H2><A NAME="Kernel"></A> <A NAME="s10">10. Debian and the kernel </A></H2>
+
+<P>
+<H2><A NAME="custker"></A> <A NAME="ss10.1">10.1 What tools does Debian provide to build custom kernels? </A>
+</H2>
+
+<P>Users who wish to (or must) build a custom kernel are encouraged to download
+the package <CODE>kernel-package_VVV_all.deb</CODE> (it is stored in section
+<CODE>misc</CODE> at the Debian FTP archives).  This package contains 
+the script to build the kernel package, and provides the capability to 
+create a Debian kernel-image package just by running the command 
+<CODE>make-kpkg kernel_image</CODE> in the top-level kernel source directory.
+Help is available by executing the command <CODE>make-kpkg --help</CODE>,
+and through the manual page for make-kpkg(8).
+<P>Users must separately download the source code for the most recent 
+kernel (or the kernel of their choice) from their favorite Linux archive
+site.
+<P>To build a custom kernel, users must have these packages installed:
+<CODE>gcc</CODE>,
+<CODE>libc5-dev</CODE>,
+<CODE>bin86</CODE>,
+<CODE>binutils</CODE>,
+<CODE>gawk</CODE>,
+<CODE>make</CODE>,
+<CODE>gzip</CODE>,
+and <CODE>grep</CODE>.
+<P>Executing the command <CODE>dpkg --install kernel-package_VVV_all.deb</CODE>
+sets up the directory <CODE>/usr/src/linux-VVV/</CODE>, and
+sets up the link <CODE>/usr/src/linux</CODE> to point to the 
+directory <CODE>/usr/src/linux-VVV/</CODE> containing the kernel sources.
+<P>Detailed instructions for using the package are given in the file
+<CODE>/usr/doc/kernel-package/README</CODE>.  Briefly, one should:
+<UL>
+<LI>Unpack the kernel sources, and <CODE>cd</CODE> to the newly created 
+directory.</LI>
+<LI>Modify the kernel configuration using one of these commands:
+<UL>
+<LI><CODE>make config</CODE>  (for a tty one-line-at-a-time-interface).</LI>
+<LI><CODE>make menuconfig</CODE>  (for an ncurses-based menu driven interface).
+Note that to use this option, the <CODE>ncurses3.0-dev</CODE> package 
+must be installed.</LI>
+<LI><CODE>make xconfig</CODE>  (for an X11 interface).
+Using this option requires that relevant X packages be installed.</LI>
+</UL>
+
+Any of the above steps generates a new <CODE>.config</CODE> in the top-level
+kernel source directory.</LI>
+<LI>Execute the command: <CODE>make-kpkg -r Custom.N kernel_image</CODE>, where
+N is a revision number assigned by the user.
+The new Debian archive thus formed would have revision Custom.1, e.g.,
+<CODE>kernel-image-2.0.27-Custom.1.deb</CODE>
+for the Linux kernel 2.0.27.
+<P>
+</LI>
+<LI>Install the package created.
+<UL>
+<LI><CODE>Run dpkg --install /usr/src/kernel-image_VVV-Custom.N.deb</CODE> 
+to install the kernel itself.  The installation script will:
+<UL>
+<LI>run the boot loader, LILO (if it is installed), </LI>
+<LI>install the custom kernel in /boot/vmlinuz_VVV-Custom.N, and
+set up appropriate symbolic links to the most recent kernel version.</LI>
+<LI>prompt the user to make a boot floppy.  This boot floppy will 
+contain the raw kernel only.  See additional notes for making a 
+<A HREF="#cusboot">custom boot floppy</A>.</LI>
+</UL>
+</LI>
+<LI>To employ a secondary boot loaders (e.g., <CODE>loadlin</CODE>), copy 
+this image to other locations (e.g., an <CODE>MS-DOS</CODE> partition).</LI>
+</UL>
+</LI>
+</UL>
+<P>
+<H2><A NAME="cusboot"></A> <A NAME="ss10.2">10.2 How can I make a custom boot floppy?</A>
+</H2>
+
+<P>This task is greatly aided by the Debian package 
+<CODE>boot-floppies_VVV-RRR.deb</CODE>, normally found in the 
+binary/devel section of the Debian FTP archive.  Shell scripts in this package
+produce boot floppies in the <CODE>SYSLINUX</CODE> format.  These are 
+<CODE>MS-DOS</CODE> formatted floppies whose master boot records have been
+altered so that they boot Linux directly (or whatever other operating system
+has been defined in the syslinux.cfg file on the floppy).
+Other shell scripts in this package produce emergency root disks and 
+can even reproduce the base disks.
+<P>When the boot-floppies package is installed, it produces files which reside
+in <CODE>/usr/src/boot-floppies/</CODE>, including the three
+scripts, called <CODE>bootdisk.sh</CODE>, <CODE>rootdisk.sh</CODE>, and 
+<CODE>basedisk.sh</CODE>.  Users of these scripts are encouraged to read 
+them and customize as appropriate.  In particular, one should
+include the kernel of your choice when invoking the <CODE>bootdisk.sh</CODE>
+script.  <EM>Be aware that this kernel cannot be used to load the root disk
+into a RAMDISK unless it was compiled with <CODE>CONFIG_RAMDISK=y</CODE>, and 
+<CODE>CONFIG_INITRD=y</CODE></EM>.
+<P>To write the kernel-image-2.0.27 package to the 1.44 MByte disk in drive A: run this command:
+<BLOCKQUOTE><CODE>
+<PRE>
+./bootdisk.sh /usr/src/kernel-image-2.0.27_1.00.deb /dev/fd0 1440
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>Be sure to include the editor and whatever other tools you prefer 
+when building your custom root disk with <CODE>./rootdisk.sh</CODE>.
+<P>Some people found that the boot and root disks make good emergency floppies.
+<P>
+<H2><A NAME="ss10.3">10.3 What special provisions does Debian provide to deal with modules?</A>
+</H2>
+
+<P>Debian's <CODE>modconf</CODE> package provides a shell script 
+(<CODE>/usr/sbin/modconf</CODE>) which can be used to customize the 
+configuration of modules.  This script presents a menu-based interface,
+prompting the user for particulars on the loadable device drivers 
+in his system.  The responses are used to customize the file
+<CODE>/etc/conf.modules</CODE> (which lists aliases, and other arguments that
+must be used in conjunction with various modules),
+and <CODE>/etc/modules</CODE> (which lists the modules that must be loaded
+at boot time).
+<P>Like the (new) Configure.help files that are now available to support
+the construction of custom kernels, the modconf package comes with a 
+series of help files (in <CODE>/usr/lib/modules_help/</CODE>)
+which provide detailed information on appropriate arguments for each of
+the modules.
+<P>
+<H2><A NAME="ss10.4">10.4 Can I safely de-install an old kernel, and if so how?</A>
+</H2>
+
+<P>Yes.  The <CODE>kernel-image-NNN.prerm</CODE> script checks to see whether the
+kernel you are currently running is the same as the kernel you are trying
+to de-install.  Therefore you can remove unwanted kernel image packages using
+this command:
+<P><CODE>dpkg --purge --force-remove-essential kernel-image-NNN</CODE>
+<P>
+<HR>
+<A HREF="debian-faq-9.html">Previous</A>
+<A HREF="debian-faq-11.html">Next</A>
+<A HREF="debian-faq.html#toc10">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,134 @@
+F AOUT-BIN.DEB;1                    	aout-binutils_2.7-6.deb
+F AOUT-GCC.DEB;1                    	aout-gcc_2.7.2.1-5.deb
+L AUTOCONF.DEB;1                    	autoconf_2.12-1.deb	../../binary-all/devel/autoconf_2.12-1.deb
+L AUTOMAKE.DEB;1                    	automake_1.0-4.deb	../../binary-all/devel/automake_1.0-4.deb
+F BIN86_0_.DEB;1                    	bin86_0.4-3.deb
+F BINUTILS.DEB;1                    	binutils_2.7.0.9-3.deb
+F BISON_1_.DEB;1                    	bison_1.25-4.deb
+F BLT-DEV_.DEB;1                    	blt-dev_2.1-6.deb
+F BYACC_1_.DEB;1                    	byacc_1.9-11.deb
+F C2MAN_2_.DEB;1                    	c2man_2.41-4.deb
+F CFLOW_2_.DEB;1                    	cflow_2.0-9.deb
+F CHECKER_.DEB;1                    	checker_0.8-8.deb
+L CVS-PCL_.DEB;1                    	cvs-pcl_1.9-4.deb	../../binary-all/devel/cvs-pcl_1.9-4.deb
+F CVS_1_9-.DEB;1                    	cvs_1.9-4.deb
+L CWEB-LAT.DEB;1                    	cweb-latex_1.1.1-2.deb	../../binary-all/devel/cweb-latex_1.1.1-2.deb
+F CWEB_3_4.DEB;1                    	cweb_3.4g-5.deb
+F DDD_2_1-.DEB;1                    	ddd_2.1-3.deb
+L DEJAGNU_.DEB;1                    	dejagnu_1.3-5.deb	../../binary-all/devel/dejagnu_1.3-5.deb
+F DIFFSTAT.DEB;1                    	diffstat_1.25-5.deb
+L DIST_3_7.DEB;1                    	dist_3.70-1.deb	../../binary-all/devel/dist_3.70-1.deb
+F DLD_3_2_.DEB;1                    	dld_3.2.6-3.deb
+F DLLTOOLS.DEB;1                    	dlltools_2.17-13.deb
+F DOC___3_.DEB;1                    	doc++_3.0-1.deb
+F ELECTRIC.DEB;1                    	electric-fence_2.0.5-3.deb
+L ELKDOC_3.DEB;1                    	elkdoc_3.0-1.deb	../../binary-all/devel/elkdoc_3.0-1.deb
+F ELK_3_0-.DEB;1                    	elk_3.0-1.deb
+F F2C_9607.DEB;1                    	f2c_960717-0.deb
+F FLEX_2_5.DEB;1                    	flex_2.5.4-2.deb
+F FORT77_1.DEB;1                    	fort77_1.14-1.deb
+F FTNCHEK_.DEB;1                    	ftnchek_2.9.3-1.deb
+F FTPLIB_1.DEB;1                    	ftplib_1-5.deb
+F G77_0_5_.DEB;1                    	g77_0.5.20-1.deb
+F GCC_2_7_.DEB;1                    	gcc_2.7.2.1-8.deb
+F GDB_4_16.DEB;1                    	gdb_4.16-6.deb
+F GMP_2_0_.DEB;1                    	gmp_2.0.2-2.deb
+L GNATS-TK.DEB;1                    	gnats-tk_3.101-2.deb	../../binary-all/devel/gnats-tk_3.101-2.deb
+F GNATS-US.DEB;1                    	gnats-user_3.101-2.deb
+F GNATS_3_.DEB;1                    	gnats_3.101-2.deb
+F GNAT_3_0.DEB;1                    	gnat_3.09-1.deb
+L GPC-DOC_.DEB;1                    	gpc-doc_2.0-3.deb	../../binary-all/devel/gpc-doc_2.0-3.deb
+F GPC_2_0-.DEB;1                    	gpc_2.0-3.deb
+F GROUPKIT.DEB;1                    	groupkit_3.2-1.deb
+F GSTEP-BA.000;1                    	gstep-base-dbg_0.2.12-1.deb
+F GSTEP-BA.DEB;1                    	gstep-base-dev_0.2.12-1.deb
+F GUAVAC_0.DEB;1                    	guavac_0.2.6p1-1.1.deb
+F ICMAKE_6.DEB;1                    	icmake_6.21-1.deb
+L ICON-DOC.DEB;1                    	icon-doc_9.1-1.deb	../../binary-all/devel/icon-doc_9.1-1.deb
+L ICON-IPL.DEB;1                    	icon-ipl_9.1-1.deb	../../binary-all/devel/icon-ipl_9.1-1.deb
+F ICONC_9_.DEB;1                    	iconc_9.1-1.deb
+F ICONT_9_.DEB;1                    	icont_9.1-1.deb
+F ICONX_9_.DEB;1                    	iconx_9.1-1.deb
+F ILU-BASE.DEB;1                    	ilu-base_2.0.0.8-2.deb
+F ILU-DEV_.DEB;1                    	ilu-dev_2.0.0.8-2.deb
+F ILU-DOC_.DEB;1                    	ilu-doc_2.0.0.8-2.deb
+F ILU-ELIS.DEB;1                    	ilu-elisp_2.0.0.8-2.deb
+F ILU-EXAM.DEB;1                    	ilu-examples_2.0.0.8-2.deb
+F INDENT_1.DEB;1                    	indent_1.9.1-16.deb
+L JAVA-LEX.DEB;1                    	java-lex_1.1.4-1.deb	../../binary-all/devel/java-lex_1.1.4-1.deb
+L KERNEL-H.000;1                    	kernel-headers-2.0.29_2.0.29-7.deb	../../binary-all/devel/kernel-headers-2.0.29_2.0.29-7.deb
+L KERNEL-H.DEB;1                    	kernel-headers-2.0.30_2.0.30-7.deb	../../binary-all/devel/kernel-headers-2.0.30_2.0.30-7.deb
+L KERNEL-S.000;1                    	kernel-source-2.0.29_2.0.29-7.deb	../../binary-all/devel/kernel-source-2.0.29_2.0.29-7.deb
+L KERNEL-S.DEB;1                    	kernel-source-2.0.30_2.0.30-7.deb	../../binary-all/devel/kernel-source-2.0.30_2.0.30-7.deb
+F LAPACK-D.000;1                    	lapack-dev_2.0.1-1.deb
+L LAPACK-D.DEB;1                    	lapack-doc_2.0.1-1.deb	../../binary-all/devel/lapack-doc_2.0.1-1.deb
+F LESSTIF-.000;1                    	lesstif-dbg_0.76-1.deb
+F LESSTIF-.001;1                    	lesstif-dev_0.76-1.deb
+F LESSTIF-.DEB;1                    	lesstif-bin_0.76-1.deb
+F LIBBFD2_.DEB;1                    	libbfd2.7.0.9-dev_2.7.0.9-3.deb
+F LIBC4-DE.DEB;1                    	libc4-dev_4.6.27-15.deb
+F LIBC5-DB.DEB;1                    	libc5-dbg_5.4.33-3.deb
+F LIBC5-DE.DEB;1                    	libc5-dev_5.4.33-3.deb
+F LIBC5-PI.DEB;1                    	libc5-pic_5.4.33-3.deb
+F LIBDB1-D.DEB;1                    	libdb1-dev_1.85.4-3.deb
+F LIBDND1-.DEB;1                    	libdnd1-dev_1.0-4.deb
+F LIBELF0-.DEB;1                    	libelf0-dev_0.6.4-5.deb
+F LIBFCGI1.DEB;1                    	libfcgi1-dev_1.5.1-1.deb
+F LIBGDBM1.DEB;1                    	libgdbm1-dev_1.7.3-19.deb
+F LIBGSM-B.DEB;1                    	libgsm-bin_1.0.10-2.deb
+F LIBGSM-D.DEB;1                    	libgsm-dev_1.0.10-2.deb
+F LIBG__27.DEB;1                    	libg++27-dev_2.7.2.1-8.deb
+F LIBNATAL.DEB;1                    	libnatali-dev_1.10-3.deb
+L LIBPAM-D.000;1                    	libpam-doc_0.56-2.deb	../../binary-all/devel/libpam-doc_0.56-2.deb
+F LIBPAM-D.001;1                    	libpam-dev_0.56-2.deb
+F LIBPAM-D.DEB;1                    	libpam-dbg_0.56-2.deb
+F LIBPAM-U.DEB;1                    	libpam-util_0.56-2.deb
+F LIBPCAP-.DEB;1                    	libpcap-dev_0.3-1.deb
+F LIBPROC-.DEB;1                    	libproc-dev_1.11.6.deb
+F LIBPTHRE.DEB;1                    	libpthread0-dev_0.5-2.deb
+F LIBPWDB-.000;1                    	libpwdb-dev_0.54preD-1.deb
+F LIBPWDB-.001;1                    	libpwdb-dbg_0.54preD-1.deb
+L LIBPWDB-.DEB;1                    	libpwdb-doc_0.54preD-1.deb	../../binary-all/devel/libpwdb-doc_0.54preD-1.deb
+F LIBREADL.DEB;1                    	libreadline2-dev_2.1-2.deb
+F LIBTCLOB.DEB;1                    	libtclobjc-dev_1.1b3-5.deb
+F LIBTOOL_.DEB;1                    	libtool_0.7-3.deb
+F LINUX86_.DEB;1                    	linux86_0.0.11-0.deb
+F LIWC_1_0.DEB;1                    	liwc_1.0-1.deb
+F LOCALEBI.DEB;1                    	localebin_5.4.33-3.deb
+F MAKE_3_7.DEB;1                    	make_3.75-4.deb
+F MERCURY_.DEB;1                    	mercury_0.6.2-1.deb
+F NASM_0_9.DEB;1                    	nasm_0.93-1.deb
+F NCURSES3.000;1                    	ncurses3.0-pic_1.9.9e-1.deb
+F NCURSES3.DEB;1                    	ncurses3.0-dev_1.9.9e-1.deb
+F OBJPAK-D.DEB;1                    	objpak-dev_1.1.1-1.deb
+F P2C_1_20.DEB;1                    	p2c_1.20-2.deb
+F PMAKE_1_.DEB;1                    	pmake_1.0-13.deb
+F POSTGRES.000;1                    	postgres95-dev_1.09-1.deb
+L POSTGRES.DEB;1                    	postgres95-doc_1.09-1.deb	../../binary-all/devel/postgres95-doc_1.09-1.deb
+F PUBLIB-D.DEB;1                    	publib-dev_0.25-1.deb
+F RATFOR77.DEB;1                    	ratfor77_1.0-3.deb
+F RCS_5_7-.DEB;1                    	rcs_5.7-4.deb
+F REGEX-DE.DEB;1                    	regex-dev_0.12-2.deb
+F RX-DEV_1.DEB;1                    	rx-dev_1.5-1.deb
+F SLANG0_9.DEB;1                    	slang0.99.34-dev_0.99.38-2.deb
+L SLIB_2A6.DEB;1                    	slib_2a6-1.deb	../../binary-all/devel/slib_2a6-1.deb
+F SUP_1_8-.DEB;1                    	sup_1.8-3.deb
+F TCL74-DE.DEB;1                    	tcl74-dev_7.4p3-5.deb
+F TCL75-DE.DEB;1                    	tcl75-dev_7.5p1-2.deb
+F TCL76-DE.DEB;1                    	tcl76-dev_7.6p2-4.deb
+F TCLX74-D.DEB;1                    	tclx74-dev_7.4a-p2-5.deb
+F TCLX75-D.DEB;1                    	tclx75-dev_7.5.2-5.deb
+F TCLX76-D.DEB;1                    	tclx76-dev_7.6.0-3.deb
+F TIX40-DE.DEB;1                    	tix40-dev_4.0.5-5.deb
+F TIX41-DE.DEB;1                    	tix41-dev_4.1.0.1-1.deb
+F TK40-DEV.DEB;1                    	tk40-dev_4.0p3-5.deb
+F TK41-DEV.DEB;1                    	tk41-dev_4.1p1-2.deb
+F TK42-DEV.DEB;1                    	tk42-dev_4.2p2-4.deb
+F UCBLOGO_.DEB;1                    	ucblogo_3.3-1.deb
+F V-BIN_1_.DEB;1                    	v-bin_1.16-3.deb
+F V-DBG_1_.DEB;1                    	v-dbg_1.16-3.deb
+F V-DEV_1_.DEB;1                    	v-dev_1.16-3.deb
+L V-DOC_1_.DEB;1                    	v-doc_1.16-3.deb	../../binary-all/devel/v-doc_1.16-3.deb
+L VISUAL-T.DEB;1                    	visual-tcl_1.07-2.deb	../../binary-all/devel/visual-tcl_1.07-2.deb
+F XXGDB_1_.DEB;1                    	xxgdb_1.12-9.deb
+F ZLIB1-DE.DEB;1                    	zlib1-dev_1.0.4-7.deb

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Customizing your installation of Debian GNU/Linux </TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-10.html">Previous</A>
+<A HREF="debian-faq-12.html">Next</A>
+<A HREF="debian-faq.html#toc11">Contents</A>
+<HR>
+<H2><A NAME="Customizing"></A> <A NAME="s11">11. Customizing your installation of Debian GNU/Linux </A></H2>
+
+<P>
+<P>
+<H2><A NAME="ss11.1">11.1 How can I ensure that all programs use the same paper size?</A>
+</H2>
+
+<P>The file <CODE>/etc/papersize</CODE> contains the name of the system-wide
+default paper size (i.e. letter or A4). It can be overwritten using
+the <CODE>PAPERSIZE</CODE> environment variable. For details see the
+manual page <CODE>papersize(5)</CODE>.
+<P>
+<P>
+<H2><A NAME="ss11.2">11.2 How can I configure an X11 program's application defaults ?</A>
+</H2>
+
+<P>Debian's X11 installation expects you to leave the files in
+<CODE>/usr/X11R6/lib/X11/app-defaults/</CODE> unchanged. If you want to
+customise X applications globally, put your customizations in
+<CODE>/etc/X11/Xresources</CODE>. This file is marked as a configuration
+file, so its contents will be preserved during upgrades.
+<P>
+<H2><A NAME="ss11.3">11.3 Every distribution seems to have a different boot-up method.  Tell me about Debian's.</A>
+</H2>
+
+<P>Like all Unices, Debian boots up by executing the program <CODE>init</CODE>.
+The configuration file for <CODE>init</CODE> (which is <CODE>/etc/inittab</CODE>)
+specifies that the first script to be executed should 
+be <CODE>/etc/init.d/boot</CODE>.  This script checks and mounts file systems,
+loads modules, starts the network services 
+(by calling the script <CODE>/etc/init.d/network</CODE>),
+sets the clock, performs other initialization, and then runs all of the
+scripts (except those with a '.' in the filename) in <CODE>/etc/rc.boot/</CODE>.  
+The latter script sets the default keyboard, recovers lost editor files, 
+and configures the serial ports.
+<P>After completing the boot process, <CODE>init</CODE> executes all start
+scripts in a directory specified by the default runlevel (this runlevel 
+is given by the entry for <CODE>id</CODE> in <CODE>/etc/inittab</CODE>).  
+Like most
+System V compatible Unices, Linux has 7 runlevels:  
+<P>0 (halt the system), 1 (single-user mode), 
+2 through 5 (various multi-user modes), and 6 (reboot the system).
+Debian systems come with id=2, which indicates that the default 
+runlevel will be '2' when the multi-user
+state is entered, and the scripts in <CODE>/etc/rc2.d/</CODE> will be run.
+<P>In fact, the scripts in any of the directories, <CODE>/etc/rcN.d/</CODE>
+are just symbolic links back to scripts in <CODE>/etc/init.d/</CODE>.  However,
+the <EM>names</EM> of the files in each of the <CODE>/etc/rcN.d/</CODE> directories
+are selected to indicate the <EM>way</EM> the scripts in <CODE>/etc/init.d/</CODE> 
+will be run.  Specifically, before entering any
+runlevel, all the scripts beginning with 'K' are run; these scripts kill
+services.  Then all the scripts beginning with 'S' are run; these scripts 
+start services.  The two-digit number following the 'K' or 'S' indicates
+the order in which the script is run.  Lower numbered scripts are executed
+first.
+<P>This approach works because the scripts in <CODE>/etc/init.d/</CODE> all
+take an argument which can be either 'start', 'stop', or 'reload',
+and will then do the task indicated by the argument.
+For example, with the argument 'reload' the command 
+<CODE>/etc/init.d/sendmail reload</CODE> sends the sendmail daemon a 
+signal to reread its configuration file.
+These scripts can be used even after a system
+has been booted to control various processes.
+<P>
+<P>
+<H2><A NAME="ss11.4">11.4 It looks as if Debian does not use <CODE>rc.local</CODE> to customize the boot process; what facilities are provided?</A>
+</H2>
+
+<P>Suppose a system needs to execute script <CODE>foo</CODE> on start-up,
+or on entry to a particular (System V) runlevel.  Then the system
+administrator should:
+<UL>
+<LI>Enter the script <CODE>foo</CODE> into the directory <CODE>/etc/init.d/</CODE>.</LI>
+<LI>Run the Debian command <CODE>update-rc.d</CODE> with appropriate
+arguments, to set up links between the (command-line-specified) directories
+rc?.d and <CODE>/etc/init.d/foo</CODE>.  Here, '?' is a number from 0 through 6
+and corresponds to each of the System V runlevels.  </LI>
+<LI>Reboot the system.</LI>
+</UL>
+<P>The command <CODE>update-rc.d</CODE> will set up links between files in
+the directories rc?.d and the script in <CODE>/etc/init.d/</CODE>.
+Each link will begin with a 'S' or a 'K', followed by a number, followed
+by the name of the script.  Scripts beginning with 'S' in 
+<CODE>/etc/rcN.d/</CODE> are executed when runlevel <CODE>N</CODE> is entered.
+Scripts beginning with a 'K' are executed when leaving runlevel <CODE>N</CODE>.
+<P>One might, for example, cause the script <CODE>foo</CODE> to execute at boot-up,
+by putting it in <CODE>/etc/init.d/</CODE> and installing the links with
+<CODE>update-rc.d foo defaults 19</CODE>.  The argument 'defaults' refers 
+to the default runlevels, which are 2 through 5.  The argument '19' ensures 
+that <CODE>foo</CODE> is called before any scripts containing numbers 20 
+or larger.
+<P>
+<H2><A NAME="ss11.5">11.5 How does the package management system deal with packages that contain configuration files for other packages?</A>
+</H2>
+
+<P>Some users wish to create, for example, a new server by installing a
+group of Debian packages and a locally generated package consisting of
+configuration files.  This is not generally a good idea, because <CODE>dpkg</CODE>
+will not know about those configuration files if they are in a different package, 
+and may write conflicting configurations when one of the 
+initial &quot;group&quot; of packages is upgraded.
+<P>Instead, create a local package that modifies the configuration files of the
+&quot;group&quot; of Debian packages of interest.  Then 
+<CODE>dpkg</CODE> and the rest of the package management system will see 
+that the files have been modified by the local &quot;sysadmin&quot; 
+and will not try to overwrite them when those packages are upgraded.
+<P>
+<H2><A NAME="divert"></A> <A NAME="ss11.6">11.6 How do I override a file installed by a package so that a different version can be used instead? </A>
+</H2>
+
+<P>Suppose a sysadmin or local user wishes to use a program &quot;login-local&quot; rather than the program &quot;login&quot; provided by the 
+Debian <CODE>login</CODE> package.  
+Do not:
+<UL>
+<LI>Overwrite <CODE>/bin/login</CODE> with <CODE>login-local</CODE>.  </LI>
+</UL>
+
+The package management system will not know about this change, and will simply
+overwrite your custom <CODE>/bin/login</CODE> whenever <CODE>login</CODE> (or any
+package that provides <CODE>/bin/login</CODE>) is installed or updated.
+<P>Rather, do
+<UL>
+<LI>Execute <CODE>dpkg-divert --divert /bin/login.debian /bin/login</CODE>
+in order to cause all future installations of the Debian <CODE>login</CODE>
+packages to write the file <CODE>/bin/login</CODE> to <CODE>/bin/login.debian</CODE>
+instead.  </LI>
+<LI>Then execute <CODE>cp login-local /bin/login</CODE> to move your own
+locally-built program into place.</LI>
+</UL>
+<P>Some details are given in the usage statement for <CODE>dpkg-divert</CODE>
+(which can be viewed using the command <CODE>dpkg-divert --help</CODE>).
+Additional details are given in the 
+<A HREF="ftp://ftp.debian.org/debian/doc/package-developer/programmer.ps.gz">Debian programmer's manual</A>.
+<P>
+<H2><A NAME="ss11.7">11.7 How can I have my locally-built package included in the list of available packages that the package management system knows about?</A>
+</H2>
+
+<P>You can do this in either of two ways:
+<UL>
+<LI>Use <CODE>dselect</CODE>, and reselect the access method. You will be 
+asked for a directory where your local packages reside. </LI>
+<LI>Execute the command
+<CODE>dpkg-scanpackages BIN_DIR OVERRIDE_FILE [PATHPREFIX] > Packages.new</CODE>
+where:
+<UL>
+<LI>BIN-DIR is a directory where Debian archive files (which usually have
+an extension of &quot;.deb&quot;) are stored.</LI>
+<LI>OVERRIDE_FILE is a file that is edited by the distribution maintainers
+and is usually stored on a Debian FTP archive at 
+<CODE>indices/override.main.gz</CODE> for the Debian packages in 
+the &quot;main&quot; distribution.</LI>
+<LI>PATHPREFIX is an optional string that can be prepended to the
+Packages.new file being produced.</LI>
+</UL>
+
+Once you have built the file <CODE>Packages.new</CODE>, tell the package 
+management system about it by using the command 
+<CODE>dpkg --update-avail Packages.new</CODE>.  
+</LI>
+</UL>
+<P>
+<H2><A NAME="diverse"></A> <A NAME="ss11.8">11.8 Some users like mawk, others like gawk; some like vim, others like elvis; some like trn, others like tin; how does Debian support diversity?</A>
+</H2>
+
+<P>There are several cases where two packages provide two different versions
+of a program, both of which provide the same core functionality.  Users
+might prefer one over another out of habit, or because the user
+interface of one package is somehow more pleasing than the interface of
+another.  Other users on the same system might make a different choice.
+<P>Debian uses a &quot;virtual&quot; package system to
+allow system administrators to choose (or let users choose) their 
+favorite tools when there are two or more that provide the same basic 
+functionality, yet
+satisfy package dependency requirements without specifying a particular
+package.
+<P>
+<P>For example, there might exist two different versions of newsreaders on
+a system.  The news server package might 'recommend' that there exist
+<EM>some</EM> news reader on the system, but the choice of <CODE>tin</CODE>
+or <CODE>trn</CODE> is left up to the individual user.  This is satisfied by
+having both the <CODE>tin</CODE> and <CODE>trn</CODE> packages provide the
+virtual package <CODE>news-reader</CODE>.  <EM>Which</EM> program is
+invoked is determined by a link pointing from a file with the virtual
+package name <CODE>/etc/alternatives/news-reader</CODE> to the selected file,
+e.g., <CODE>/usr/bin/trn</CODE>.
+<P>
+<P>A single link is insufficient to support full use of an alternate
+program; normally, manual pages, and possibly other supporting files
+must be selected as well.  The Perl script 
+<CODE>update-alternatives</CODE> provides a way of ensuring that all the
+files associated with a specified package are selected as a system 
+default.
+<P>
+<P>
+<P>
+<HR>
+<A HREF="debian-faq-10.html">Previous</A>
+<A HREF="debian-faq-12.html">Next</A>
+<A HREF="debian-faq.html#toc11">Contents</A>
+</BODY>
+</HTML>

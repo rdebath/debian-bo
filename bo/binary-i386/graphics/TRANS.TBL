@@ -1,0 +1,42 @@
+F GLUT-DEV.DEB;1                    	glut-dev_3.3-2.deb
+L GLUT-DOC.DEB;1                    	glut-doc_3.3-2.deb	../../binary-all/graphics/glut-doc_3.3-2.deb
+F HPSCANPB.DEB;1                    	hpscanpbm_0.3a-5.deb
+F IMAGEMAG.DEB;1                    	imagemagick_3.8.2-1.deb
+F LIBHDF4-.DEB;1                    	libhdf4-dev_4.0.2-3.deb
+F LIBJPEG-.000;1                    	libjpeg-progs_6a-4.deb
+F LIBJPEG-.DEB;1                    	libjpeg-dev_6a-4.deb
+F LIBMAGIC.DEB;1                    	libmagick-dev_3.8.2-1.deb
+F LIBPNG1-.DEB;1                    	libpng1-dev_0.89c-6.deb
+F LIBTIFF3.DEB;1                    	libtiff3-dev_3.4beta035-1.deb
+F MANDELSP.DEB;1                    	mandelspawn_0.07-3.deb
+F MESA-DBG.DEB;1                    	mesa-dbg_2.2-1.deb
+F MESA-DEV.DEB;1                    	mesa-dev_2.2-1.deb
+L MESA-DOC.DEB;1                    	mesa-doc_2.2-1.deb	../../binary-all/graphics/mesa-doc_2.2-1.deb
+F MESA-WID.DEB;1                    	mesa-widgets-dev_2.2-1.deb
+L PICON-DO.DEB;1                    	picon-domains_97.02.21-1.deb	../../binary-all/graphics/picon-domains_97.02.21-1.deb
+L PICON-MI.DEB;1                    	picon-misc_97.01.07-2.deb	../../binary-all/graphics/picon-misc_97.01.07-2.deb
+L PICON-NE.DEB;1                    	picon-news_97.02.20-1.deb	../../binary-all/graphics/picon-news_97.02.20-1.deb
+L PICON-UN.DEB;1                    	picon-unknown_97.01.07-2.deb	../../binary-all/graphics/picon-unknown_97.01.07-2.deb
+L PICON-US.000;1                    	picon-usenix_95.04.13-1.deb	../../binary-all/graphics/picon-usenix_95.04.13-1.deb
+L PICON-US.DEB;1                    	picon-users_97.02.20-1.deb	../../binary-all/graphics/picon-users_97.02.20-1.deb
+L PICON-WE.DEB;1                    	picon-weather_97.01.07-3.deb	../../binary-all/graphics/picon-weather_97.01.07-3.deb
+F PIXMAP_2.DEB;1                    	pixmap_2.6pl4-3.deb
+L POVRAY-M.000;1                    	povray-manual_3.0.10-3.deb	../../binary-all/graphics/povray-manual_3.0.10-3.deb
+L POVRAY-M.DEB;1                    	povray-misc_3.0.10-2.deb	../../binary-all/graphics/povray-misc_3.0.10-2.deb
+F POVRAY_3.DEB;1                    	povray_3.0.10-2.deb
+F PSTOEDIT.DEB;1                    	pstoedit_2.3.3-3.deb
+F SAOIMAGE.DEB;1                    	saoimage_1.19-2.deb
+F SCED_0_9.DEB;1                    	sced_0.94-3.deb
+F SVGALIB1.000;1                    	svgalib1-bin_1.2.10-4.deb
+F SVGALIB1.DEB;1                    	svgalib1-dev_1.2.10-4.deb
+F TGIF_3_0.DEB;1                    	tgif_3.0p5-1.deb
+F TRANSFIG.DEB;1                    	transfig_3.2.0-beta2-2.deb
+F UCBMPEG_.000;1                    	ucbmpeg_play_2.3_patched-2.deb
+F UCBMPEG_.DEB;1                    	ucbmpeg_1r2-2.deb
+F WHIRLGIF.DEB;1                    	whirlgif_2.01-2.deb
+F XAOS_2_2.DEB;1                    	xaos_2.2-1.deb
+F XBMBROWS.DEB;1                    	xbmbrowser_5.1-2.deb
+F XFIG_3_2.DEB;1                    	xfig_3.2.0-beta3-3.deb
+F XLOADIMA.DEB;1                    	xloadimage_4.1-2.deb
+F XPAINT_2.DEB;1                    	xpaint_2.4.8-1.deb
+F ZGV_2_7-.DEB;1                    	zgv_2.7-4.deb

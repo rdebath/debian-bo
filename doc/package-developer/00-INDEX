@@ -1,0 +1,22 @@
+What's in /debian/doc/package-developer?
+
+--- Developer Documentation
+policy.{ps,html}.gz               Debian Policy Manual
+programmer.{ps,html}.gz           dpkg Programmer's Manual
+prospective-packages.txt          Work-Needing and Prospective Packages
+virtual-package-names-list.text   Authoritative List of Virtual Package Names
+
+
+--- The classic greeting, and a good example
+hello_*.dsc                       Debian Source Control file
+hello_*.orig.tar.gz               Original Source
+hello_*.diff.gz                   Debian Diff
+hello_*_i386.deb                  i386 Binary
+hello_*_m68k.deb                  m68k Binary
+
+
+--- The Linux Filesystem Structure (FSSTND)
+FSSTND-FAQ                        FSSTND FAQ
+fsstnd-1.2.ChangeLog              Changes from FSSTND 1.1 -> FSSTND 1.2
+fsstnd-1.2.{dvi,lj4,ps,txt}.gz    FSSTND in various formats
+tentative-opt-draft               Proposed /opt addition to the FSSTND

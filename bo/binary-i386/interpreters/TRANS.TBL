@@ -1,0 +1,40 @@
+F ALIAS_2_.DEB;1                    	alias_2.3-1.deb
+F BLT2_2_1.DEB;1                    	blt2_2.1-6.deb
+F BLT_2_1-.DEB;1                    	blt_2.1-5.deb
+F CPP_2_7_.DEB;1                    	cpp_2.7.2.1-8.deb
+F EXPECT_5.DEB;1                    	expect_5.19.0-2.deb
+F GAWK_3_0.DEB;1                    	gawk_3.0.2-1.deb
+L GCL-DOC_.DEB;1                    	gcl-doc_2.2.1-1.deb	../../binary-all/interpreters/gcl-doc_2.2.1-1.deb
+L GCLINFO-.DEB;1                    	gclinfo-html_2.2-4.deb	../../binary-all/interpreters/gclinfo-html_2.2-4.deb
+L GCLINFO_.DEB;1                    	gclinfo_2.2-4.deb	../../binary-all/interpreters/gclinfo_2.2-4.deb
+F GCL_2_2_.DEB;1                    	gcl_2.2.1-1.deb
+F GFORTH_0.DEB;1                    	gforth_0.2.1-1.deb
+F GUILE-DE.DEB;1                    	guile-dev_1.0-1.deb
+F GUILE-DO.DEB;1                    	guile-doc_1.0-1.deb
+F GUILE-LI.DEB;1                    	guile-lib_1.0-1.deb
+F INTERCAL.DEB;1                    	intercal_0.15-2.deb
+F LIBNET-P.DEB;1                    	libnet-perl_1.04-1.deb
+F LIBWWW-P.DEB;1                    	libwww-perl_5.07-1.deb
+F M4_1_4-6.DEB;1                    	m4_1.4-6.deb
+F PERL-DEB.DEB;1                    	perl-debug_5.003.07-10.deb
+F PERL-SUI.DEB;1                    	perl-suid_5.003.07-10.deb
+F PERL-TK_.DEB;1                    	perl-tk_b11.02-5.deb
+F PERL_5_0.DEB;1                    	perl_5.003.07-10.deb
+F PYTHON-B.000;1                    	python-bsddb_1.4.0-4.deb
+F PYTHON-B.DEB;1                    	python-base_1.4.0-4.deb
+F PYTHON-C.DEB;1                    	python-curses_1.4.0-4.deb
+F PYTHON-D.000;1                    	python-dev_1.4.0-4.deb
+L PYTHON-D.DEB;1                    	python-doc_1.4.0-4.deb	../../binary-all/interpreters/python-doc_1.4.0-4.deb
+F PYTHON-E.000;1                    	python-examples_1.4.0-4.deb
+F PYTHON-E.DEB;1                    	python-elisp_1.4.0-4.deb
+F PYTHON-G.DEB;1                    	python-gdbm_1.4.0-4.deb
+F PYTHON-M.000;1                    	python-mpz_1.4.0-4.deb
+F PYTHON-M.DEB;1                    	python-misc_1.4.0-4.deb
+F PYTHON-N.DEB;1                    	python-net_1.4.0-4.deb
+F PYTHON-S.DEB;1                    	python-stdwin_1.4.0-4.deb
+F PYTHON-T.DEB;1                    	python-tk_1.4.0-4.deb
+L PYTHON-W.DEB;1                    	python-wpy_0.41-1.deb	../../binary-all/interpreters/python-wpy_0.41-1.deb
+F SCM_4E6-.DEB;1                    	scm_4e6-2.deb
+F TCLX76_7.DEB;1                    	tclx76_7.6.0-3.deb
+F YABASIC_.DEB;1                    	yabasic_2.0-4.deb
+F YFORTH_0.DEB;1                    	yforth_0.1beta-3.deb

@@ -1,0 +1,15 @@
+L AUCTEX_9.DEB;1                    	auctex_9.7n-2.deb	../../binary-all/tex/auctex_9.7n-2.deb
+F BIBINDEX.DEB;1                    	bibindex_2.6-0.deb
+F BIBTOOL_.DEB;1                    	bibtool_2.34-2.deb
+F HTML2LAT.DEB;1                    	html2latex_0.9c-1.deb
+L HYPERLAT.DEB;1                    	hyperlatex_1.4pl2-2.deb	../../binary-all/tex/hyperlatex_1.4pl2-2.deb
+F LACHECK_.DEB;1                    	lacheck_1.23-1.deb
+L LATEX2HT.DEB;1                    	latex2html_96.1.h-3.deb	../../binary-all/tex/latex2html_96.1.h-3.deb
+F LATEX2RT.DEB;1                    	latex2rtf_1.1-4.deb
+L TETEX-BA.DEB;1                    	tetex-base_0.4pl6-5.deb	../../binary-all/tex/tetex-base_0.4pl6-5.deb
+F TETEX-BI.DEB;1                    	tetex-bin_0.4pl6-8.deb
+F TETEX-DE.DEB;1                    	tetex-dev_0.4pl6-8.deb
+L TETEX-DO.DEB;1                    	tetex-doc_0.4pl6-1.deb	../../binary-all/tex/tetex-doc_0.4pl6-1.deb
+L TETEX-EX.DEB;1                    	tetex-extra_0.4pl6-4.deb	../../binary-all/tex/tetex-extra_0.4pl6-4.deb
+F TMVIEW_9.DEB;1                    	tmview_96.05-1.deb
+F UNTEX_92.DEB;1                    	untex_9210-5.deb

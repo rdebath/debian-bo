@@ -1,0 +1,33 @@
+One of Debian's key features is its upgrade mechanism. So one can
+upgrade an older Debian system without reinstalling everything. We
+wanted to make this upgrade procedure as smooth as possible, but some
+special precautions still are reuired.
+
+To upgrade from 1.1 or 1.2 make sure to install the following, by hand
+after first clearing the available file as follows:
+
+	dpkg --clear-avail
+	dpkg -i ldso<version>.deb
+	dpkg -i libc5<version>.deb
+	dpkg -i dpkg<version>.deb
+	dpkg --purge --force-depends texbin
+	dselect
+
+Any move from a previous release version will REQUIRE the upgrade of dpkg
+before additional packages can be upgraded. This is because of the fact
+that dpkg didn't work with epochs (a method of reseting version numbering)
+and the version in this release can deal with them. Dpkg depends on libc5
+and it is always a good idea to upgrade ldso before any other package.
+
+Once the dselect phase has begun the user must be prepaired to run install
+"many" times to resolve the dependency conflicts. When I did a standard
+upgrade of the 1.1.13 release to 1.3, Install had to be run four times
+before all packages upgraded. Although this process generates lots of
+errors they should, for the most part, be totally ignored, as they are
+artifacts of package order during the install phase.
+
+The above facts need to be heavily advertised on debian-user during the
+following weeks. Feel free to redistribute the above information whenever
+you wish to answer these questions for others.
+
+

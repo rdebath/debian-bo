@@ -1,0 +1,1080 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Installing Debian Linux 1.3</TITLE>
+   <META NAME="Author" CONTENT="Bruce Perens">
+   <META NAME="Description" CONTENT="Installation instructions for the Debian GNU/Linux 1.3 system.">
+</HEAD>
+<BODY>
+
+<H1>Installing Debian GNU/Linux 1.3</H1>
+
+<H2>About Copyrights and Software Licenses</H2>
+
+<P>I'm sure you've read the licenses that come with most commercial software
+- they say you can only use one copy of the software on one computer. The
+Debian GNU/Linux System isn't like that. We encourage you to put a copy
+on every computer in your school or place of business. Lend it to your
+friends, and help them install it on their computers. You can even make
+thousands of copies and <I>sell</I> them - with a few restrictions. That's
+because Debian is based on <I>free software</I>. </P>
+
+<P>Free software doesn't mean that it doesn't have a copyright, and it
+doesn't mean that the CD&nbsp;you buy containing this software is distributed
+at no charge, it simply means that the licenses of individual programs
+do not require you to pay for the privilege of copying the programs. There
+are other sorts of restrictions on how you copy the software, which you
+can read about once you've installed the system. For example, many of the
+programs in the system are licensed under the <B>GNU</B> <B>General Public
+License</B>, or <B>GPL</B>. The GPL requires that you make the <I>source
+code</I> of the programs available whenever you distribute a copy of the
+program. Thus, we've included the source code for all of those programs
+in the Debian system. There are several other forms of copyright and software
+license used on the programs in Debian. You can find the copyrights and
+licenses of every program by looking in the directory /usr/doc/<I>program-name</I>/copyright
+once you've installed your system. </P>
+
+<P>The most important legal notice is that this software comes with <B>no
+warranties</B>. People who write free software can't afford to be sued.
+</P>
+
+<H2>System Requirements</H2>
+
+<H3>CPU</H3>
+
+<P>Your computer must have a 386, 486, Pentium, or Pentium Pro processor,
+or one of the clones of those processors made by manufacturers such as
+Cyrix, AMD, TI, IBM, etc. If your processor has letters like &quot;sx&quot;,
+&quot;sl&quot;, &quot;slc&quot;, etc. after the number as in &quot;386sx&quot;,
+that's fine. The system will <I>not</I> run on the 286 or lower processors.
+</P>
+
+<H3>I/O Bus</H3>
+
+<P>Your computer must use the ISA, EISA, PCI, or VL bus. The VL bus is
+also known as VESA Local Bus or VLB. Computers that have PCI or VLB generally
+have ISA or EISA slots as well. Linux offers some support for the Micro-Channel
+bus used in IBM PS/2 computers, but this is not included on the Debian
+rescue disk.</P>
+
+<H3>RAM and Disk</H3>
+
+<P>You must have at least 4MB of RAM and 40MB of hard disk. If you want
+to install <I>everything</I> from the chess game through the printed-circuit
+design software, you'll need 300MB or more. The disk interfaces that emulate
+the &quot;AT&quot; hard disk interface which are often called MFM, RLL,
+IDE, or ATA are supported. SCSI disk controllers from many different manufacturers
+are supported. See the <A HREF="http://sunsite.unc.edu/mdw/HOWTO/Hardware-HOWTO.html">Linux
+Hardware Compatibility HOWTO</A> for more details.</P>
+
+<H3>Floppy Disk</H3>
+
+<P>You must have a 1.2MB or 1.44MB floppy disk drive as the <B>a:</B> drive
+in the system upon which you will install Linux. If you have both a 1.2MB
+and a 1.44MB&nbsp;drive, you could configure the hardware so that the
+1.44MB drive is <B>a:</B>, if this is not too difficult.</P>
+
+<H3>Display</H3>
+
+<P>You should be using a VGA-compatible display interface for the console
+terminal. Nearly every modern display card is compatible with VGA. CGA,
+MDA, or HGA might work OK for text, but they won't work with the X Window
+System, and we haven't tested them. Use of a serial terminal for the console
+is not yet supported. </P>
+
+<H3>Other Hardware</H3>
+
+<P>Linux supports a large variety hardware devices such as mice, printers,
+scanners, modems, network cards, etc. However, none of these devices are
+required while installing the system. </P>
+
+<H2>Before You Start</H2>
+
+<H3>Backups</H3>
+
+<P>Before you start, make sure to back up every file that is now on your
+system. The installation procedure can wipe out all of the data on a hard
+disk! </P>
+
+<H3>Information You'll Need</H3>
+
+<P>Besides this document, you'll need the <A HREF="ftp:cfdisk.txt">cfdisk</A>
+manual page,
+the
+<A href="ftp:dselect.beginner.6.html">Dselect Tutorial,
+the <A HREF="http://sunsite.unc.edu/mdw/HOWTO/Hardware-HOWTO.html">Linux
+Hardware Compatibility HOWTO</A>,
+and
+the <A HREF="ftp:X11_release_note.txt">X11 Release note for non-US-keyboard
+users.</A>
+
+<P>If your computer is connected to a network, you should ask your network's
+system administrator for this information: </P>
+
+<UL>
+<LI>Your host name (you may be able to decide this on your own). </LI>
+
+<LI>Your domain name. </LI>
+
+<LI>Your computer's IP address. </LI>
+
+<LI>The netmask to use with your network. </LI>
+
+<LI>The IP address of your network. </LI>
+
+<LI>The broadcast address to use on your network. </LI>
+
+<LI>The IP address of the default gateway system you should route to, if
+your network <I>has</I> a gateway. </LI>
+
+<LI>The system on your network that you should use as a DNS (Domain Name
+Service) server. </LI>
+
+<LI>Whether you connect to the network using Ethernet, and whether your
+Ethernet interface is a PCMCIA card.</LI>
+</UL>
+
+
+<H2>Configuring Your System</H2>
+
+<H3>Disks</H3>
+
+<P>There are some hardware details you should look into. First, decide
+which disk you want to place the Linux system on. You've backed that up
+along with your other disks already, right? </P>
+
+<H3>The BIOS Set-Up Menu</H3>
+
+<P>Your motherboard probably provides a BIOS set-up menu. Some systems
+start this menu if you press <B>DEL</B> while the system is booting, some
+require a SETUP disk, and some have other means of invoking the BIOS set-up
+menu. If you can start this menu, use it to control the features discussed
+in the following several paragraphs. </P>
+
+<H3>Boot Device Selection</H3>
+
+<P>Many BIOS set-up menus allow you to select the devices that will be
+used to bootstrap the system. Set this to look for a bootable operating
+system on <B>a:</B>, (the first floppy disk), and then <B>c:</B> (the first
+hard disk). Since you'll boot Linux from a floppy while installing it,
+it's important that the BIOS enables booting from a floppy disk. </P>
+
+<H3>Extended vs. Expanded Memory</H3>
+
+<P>If your system provides both ex<I>ten</I>ded and ex<I>pan</I>ded memory,
+set it so that there is as much extended and as little expanded memory
+as possible. Linux requires extended memory and can not use expanded memory.
+</P>
+
+<H3>Virus Protection</H3>
+
+<P>Disable any virus-warning features your BIOS may provide. If you have
+a virus-protection board or other special hardware, make sure it is disabled
+or physically removed while running Linux. These aren't compatible with
+Linux, and Linux has a better method of protecting you from viruses. </P>
+
+<H3>Shadow Ram</H3>
+
+<P>Your motherboard probably provides <I>shadow RAM</I>. You may see settings
+for &quot;Video BIOS Shadow&quot;, &quot;C800-CBFF Shadow&quot;, etc. <B>Disable</B>
+all shadow RAM. Shadow RAM is used to accellerate access to the ROMs on
+your motherboard and on some of the controller cards. Linux avoids using
+these ROMs once it has booted because it provides its own faster 32-bit
+software in place of the 16-bit programs in the ROMs. Disabling the shadow
+RAM may make some of it available for programs to use as normal memory.
+Leaving the shadow RAM enabled may interfere with Linux access to hardware
+devices. </P>
+
+<H3>Advanced Power Management</H3>
+
+<P>If your motherboard provides Advanced Power Management (APM), configure
+it so that power management is controlled by APM. Disable the doze, standby,
+suspend, nap, and sleep modes, and disable the hard-disk power-down timer.
+Linux can take over control of these modes, and can do a better job of
+power-management than the BIOS. The version of the operating system kernel
+on the installation floppies does not, however, use APM, because we've
+had reports of one laptop system crashing when the Linux APM driver is
+configured. Once you've installed Linux, you can install the <I>kernel-source</I>
+package and build a custom-configured version of the operating system kernel
+to enable APM and other features. </P>
+
+<h3>The Turbo Switch</h3>
+<p>
+Many systems have a <i>turbo</i> switch that controls the speed of the CPU.
+Select the high-speed setting. If your BIOS allows you to disable software
+control of the turbo switch (or software control of CPU speed), do so and
+lock the system in high-speed mode. We have one report that on a particular
+system, while Linux is
+auto-probing (looking for hardware devices) it can accidentaly touch the
+software control for the turbo switch.
+
+<h3>Over-Clocking your CPU</h3>
+<p>
+Many people have tried operating their 90 MHz CPU at 100 MHz, etc.
+It sometimes works, but is sensitive to temperature and other factors and
+can actually damage your system. The author of this document overclocked
+his own system for a year, and then the system started aborting the
+<i>gcc</i> program with an unexpected signal while it was compiling the
+operating system kernel. Turning the CPU speed back down to its rated value
+solved the problem.
+
+<h3>Bad RAM</h3>
+<p>
+The <i>gcc</i> compiler is often the first thing to die from
+bad RAM (or other hardware problems that change data unpredictably)
+because it builds huge data structures that it traverses repeatedly.
+An error in these data structures will cause it to execute an illegal
+instruction or access a non-existant address. The symptom of this will be
+gcc dying from an unexpected signal.
+<p>
+The very best motherboards support parity RAM and will actually tell you if
+your system has a single-bit error in RAM. Unfortunately, they don't have a way
+to fix the error, thus they generally crash immediately after they tell you
+about the bad RAM. Still, it's better to be told you have bad memory than to
+have it silently insert errors in your data. Thus, the best systems have
+motherboards that support parity and true-parity SIMMs.
+
+<h3>Fake or (&quot;virtual&quot;) Parity RAM</h3>
+If you ask for Parity RAM in a computer store, you'll probably get <i>virtual
+parity</i> SIMMs instead of <i>true parity</i> ones. Virtual parity SIMMs can
+often (but not always) be distinguished because they only have one more chip
+than an equivalent non-parity SIMM, and that one extra chip is smaller than
+all the others. Virtual-parity SIMMs work exactly like non-parity memory.
+They can't tell you when you have a single-bit RAM error the way true-parity
+SIMMs do in a motherboard that implements parity. Don't ever pay more for
+a virtual-parity SIMM than a non-parity one. Do expect to pay a little more
+for true-parity SIMMs, because you are actually buying one extra bit of
+memory for every 8 bits.
+<p>
+If you do have true-parity RAM and your motherboard can handle it, be sure
+to enable any BIOS settings that cause the motherboard to interrupt on
+memory parity errors.
+
+<h3>Cyrix CPUs and Floppy Disk Errors</h3>
+Many users of Cyrix CPUs have had to disable the cache in their systems
+during installation, because the floppy disk has errors if they do not.
+If you have to do this, be sure to re-enable your cache when you are finished
+with installation, as the system runs <i>much</i> slower with the cache
+disabled.
+<p>
+We don't think this is necessarily the fault of the Cyrix CPU. It may be
+something that Linux can work around. We'll continue to look into the problem.
+For the technically curious, we suspect a problem with the cache being invalid
+after a switch from 16-bit to 32-bit code.
+
+<h3>Multiple Processors</h3>
+We have several reports that Debian runs well (and <i>very</i> fast)
+on systems with two (or more) Pentium or Pentium
+Pro processors on the same motherboard. To take advantage of multiple
+processors, you'll have to install the <i>kernel-source</i> package
+and then re-compile the kernel with symmetric multiprocessing support
+enabled. At this time (kernel version 2.0.30) the way you enable that
+is to edit the top-level Makefile for the kernel and un-comment the line
+that says &quot;SMP = 1&quot;. If you compile software on a multiprocessor system,
+look for the &quot;-j&quot; flag in the documentation on &quot;make&quot;.
+
+<H3>BIOS Settings to Watch Out For</H3>
+
+<P>If your BIOS offers something like &quot;15-16 MB Memory Hole&quot;,
+please disable that. Linux expects to find memory there if you have that
+much RAM. </P>
+
+<P>We have a report of an Intel Endeavor motherboard on which there is
+an option called &quot;LFB&quot; or &quot;Linear Frame Buffer&quot;. This
+had two settings: &quot;Disabled&quot; and &quot;1 Megabyte&quot;. Set it
+to &quot;1 Megabyte&quot;. When disabled, the installation floppy was not
+read correctly, and the system eventually crashed. At this writing we don't
+understand what's going on with this particular device - it just worked
+with that setting and not without it. </P>
+
+<H3>Hardware Settings to Watch Out For</H3>
+
+<P>If any cards provide &quot;mapped memory&quot;, the memory should be
+mapped somewhere between 0xA0000 and 0xFFFFF (from 640K to just below 1
+megabyte) or at an address at least 1 megabyte greater than the total amount
+of RAM in your system. </P>
+
+<H3>Windows-specific Hardware</H3>
+
+<P>A disturbing trend is the proliferation of <I>Windows</I> modems and
+printers. In some cases these are specially designed to be operated by
+the Microsoft Windows operating system and bear the legend <i>WinModem</i>
+or <I>Made expecially
+for Windows-based computers</I>. This is generally done by removing the
+embedded processors of the hardware and shifting the work they do over
+to a Windows driver that is run by your computer's main CPU. This strategy
+makes the hardware less expensive, but the savings are often <I>not</I>
+passed on to the user and this hardware may even be more expensive than
+equivalent devices that retain their embedded intellegence.</P>
+
+<P>You should avoid Windows-specific hardware for two reasons. The first
+is that the manufacturers do not generally make the resources available
+to write a Linux driver. Generally, the hardware and software interface
+to the device is proprietary, and documentation is not available without
+a non-disclosure agreement, if it is available at all. This precludes its
+being used for free software, since free software writers disclose the
+source code of their programs. The second reason is that when devices like
+these have had their embedded processors removed, the operating system
+must perform the work of the embedded processors, often at <I>real-time</I>
+priority, and thus the CPU is not available to run your programs while
+it is driving these devices. Since the typical Windows user does not multi-process
+as intensively as a Linux user, the manufacturers hope that the Windows
+user simply won't notice the burden this hardware places on their CPU.
+However, any multi-processing operating system, even <I>Windows 95</I>
+or <I>NT,</I> is degraded when peripheral manufacturers skimp on the embedded
+processing power of their hardware. </P>
+
+<P>You can help this situation by encouraging these manufacturers to release
+the documentation and other resources necessary for us to program their
+hardware, but the best strategy is simply to avoid this sort of hardware
+until it is listed as working in the <A HREF="http://sunsite.unc.edu/mdw/HOWTO/Hardware-HOWTO.html">Linux
+Hardware Compatibility HOWTO.</A></P>
+
+<H3>Other Closed Hardware</H3>
+
+<P>Some hardware manufacturers simply won't tell us how to write drivers
+for their hardware, or they won't allow us access to the documentation
+without a non-disclosure agreement that would prevent us from releasing
+the Linux source code. One example is the IBM laptop DSP sound system used
+in recent ThinkPad systems - some of these systems also couple the sound
+system to the modem. Since we haven't been granted access to the documentation
+on these devices, they simply won't work under Linux. You can help by asking
+the manufacturers of such hardware to release the documentation. If enough
+people ask, they will realize that Linux is an important market. The <A HREF="http://sunsite.unc.edu/mdw/HOWTO/Hardware-HOWTO.html">Linux
+Hardware Compatibility HOWTO</A> provides information about what devices
+currently have Linux drivers.</P>
+
+
+<H2>Methods for Installing Debian</H2>
+
+<P>
+In order to install Debian you need an <em>Initial Boot
+Medium</em>. After booting from this you install <em>the Kernel and
+the Modules</em>, the <em>Base System</em> and the <em>Debian
+Packages</em>. (Detailed installation instructions follow below.)
+
+<P>
+The following list shows which media can be used as source for these
+components.
+
+<DL>
+
+<DT> Initial Boot Medium
+
+<DD>
+The Initial Boot Medium is used to start the Debian installation. 
+It boots the installation system and runs the installation program.
+
+
+The installation system can be booted from:
+
+<MENU>
+<LI>floppy disk
+<P>
+The required disk is called the Rescue Disk. The Rescue Disk (usually)
+contains the kernel and the root filesystem that provides the files
+and programs needed for the basic installation.
+
+<LI>CD-ROM
+<P>
+You need Debian on a bootable CD and the computer must be able to boot
+from the CD-ROM drive.
+
+<LI>Loadlin on a running DOS system
+<P>
+You need an already-running DOS system. Copy linux and root.bin on
+this system, in addition you need loadlin from the tools directory.
+<P>
+Loadlin is used to boot the kernel: <TT>loadlin linux root=/dev/ram
+initrd=root.bin</TT>
+
+</MENU>
+
+
+<P>
+In some cases the root filesystem must be loaded from an extra disk:
+
+<MENU>
+<LI>When you boot from a 1.2MB floppy disk, you need the Root Disk because
+the disk image file doesn't fit on the first 1.2MB floppy disk.
+
+<LI>
+When you have less than 6MB RAM, you need a special Low-Memory Root
+Disk. You must boot from floppy disk.
+</MENU>
+
+<DT> Kernel and Driver Modules
+
+<DD>
+
+The Linux kernel and the modules can be installed from:
+
+<MENU>
+<LI>floppy disk (Rescue Disk and Driver Disk)
+<LI>filesystem on the local harddisk (msdos, minix or ext2)
+<LI>CD-ROM
+</MENU>
+
+<P>
+In all but the first case you need a directory that contains the files
+<A HREF="resc1440.bin">resc1440.bin</A> and <A
+HREF="drv1440.bin">drv1440.bin</A> on the medium.
+
+<P>
+If you have a CD-ROM drive with a proprietary interface (neither SCSI
+nor ATAPI) you need the Driver Disk in order to install the CD-ROM
+interface driver from floppy.
+
+<DT> Base system
+
+<DD>
+The Base system contain the initial Debian system that will be
+copied to the hard disk.
+
+The Base system can be installed from:
+
+<MENU>
+<LI>floppy disk (five 3,5" or 5,25"floppies)
+<LI>filesystem on a local harddisk (msdos, minix or ext2)
+<LI>CD-ROM
+<LI>NFS (Network File System)
+</MENU>
+
+In all but the first case you need a directory that contains the file
+<A HREF="base1_3.tgz">base1_3.tgz</A> on the medium.
+
+<DT> Debian Packages
+
+<DD>
+Once you installed the Base system and rebooted into the fresh system
+dselect offers install more Debian Packages. These Packages can be 
+installed from:
+
+<MENU>
+<LI>floppy disk (you will need many floppies, try to avoid this!)
+<LI>filesystem on a local harddisk (msdos, minix or ext2)
+<LI>CD-ROM
+<LI>NFS
+<LI>FTP
+</MENU>
+
+</DL>
+
+
+<H2>Writing the Floppy Disk Image Files to Floppy Disk</H2>
+
+<P> 
+
+The following disks may be needed for installing Debian (Read above
+section to decide which disks you need) :
+
+<DL>
+
+<DT> Rescue Disk
+  <DD> 
+       If your <B>a:</B> drive of the system upon which you will
+install Linux uses 1.44MB floppy disks, you will need the file <A
+HREF="resc1440.bin">resc1440.bin</A>; if it uses 1.2MB floppy disks,
+you will need the file <A HREF="resc1200.bin">resc1200.bin</A>,
+
+<DT> Driver Disk
+  <DD> 
+       If your <B>a:</B> drive of the system upon which you will
+install Linux uses 1.44MB floppy disks, you will need the file <A
+HREF="drv1440.bin">drv1440.bin</A>; if it uses 1.2MB floppy disks,
+you will need the file <A HREF="drv1200.bin">drv1200.bin</A>,
+
+<DT> Root Disk
+<DD> 
+  The Root Disk can be created from the file <A HREF="root.bin">root.bin</A>.
+
+<DT> Low-Memory Root Disk
+<DD> 
+  The Low-Memory Root Disk can be created from the file 
+  <A HREF="lmemroot.bin">lmemroot.bin</A>.
+  This file is 1.2MB large, so it fits on both 3,5" and 5,25" high
+  density floppies.
+
+<DT> Base Disks
+  <DD> These disks will be generated from the files files <A
+HREF="base-1.bin">base-1.bin</A>, <A
+HREF="base-2.bin">base-2.bin</A>, <A
+HREF="base-3.bin">base-3.bin</A>, <A
+HREF="base-4.bin">base-4.bin</A>, and <A
+HREF="base-5.bin">base-5.bin</A>.
+
+These files are 1.2MB large, so they fit on both 3,5" and 5,25" high
+density floppies.
+
+</DL>
+
+If you are using a web browser on a networked computer to read this
+document, you can probably retrieve the files by selecting their
+names in your web browser. Otherwise, you can retrieve them from <A
+HREF="ftp://ftp.debian.org/debian/stable/disks-i386/current/">
+ftp://ftp.debian.org/debian/stable/disks-i386/current/ </A>, or a
+similar directory in any of the Debian FTP mirror sites. All of these
+are <I>floppy disk image files</I>, which means that each file
+contains the complete contents of a floppy disk in <I>raw</I> form. A
+special program is used to write the image files to floppy disk in
+<I>raw</I> mode. </P>
+
+<P>Find (up to) 8 formatted floppy disks. Mark them with as &quot;Rescue&quot;, &quot;Device
+Drivers&quot;, &quot;Custom Boot&quot;, &quot;Base 1&quot;, &quot;Base
+2&quot;, &quot;Base 3&quot;, and &quot;Base 4&quot;. </P>
+
+<P>No file is written to the Custom Boot floppy, that will be written by
+the Debian system while it is being installed. </P>
+
+<H3>Writing from a DOS, Windows, or OS-2 System</H3>
+
+<P>You'll find the <A HREF="ftp:rawrite2.exe">rawrite2.exe</A>
+program in the same directory as the floppy disk images.
+There's also a <A HREF="ftp:rawrite2.txt">rawrite2.txt</A>
+file containing instructions for rawrite2.exe . </P>
+
+<P>To write the floppy disk image files to the floppy disks, use the command
+</P>
+
+<PRE>        rawrite2 -f <I>file</I> -d <I>drive</I>
+</PRE>
+
+<P>where <I>file</I> is one of the floppy disk image files, and <I>drive</I>
+is either <B>a:</B> or <B>b:</B>. </P>
+
+
+<H3>Writing from a Linux or Unix System</H3>
+
+<P>Some systems attempt to automaticaly mount a floppy disk when you
+place it in the drive. You might have to disable this feature before the
+workstation will allow you to write a floppy in <I>raw mode</I>. Unfortunately,
+I don't know the command necessary to do this for your particular workstation.
+Ask your system administrator. </P>
+
+<P>To write the floppy disk image files to the floppy disks, use the command
+</P>
+
+<UL>
+<P>   dd if=<I>file</I> of=/dev/fd0 bs=512 conv=sync ; sync</P>
+</UL>
+
+<P>where <I>file</I> is one of the floppy disk image files. <I>/dev/fd0</I>
+is a commonly used name of the floppy-disk device, it may be different
+on your workstation. The command may return to the prompt before Unix has
+finished writing the floppy disk, so look for the disk-in-use light on
+the floppy drive and be sure that the light is out and the disk has stopped
+revolving before you remove it from the drive. On some systems, you'll
+have to run a command to eject the floppy from the drive. </P>
+
+<H2>Installing the System</H2>
+
+<H3>Floppy-disk Reliability</H3>
+
+<P>The number one problem of people installing Debian for the first time
+seems to be floppy-disk reliability. </P>
+
+<P>The Rescue Floppy is the one with the worst problems, because that floppy
+is read by BIOS before Linux boots. BIOS doesn't seem to read as reliably
+as the Linux floppy disk driver, and may just stop without printing an
+error message if it reads incorrect data. There can also be failures in
+the drivers floppy and the base floppies, most of which indicate themselves
+with a flood of messages about disk I/O errors. </P>
+
+<P>If you are having the installation stall at a particular floppy, the
+first thing you should do is re-download the floppy disk image and write
+it to a <I>different</I> floppy. Simply reformatting the old floppy is
+not sufficient, even if it appears that the floppy was reformatted and
+written with no errors. It's sometimes useful to try writing the floppy
+on a different system. </P>
+
+<P>One user reports he had to write <I>three</I> boot floppies before one
+worked, and then everything was fine with the third floppy.</P>
+
+<H3>The Rescue Floppy</H3>
+
+<P>Place the Rescue floppy in the <B>a:</B> floppy drive, and reset the
+system by pressing <B>reset</B>, turning the system off and then on, or
+by pressing <B>Control-Alt-Del</B> on the keyboard. The floppy disk should
+be accessed, and you should then see a screen that introduces the rescue
+floppy and ends with the <B>boot:</B> prompt. It's called the Rescue floppy
+because you can use it to boot your system and perform repairs if there
+is ever a problem that makes your hard disk unbootable. Thus, you should
+save this floppy after you've installed your system. Pressing F3 will give
+further information on this.</P>
+
+<P>You can do two things at the <B>boot:</B> prompt. You can press the
+function keys F1 through F10 to view a few pages of helpful
+information, or you can boot the system. If you have less than 6MB
+RAM, you have to use a floppy boot method (the boot methods are listed
+by pressing F3), and you have to insert the Low-Memory Root Disk when
+being prompted for the root floppy. If you boot from a 1.2MB floppy
+drive, you have to use a ramdisk boot method, and you will need the
+Root Disk. If you have any hardware devices that aren't made
+accessable from Linux correctly when Linux boots, you may find a
+parameter to add to the boot command line in the screens you see by
+pressing F4 and F5. If you add any parameters to the boot command
+line, be sure to type the boot method (the default is <B>linux</B>)
+and a space before the first parameter. If you simply press Enter,
+that's the same as typing <B>linux</B> without any special
+parameters. </P>
+
+<P>If this is the first time you're booting the system, just press Enter
+and see if it works correctly. It probably will. If not, you can reboot
+later and look for any special parameters that inform the system about
+your hardware. </P>
+
+<P>Once you press Enter, you should see the message <I>Loading...</I>,
+and then <I>Uncompressing Linux...</I>, and then a page or so of cryptic
+information about the hardware in your system. There may be a many messages
+in the form <I>can't find something</I>, or <I>something not present</I>,
+<I>can't initialize something</I>, or even <I>this driver release depends
+on something</I>. Most of these messages are harmless. You see them because
+the installation boot disk is built to run on computers with many different
+peripheral devices. Obviously, no one computer will have every possible
+peripheral device, so the operating system may emit a few complaints while
+it looks for peripherals you don't own. You may also see the system pause
+for a while. This happens when it is waiting for a device to respond, and
+that device is not present on your system. If you find the time it takes
+to boot the system unacceptably long, you can create a <I>custom kernel</I>
+once you've installed your system without all of the drivers for non-existant
+devices.</P>
+
+<p>
+If you choose a non-default boot method, e.g. ramdisk or floppy,
+you will be prompted to insert the Root floppy. Insert the Root Floppy
+into the first disk drive and press Enter.  (If you choose floppy1
+insert the Root Floppy into the second disk drive.)
+
+<H3>Low-Memory Systems</H3>
+
+<P>If you system has less than 6MB RAM , a paragraph about low memory
+and a text menu with four choices can be displayed. This means that
+the system detected that you don't have enough memory for a normal
+installation, hence must follow a special low-memory installation procedure.
+Go through the menu selections in order:
+
+<MENU>
+<LI>Use fdisk to create a
+Linux Swap partition (type 82). The swap partition is needed to provide
+<I>virtual memory</I> during the installation process, since that process
+will use more memory than you have in your system. Select the size for
+the amount of virtual memory you intend to use once your system is installed.
+16 megabytes is probably the lowest amount that's practical, use 32 megabytes
+if you can spare the space, and 64 if your disk is large enough that you
+won't miss that much.
+<P>
+In addition create a MINIX partition (type 81). This will hold the
+root filesystem in the early installation process. Its size should be
+at least 2 megabytes. This partition can be deleted when the installation is
+finished.
+<LI>Activate the swap partition.
+<LI>Copy the root filesystem to disk.
+<LI>Reboot: boot the system again using the boot options that are shown.
+</MENU>
+
+</P>
+
+<H3>The Color-or-Monochrome Dialog Box</H3>
+
+<P>Once the system has finished booting, you should see the color or monochrome
+choice dialog box. If your monitor displays black-and-white, press Enter
+to continue with the installation. Otherwise, use the arrow key to move
+the cursor to the <I>Color</I> menu item and then press Enter. The display
+should change from black-and-white to color. Then press Enter again to
+continue with the installation. </P>
+
+<H3>The Main Menu</H3>
+
+<P>You may see a dialog box that says <I>The installation program is determining
+the current state of your system</I>. On some systems, this will go by
+too quickly to read. You'll see this dialog box between steps in the main
+menu. The installation program will check the state of the system in between
+each step. This checking allows you to re-start the installation without
+losing the work you have already done if you happen to halt your system
+in the middle of the installation process. If you have to restart an installation,
+you will have to configure color-or-monochrome, configure your keyboard,
+re-activate your swap partition, and re-mount any disks that have been
+initialized. Anything else that you have done with the installation system
+will be saved.</P>
+
+<P>During the entire installation process, you will be presented with the
+main menu. The choices at the top of the menu will change to indicate your
+progress in installing the system. Phil Hughes wrote in <I>Linux Journal</I>
+that you could teach a <I>chicken</I> to install Debian! He meant that
+the installation process was mostly just <I>pecking</I> at the return key.
+The first choice on the installation menu is the next action that you should
+perform according to what the system detects you have already done. It
+should say <I>Next,</I> and at this point the <I>next</I> item should be
+<I>Configure the Keyboard</I>.</P>
+
+<H3>Configuring the Keyboard</H3>
+
+<P>Make sure the highlight is on the <I>Next</I> item, and Press Enter
+to go to the keyboard configuration menu. Select a keyboard that conforms
+to the layout used for your national language, or select something close
+if the keyboard layout you want isn't represented. Once the system is installed,
+you'll be able to select a keyboard layout from a wider range of choices.
+Move the highlight to the keyboard selection you desire and press Enter.
+Use the arrow keys to move the highlight - they are in the same place in
+all national language keyboard layouts, so they are independent of the
+keyboard configuration.</P>
+
+<H3>The Shell</H3>
+
+<P>If you are an experienced Unix or Linux user, press <B>LeftAlt-F2</B>
+to get to the second <I>virtual console</I>. That's the <B>Alt</B> key
+on the left-hand side of the space bar, and the <B>F2</B> function key,
+at the same time. This is a separate window running a Bourne shell clone
+called <B>ash</B>. At this point you are booted from the RAM disk, and
+there is a limited set of Unix utilities available for your use. You can
+see what programs are available with the command <B>ls /bin /sbin /usr/bin
+/usr/sbin</B>. Use the menus to perform any task that they are able to
+do - the shell and commands are only there in case something goes wrong.
+In particular, you should always use the menus, not the shell, to activate
+your swap partition, because the menu software can't detect that you've
+done this from the shell. Press <B>LeftAlt-F1</B> to get back to menus.
+Linux provides up to 64 virtual consoles, although the Rescue floppy only
+uses a few of them.</P>
+
+<H3>Last Chance!</H3>
+
+<P>Did we tell you to back up your disks? Here's your first chance to wipe
+out all of the data on your disks, and your last chance to save your old
+system. If you haven't backed up all of your disks, remove the floppy from
+the drive, reset the system, and run backups. </P>
+
+<H3>Partition Your Hard Disks</H3>
+
+<P>If you have not already partitioned your disks for Linux native and
+Linux swap filesystems, the menu item <I>Next</I> will be <I>Partition
+a Hard Disk</I>. If you have already created at least one Linux Native
+and one Linux Swap disk partition, the <I>Next</I> menu selection will
+be <I>Initialize and Activate the Swap Disk Partition,</I> or you may even
+skip that step if your system had low memory and you were asked to activate
+the swap partition as soon as the system started. Whatever the <I>Next</I>
+menu selection is, you can use the down-arrow key to select <I>Partition
+a Hard Disk</I>. </P>
+
+<P>The <I>Partition a Hard Disk</I> menu item presents you with a list
+of disk drives you can partition, and runs the <I>cfdisk</I> program, which
+allows you to create and edit disk partitions. The <A HREF="ftp:cfdisk.txt">
+cfdisk</A>
+manual page is included with this document, and you should read it now.
+You must create at least one &quot;Linux&quot; (type 83) disk partition, and one
+&quot;Linux Swap&quot; (type 82) partition. </P>
+
+<P>Your swap partition will be used to provide virtual memory for the system
+and should be between 16 and 128 megabytes in size, depending on how much
+disk space you have and how many large programs you want to run. Linux
+will not use more than 128 megabytes of swap, so there's no reason to make
+your swap partition larger than that. A swap partition is strongly recommended,
+but you can do without one if you insist, and if your system has more than
+16 megabytes of RAM. If you wish to do this, please select the <I>Do Without
+a Swap Partition</I> item from the menu. </P>
+
+<P>The &quot;Linux&quot; disk partition will hold all of your files, and
+you may make it any size between 40 megabytes and the maximum size of your
+disk minus the size of the swap partition. If you are already familiar
+with Unix or Linux, you may want to make additional partitions - for example,
+you can make partitions that will hold the <B>/var</B>, and <B>/usr</B>,
+filesystems. </P>
+
+<H3>Initialize and Activate the Swap Disk Partition</H3>
+
+<P>This will be the <I>Next</I> menu item once you have created one disk
+partition. You have the choice of initializing and activating a new swap
+partition, activating a previously-initialized one, and doing without a
+swap partition. It's always permissible to re-initialize a swap partition,
+so select <I>Initialize and Activate the Swap Disk Partition</I> unless
+you are sure you know what you are doing. This menu choice will give you
+the option to scan the entire partition for un-readable disk blocks caused
+by defects on the surface of the hard disk platters. This is useful if
+you have MFM, RLL, or older SCSI disks, and never hurts. Properly-working
+IDE disks don't need this choice, as they have their own internal mechanism
+for mapping out bad disk blocks. </P>
+
+<P>The swap partition provides <I>virtual memory</I> to supplement the
+RAM memory that you've installed in your system. It's even used for virtual
+memory while the system is being installed. That's why we initialize it
+first. </P>
+
+<H3>Initialize a Linux Disk Partition</H3>
+
+<P>At this point, the <I>Next</I> menu item should be <I>Initialize a Linux
+Disk Partition</I>. If it isn't, it's because you haven't completed the
+disk partitioning process, or you haven't made one of the menu choices
+dealing with your swap partition. </P>
+
+<P>You can initialize a Linux Disk partition, or alternatedly you can mount
+a previously-initialized one. </P>
+
+<P>These floppies will not upgrade an old system without removing the files
+- Debian provides a different procedure than using the boot floppies for
+upgrading existing Debian systems. Thus, if you are using old disk partitions
+that are not empty, you should initialize them (which erases all files)
+here. You must initialize any partitions that you created in the disk partitioning
+step. About the only reason to mount a partition without initializing it
+at this point would be to mount a partition upon which you have already
+performed some part of the installation process using this same set of
+installation floppies. </P>
+
+<P>Select the <I>Next</I> menu item to initialize and mount the <B>/</B>
+disk partition. The first partition that you mount or initialize will be
+the one mounted as <B>/</B> (pronounced <I>root</I>). You will be offered
+the choice to scan the disk partition for bad blocks, as you were when
+you initialized the swap partition. It never hurts to scan for bad blocks,
+but it could take 10 minutes or more to do so if you have a large disk.
+</P>
+
+<P>Once you've mounted the <B>/</B> partition, the <I>Next</I> menu item
+will be <I>Install the Operating System Kernel and the Device
+Drivers</I> unless you've already performed
+some of the installation steps. You can use the arrow keys to select the
+menu items to initialize and/or mount disk partitions if you have any more
+partitions to set up. If you have created separate partitions for <B>/var</B>,
+<B>/usr</B>, or other filesystems, you should initialize and/or mount them
+now. </P>
+
+<H3>Install the Operating System Kernel and the Device Drivers</H3>
+
+<P> This should be the <I>Next</I> menu step after you've mounted your
+<B>/</B> disk, unless you've already performed some of the
+installation steps on <B>/</B>. Select it, and you will be offered
+a menu of drives to use to read the kernel. If you choose to install
+from floppy disk insert the Rescue Floppy as requested, and the kernel
+will be copied on to the hard disk. In a later step this kernel will
+be used to create a custom boot floppy for your system, and to make
+the hard disk bootable without a floppy. </P>
+
+<P> If you choose to install from floppy disk you will be prompted to
+insert the device drivers floppy. The device drivers will be copied to
+your hard disk. </P>
+
+<H3>Configure the Device Drivers</H3>
+
+<P>
+Select the <I>Configure Device Drivers</I> menu item and look for
+devices that are on your system. Configure those device drivers, and
+they will be loaded whenever your system boots. If you want to install
+the base system via NFS you must load and configure the driver
+module for your network card.</P>
+
+<P> There is a menu selection for PCMCIA device drivers, but you need not
+use it . Once your system is installed, you can install the <B>pcmcia-cs</B>
+package. This detects PCMCIA&nbsp;cards automaticaly, and configures the
+ones it finds. It also copes with hot-plugging the cards while the system
+is booted - they will all be configured as they are plugged in, and de-confugured
+when you unplug them.</P>
+
+<H3>Configure the Network</H3>
+
+<P>You'll have to configure the network even if you don't have a network,
+but you'll only have to answer the first two questions - <I>what is the
+name of your computer?</I>, and <I>is your system connected to a network?</I>.
+</P>
+
+<P>If you are connected to a network, here come some questions that you
+may not be able to figure out on your own - check with your network administrator
+if you don't know: </P>
+
+<UL>
+<LI>Your host name. </LI>
+
+<LI>Your domain name. </LI>
+
+<LI>Your computer's IP address. </LI>
+
+<LI>The netmask to use with your network. </LI>
+
+<LI>The broadcast address to use on your network. </LI>
+
+<LI>The IP address of the default gateway system you should route to, if
+your network <I>has</I> a gateway. </LI>
+
+<LI>The system on your network that you should use as a DNS (Domain Name
+Service) server. </LI>
+
+<LI>The type of your network (Ethernet, Token Ring). </LI>
+</UL>
+
+<P>Some technical details you might, or might not, find handy: the program
+assumes the network IP address is the bitwise-AND of your system's
+IP address and your netmask. It will guess the broadcast address is the
+bitwise OR of your system's IP address with the bitwise negation of the
+netmask. It will guess that your gateway system is also your DNS server.
+If you can't find any of these answers, use the system's guesses - you
+can change them once the system has been installed, if necessary, by editing
+/etc/init.d/network . </P>
+
+<H3>Install the Base System</H3>
+
+<P> Select the <I>Install the Base
+System</I> menu item.  You'll be offered a menu of drives to use to
+read the base floppies. Select the appropriate drive. If you choose to
+install from floppy disk feed in the Base 1, 2, 3, 4 and 5 as requested
+by the program. If one of the base floppies is unreadable, you'll have
+to create a replacement floppy and feed all floppies into the
+system again. Once the floppies have all been read, the system will
+install the files it's read from them. This could take 10 minutes or
+more on slow systems, less on faster ones. </P>
+
+<H3>Configure the Base System</H3>
+
+<P>At this point you've read in all of the files that make up a minimal
+Debian system, but you must perform some configuration before the system
+will run. Select the <I>Configure the Base System</I> menu item. </P>
+
+<P>You'll be asked to select your time zone. Look for your time zone or
+region of the world in the menu, and type it at the prompt. This may lead
+to another menu, in which you can select your actual time zone. </P>
+
+<P>Next, you'll be asked if your system clock is to be set to GMT or local
+time. Select GMT if you will only be running Linux and Unix on your system,
+and select local time if you will be running another operating system such
+as DOS or Windows. Unix and Linux keep GMT time on the system clock and
+use software to convert it to the local time zone. This allows them to
+keep track of daylight savings time and leap years, and even allows users
+who are logged in from other time zones to individually set the time zone
+used on their terminal. If you run the system clock on GMT and your locality
+uses <I>daylight savings time</I>, you'll find that the system adjusts
+for daylight savings time properly on the days that it starts and ends.
+</P>
+
+<H3>Make the Hard Disk Bootable</H3>
+
+<P>If you select to make the hard disk boot directly to Linux, you will
+be asked to install a master boot record. If you aren't using a boot manager
+(and this is probably the case if you don't know what a boot manager is),
+answer <B>yes</B> to this question. The next question will be whether you
+want to boot Linux automaticaly from the hard disk when you turn on your
+system. This sets Linux to be the <I>bootable partition</I> - the one that
+will be loaded from the hard disk. If you answer <B>no</B> to this question,
+you can set the bootable partition later using the DOS <B>fdisk</B> program,
+or with the Linux <B>fdisk</B> or <B>activate</B> programs.</P>
+
+<P>If you are installing Linux on a drive other than the first hard disk
+in your system, be sure to make a boot floppy. The boot ROM of most systems
+is only capable of directly booting from the first hard drive, not the
+second one. You can, however, work around this problem once you've installed
+your system. To do so, read the instructions in the directory <B>/usr/doc/lilo</B>.
+</P>
+
+<H3>Make a Boot Floppy</H3>
+
+<P>You should make a boot floppy even if you intend to boot the system
+from the hard disk. The reason for this is that it's possible for the hard
+disk bootstrap to be mis-installed, but a boot floppy will almost always
+work. Select <I>Make a Boot Floppy</I> from the menu and feed the system
+a blank floppy as directed. Make sure the floppy isn't write-protected,
+as the software will format and write it. Mark this the &quot;Custom Boot&quot;
+floppy and write-protect it once it has been written. </P>
+
+<H3>The Moment of Truth</H3>
+
+<P>This is what electrical engineers call the <I>smoke test</I> - what
+happens when you turn on a new system for the first time. Remove the floppy
+disk from the floppy drive, and select the <I>Reboot the System</I> menu
+item. If the Linux system doesn't start up, insert the Custom Boot floppy
+you created and reset your system. Linux should boot. You should see the
+same messages as when you first booted the installation boot floppy, followed
+by some new messages.</P>
+
+<H3>Set the Root Password</H3>
+
+<P>This is the password for the <I>super-user</I>, a login that bypasses
+all security protection on your system. It should only be used to perform
+system administration, and only for as short a time as possible. Do not
+use <B>root</B> as your personal login. You will be prompted to create
+a personal login as well, and that's the one you should use to send and
+receive e-mail and perform most of your work - not root. The reason to
+avoid using root's privileges is that you might be tricked into running
+a <I>trojan-horse</I> program - that is a program that takes advantage
+of your super-user power to compromise the security of your system behind
+your back. Any good book on Unix system administration will cover this
+topic in more detail - consider reading one if it's new to you. The good
+news is that Linux is probably more secure than other operating systems
+you might run on your PC. DOS and Windows, for example, give <I>all</I>
+programs super-user privilege. That's one reason that they have been so
+plagued by viruses. </P>
+
+<P>All of the passwords you create should contain from 6 to 8 characters,
+and should contain both upper and lower-case characters, as well as punctuation
+characters. </P>
+
+<P>Once you've added both logins, you'll be dropped into the <B>dselect</B>
+program.
+The <A href="ftp:dselect.beginner.6.html">Dselect Tutorial</A> is required
+reading before you run dselect.
+Dselect allows you to select <I>packages</I> to be installed
+on your system. If you have a CD-ROM or hard disk containing the additional
+Debian packages that you want to install on your system, or you are connected
+to the Internet, this will be useful to you right away. Otherwise, you may
+want to quit dselect and start it later, once
+you have transported the Debian package files to your system. You must
+be the super-user (root) when you run dselect.
+
+If you are about to install the X Window system and you do not use a US
+keyboard, you should read
+the <A HREF="ftp:X11_release_note.txt">X11 Release note for non-US-keyboard
+users.</A>
+</P>
+
+<H3>Log In</H3>
+
+<P>After you've quit dselect, you'll be presented with the login prompt.
+Log in using the personal login and password you selected. Your system
+is now ready to use. </P>
+
+<h2>Technical Information on the Boot Floppies</h2>
+<h3>Source Code</h3>
+The &quot;boot-floppies&quot; package contains all of the source code for the
+installaton floppies.
+<h3>The Rescue Floppy</h3>
+The Rescue Floppy is an MS-DOS filesystem, and you should be able to access
+it from a DOS or Windows system or anything else that can mount DOS disks.
+The Linux kernel is in the file &quot;linux&quot;.
+The file root.bin is a gzip-compressed disk image of a 1.44 MB Minix
+filesystem, and will be loaded into the RAM disk and used as the root
+filesystem.
+<h3>Replacing the Kernel</h3>
+If you find it necessary to replace the kernel on the Rescue Floppy,
+you must configure your new kernel with these features linked in, not in
+loadable modules:
+<ul>
+<li>Initial RAM disk.
+<li>MSDOS, Minix, and EXT2 filesystems.
+<li>ELF executables.
+</ul>
+Copy your new kernel to the file &quot;linux&quot; on the Rescue Floppy, and then
+run the shell script &quot;rdev.sh&quot; that you'll find on the floppy.
+<h3>The Base Floppies</h3>
+The base floppies contain a 512-byte header followed by a portion of a
+gzip-compressed &quot;tar&quot; archive. If you strip off the headers and
+then concatenate the contents of the base floppies, the result should be the
+compressed tar archive. The archive contains the base system that will be
+installed on your hard disk. Once this archive is installed, you must go
+through the <i>Configure the Base System</i> menu item in the installation
+system and other menu items
+to configure the network and install the operating system kernel and modules
+before the system will be usable.
+
+<H2>Last Update</H2>
+
+<P>The last update of this document was made on May 28, 1997.
+</P>
+
+<H2>Copyright of This Document</H2>
+
+<P>Copyright 1996 Bruce Perens; 1996, 1997 Sven
+Rudolph. This document may be distributed under the terms of the GNU
+General Public License. </P>
+
+<H2>Trademark Acknowledgement</H2>
+
+<P>Trademarks that are not explicitly acknowledged here are the property
+of their respective holders. 386, 386sx, 486, Pentium, and Pentium Pro
+are the property of Intel. Windows and WinModem are a trademark of Microsoft.
+ThinkPad and PS/2 are the property of IBM.</P>
+
+</BODY>
+</HTML>

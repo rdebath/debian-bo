@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>The Debian GNU/Linux FAQ: Getting and Installing Debian GNU/Linux</TITLE>
+</HEAD>
+<BODY>
+<A HREF="debian-faq-7.html">Previous</A>
+<A HREF="debian-faq-9.html">Next</A>
+<A HREF="debian-faq.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="GetDeb"></A> <A NAME="s8">8. Getting and Installing Debian GNU/Linux</A></H2>
+
+<P>
+<H2><A NAME="ss8.1">8.1 Where/how can I get the Debian installation disks?</A>
+</H2>
+
+<P>You can get the installation disks by downloading the appropriate files
+from the Debian FTP site: 
+<A HREF="ftp://ftp.debian.org/debian/">ftp://ftp.debian.org/debian/</A>
+and its 
+<A HREF="http://www.debian.org/ftplist.html">mirrors</A>.
+<P>Please follow the instructions given in the Installation Guide.
+It is available in the files 
+<CODE>
+<A HREF="ftp://ftp.debian.org/stable/disks-i386/current/install.txt">install.txt</A></CODE> (ASCII) and
+<CODE>
+<A HREF="ftp://ftp.debian.org/stable/disks-i386/current/install.txt">install.html</A></CODE> (HTML).
+<P>Some special cases are mentioned below.
+<P>
+<P>
+<H2><A NAME="cdrom"></A> <A NAME="ss8.2">8.2 How do I get and install the Debian from CD-ROM?</A>
+</H2>
+
+<P>Linux supports the ISO 9660 (CD-ROM) file system with Rock Ridge extensions 
+(formerly known as &quot;High Sierra&quot;).  Several vendors provide
+Debian in this format; these vendors have directly supported
+the Debian project:
+<UL>
+<LI>iConnect Corp.: i-Connect.Net provides the master FTP system used by
+Debian developers, and its network connection and system administration.
+They provide our 168 developers with free accounts on a system that is
+exclusively for our use, and they run our DNS domain. They also maintain
+several Debian packages.  Use the following contact info to order their
+CD-ROM:
+<UL>
+<LI>WWW:
+<A HREF="http://www.i-connect.net/i-connect/services/cdrom.html">http://www.i-connect.net/i-connect/services/cdrom.html</A></LI>
+<LI>E-Mail (sales):
+<A HREF="mailto:sales@i-connect.net">sales@i-connect.net</A></LI>
+<LI>E-Mail (help):
+<A HREF="mailto:help@i-connect.net">help@i-connect.net</A></LI>
+<LI>Phone from inside the US: 1-503-641-8774</LI>
+<LI>Phone from outside the US: +1-503-641-8774</LI>
+<LI>Postal address:
+<BLOCKQUOTE><CODE>
+<PRE>
+       iConnect Corp.
+       14355 SW Allen Blvd., Suite 140
+       Beaverton, OR 97005
+      
+</PRE>
+</CODE></BLOCKQUOTE>
+</LI>
+</UL>
+
+</LI>
+<LI>Flexible Software:  This company maintains 8 Debian
+packages, and puts a lot of manpower into supporting users on the
+debian-user mailing list and refining the system design with our
+developers. They have carefully documented the development of one 
+of the two methods used to upgrade from Debian 0.93 to Debian 1.1.
+<UL>
+<LI>E-Mail (sales):
+<A HREF="mailto:dwarf@polaris.net">dwarf@polaris.net</A></LI>
+<LI>Postal address:
+<BLOCKQUOTE><CODE>
+<PRE>
+       Flexible Software
+       1000 McCrackin Road
+       Tallahassee, FL 32308
+      
+</PRE>
+</CODE></BLOCKQUOTE>
+</LI>
+</UL>
+  </LI>
+</UL>
+<P>
+<H2><A NAME="floppy"></A> <A NAME="ss8.3">8.3 How can I get/install the Debian from a set of floppy disks?</A>
+</H2>
+
+<P>Copy the Debian packages onto formatted floppy disks.  Either a DOS, 
+the native Linux &quot;ext2&quot;, or the &quot;minix&quot; format will 
+do; one just has to use a mount command appropriate to the floppy
+being used.
+<P>Using floppy disks has these complications:
+<UL>
+<LI>Short MS-DOS filenames: If you are trying to place Debian package
+files onto MS-DOS formatted disks, you will find that their names 
+are generally too long, and do not conform to the MS-DOS 8.3 filename 
+limitation.  To overcome this,
+Debian developers make all of their packages available by 8.3 filenames 
+in separate &quot;msdos&quot; subdirectories (
+<CODE>stable/msdos-i386/</CODE>, <CODE>non-free/msdos-i386/</CODE>, 
+<CODE>contrib/msdos-i386/</CODE>, and <CODE>development/msdos-i386/</CODE>).
+The files in these 
+subdirectories are merely symbolic links to the Debian archive files; 
+they only differ from the files in the <CODE>binary-i386/</CODE>, etc. 
+directories by having shorter file names.</LI>
+<LI>Large file sizes:  Some packages are larger than 1.44 MBytes, and 
+will not fit onto a single floppy disk.  To solve this problem, use the 
+<A HREF="debian-faq-7.html#dpkgsplt">dpkg-split</A> tool, available in the 
+<CODE>tools</CODE> directory at 
+<A HREF="ftp://ftp.debian.org/debian/">ftp://ftp.debian.org/debian/</A>
+and its 
+<A HREF="http://www.debian.org/ftplist.html">mirrors</A>.</LI>
+</UL>
+<P>
+<P>You must have support in the kernel for floppy disks in order to read and 
+write to floppy disk; most kernels come with floppy drive support 
+included in them.
+<P>To mount a floppy disk under the mount point <CODE>/floppy</CODE> (a directory which 
+should have been created during installation), use:
+<UL>
+<LI><CODE>mount -t msdos /dev/fd0 /floppy/</CODE>
+if the floppy disk is in drive A: and has an MS-DOS filesystem, </LI>
+<LI><CODE>mount -t msdos /dev/fd1 /floppy/</CODE>
+if the floppy disk is in drive B: and has an MS-DOS filesystem, </LI>
+<LI><CODE>mount -t ext2 /dev/fd0 /floppy/</CODE>
+if the floppy disk is in drive A: and has an ext2 (i.e., a normal Linux) 
+filesystem.</LI>
+</UL>
+<P>
+<H2><A NAME="anonftp"></A> <A NAME="ss8.4">8.4 How can I get and install Debian directly from a remote ftp site?</A>
+</H2>
+
+<P>Install the Debian tool 
+<A HREF="debian-faq-9.html#dpkgftp">dpkg-ftp</A>.  This package
+is currently installed in the directory <CODE>development/binary-all/net</CODE>
+at 
+<A HREF="ftp://ftp.debian.org/debian/">ftp://ftp.debian.org/debian/</A> and its 
+<A HREF="http://www.debian.org/ftplist.html">mirrors</A>.
+For details on installing a package, see notes on 
+<A HREF="debian-faq-7.html#dpkg">dpkg</A>.
+<P>Then invoke the program <CODE>dselect</CODE>, which will call <CODE>dpkg-ftp</CODE>
+for you, guide you through the selection of packages, then install the packages,
+without every downloading the packages themselves to your machine.
+This method is designed to save the user both disk space and time.
+Note that no special kernel configuration is needed to access and
+install Debian packages by this method.
+<P>To use this service of <CODE>dselect</CODE>, you will need to know:
+<UL>
+<LI>the fully qualified domain name of the anonymous ftp site you
+plan to use.</LI>
+<LI>the directory which contains the files you want to install, or the
+subdirectories which contain files you want to install.  This directory
+must contain a file called &quot;Packages&quot; (or its compressed
+equivalent, &quot;Packages.gz&quot;).</LI>
+</UL>
+<P>
+<H2><A NAME="atape"></A> <A NAME="ss8.5">8.5 How can I get and install Debian from a tape?</A>
+</H2>
+
+<P>At present, installing packages directly from tape is not supported.
+One can however, use <CODE>tar</CODE>, <CODE>cpio</CODE>, or <CODE>afio</CODE> to
+copy Debian archive files onto a tape, then copy them onto your local 
+disk for installation.  In the same vein, floppy disks 
+containing &quot;tar&quot; files would have to be copied onto a 
+local disk before they could be managed with the Debian package tools.
+<P>
+<H2><A NAME="version"></A> <A NAME="ss8.6">8.6 What is the latest version of Debian?</A>
+</H2>
+
+<P>Currently there are three versions of Debian: 
+<UL>
+<LI>&quot;1.3&quot;: this is stable software, 
+and will not change. </LI>
+<LI>&quot;1.3.x&quot;, a.k.a. &quot;stable&quot;, a.k.a &quot;: this 
+is stable software, but it may change when major fixes are incorporated.</LI>
+<LI>the &quot;development&quot; version;
+<A NAME="development"></A> .  This is the version currently under
+development; it is updated continuously. 
+You can retrieve packages from the &quot;development&quot; archive on 
+any Debian FTP site and use them to upgrade your system at any time. 
+<P>It is planned that this will become a new Debian release about three months after the last release.
+</LI>
+</UL>
+
+<P>
+<HR>
+<A HREF="debian-faq-7.html">Previous</A>
+<A HREF="debian-faq-9.html">Next</A>
+<A HREF="debian-faq.html#toc8">Contents</A>
+</BODY>
+</HTML>

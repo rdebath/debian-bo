@@ -1,0 +1,68 @@
+From ic.ac.uk!a.triulzi Thu Dec  5 14:18:17 1996
+Return-Path: <a.triulzi@ic.ac.uk>
+Received: from pixar.com by golem.pixar.com with smtp
+	(Smail3.1.29.1 #2) id m0vVm7U-00HxbQC; Thu, 5 Dec 96 14:18 PST
+Received: from romeo.ic.ac.uk by pixar.com with SMTP id AA03010
+  (5.67b/IDA-1.5 for bruce@golem.pixar.com); Thu, 5 Dec 1996 14:18:14 -0800
+Received: from judy.ic.ac.uk [155.198.5.5] 
+	by romeo.ic.ac.uk with esmtp (Exim 0.57 #1)
+	id 0vVm4A-00021u-00; Thu, 5 Dec 1996 22:14:50 +0000
+Received: from tera.ma.ic.ac.uk (tera-gw.ma.ic.ac.uk [155.198.192.34]) by judy.ic.ac.uk (8.7.5/8.7.5) with SMTP id WAA02771; Thu, 5 Dec 1996 22:14:25 GMT
+Received: by tera.ma.ic.ac.uk; id AA32332; Thu, 5 Dec 1996 22:14:24 GMT
+Date: Thu, 5 Dec 1996 22:14:24 GMT
+Message-Id: <9612052214.AA32332@tera.ma.ic.ac.uk>
+To: Debian-Users <debian-user@lists.debian.org>
+Cc: Bruce Perens <bruce@pixar.com>
+Subject: XFree 3.2 International Users HOWTO
+From: Arrigo Triulzi <a.triulzi@ic.ac.uk>
+Reply-To: a.triulzi@ic.ac.uk
+Organisation: Imperial College Mathematics Department
+X-Url: http://www.ma.ic.ac.uk/~agbt
+Status: RO
+
+Hello all,
+
+	this message is intended for those of us out there who _don't_
+have a US keyboard and are installing XFree 3.2. If you have a US
+keyboard ignore all that follows.
+
+To begin with I assume you have a relatively up-to-date Debian
+tree, i.e. all X stuff is version 3.2-1 or better. What you will want
+to do, immediately, is to make a safe copy of your XFree 3.1.2
+configuration, to do this simply do
+
+cp /etc/X11/XF86Config /somewhere/safe/XF86Config
+
+Then install the XFree 3.2 packages _including_ the xext package which
+contians the dreaded XKBD extension which we will need.
+
+Now, you will notice that the installation will not ask you any
+questions as to converting your 3.1.2 config file to 3.2. This is the
+catch: let us assume that you have a password with the '@'. Then in
+the UK, for example, the '@' character sits where in the US they have
+the '"' character and vice-versa. Let us assume that you run xdm. Then
+although you were used to X getting your keyboard right it will get it
+terribly wrong and you will not be able to log in - unless you know
+where all the characters sit on a US keyboard.
+
+How do you fix this? Simply run xf86config, install the keyboard that
+you need and then, once it is done, edit the config file:
+/etc/X11/XF86Config (as usual).
+
+There are a few changes, for example new video cards, so it might be a
+good idea to install a new config file from scratch. But, if like
+myself you have a 1152x900 100dpi mode you are particularly fond of
+you can recycle the old 3.1.2 XF86Config from the "Monitors" section
+onwards without any changes.
+
+Save this new config file and restart xdm. You will get back your
+proper keyboard mappings and be able to log in.
+
+Hope this helps someone else,
+
+	Arrigo
+
+-- 
+Arrigo Triulzi <arrigo@ic.ac.uk>, http://www.ma.ic.ac.uk/~agbt
+Mathematics Dept. Imperial College of Science & Technology - London - UK
+

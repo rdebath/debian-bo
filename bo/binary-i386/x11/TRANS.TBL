@@ -1,0 +1,81 @@
+L 9FONTS_1.DEB;1                    	9fonts_1-4.deb	../../binary-all/x11/9fonts_1-4.deb
+F 9MENU_1_.DEB;1                    	9menu_1.4-6.deb
+F 9TERM_1_.DEB;1                    	9term_1.6.6-3.deb
+F 9WM_1_2-.DEB;1                    	9wm_1.2-1.deb
+F AFTERSTE.DEB;1                    	afterstep_1.0-1.deb
+F AOUT-XPM.DEB;1                    	aout-xpm_3.4f-1.deb
+F CTWM_3_3.DEB;1                    	ctwm_3.3-2.deb
+F DXPC_3_5.DEB;1                    	dxpc_3.5.0-1.deb
+F FLOATBG_.DEB;1                    	floatbg_1.0-6.deb
+F FREETYPE.DEB;1                    	freetype_0.3-1.deb
+F FVWM-COM.DEB;1                    	fvwm-common_2.0.45-BETA-4.deb
+F FVWM2_2_.DEB;1                    	fvwm2_2.0.45-BETA-4.deb
+F FVWM95_2.DEB;1                    	fvwm95_2.0.42a-10.deb
+F FVWM_1_2.DEB;1                    	fvwm_1.24r-25.deb
+L GWM-DOC_.DEB;1                    	gwm-doc_1.8c-6.deb	../../binary-all/x11/gwm-doc_1.8c-6.deb
+F GWM_1_8C.DEB;1                    	gwm_1.8c-6.deb
+L MOTIFNLS.DEB;1                    	motifnls_2.1-1.1.deb	../../binary-all/x11/motifnls_2.1-1.1.deb
+F NEXTAW_0.DEB;1                    	nextaw_0.5.1-4.deb
+F OLVWM_4_.DEB;1                    	olvwm_4.1-5.deb
+F RXVT_2_2.DEB;1                    	rxvt_2.20-3.deb
+F SWISSWAT.DEB;1                    	swisswatch_0.6-1.deb
+F TKDESK_1.DEB;1                    	tkdesk_1.0b4-2.deb
+F UNCLUTTE.DEB;1                    	unclutter_0.8-13.deb
+F WM2_3-1.DEB;1                     	wm2_3-1.deb
+L X3270-HT.DEB;1                    	x3270-htmldoc_3.1.1.5-1.deb	../../binary-all/x11/x3270-htmldoc_3.1.1.5-1.deb
+F X3270_3_.DEB;1                    	x3270_3.1.1.5-1.deb
+F XARCLOCK.DEB;1                    	xarclock_1.0-3.deb
+F XAW3D_1_.DEB;1                    	xaw3d_1.3-5.deb
+F XAW95_1_.DEB;1                    	xaw95_1.1-3.deb
+F XBANNER_.DEB;1                    	xbanner_1.3-5.deb
+F XBASE_3_.DEB;1                    	xbase_3.3-3.deb
+L XBOOKS_3.DEB;1                    	xbooks_3.3-3.deb	../../binary-all/x11/xbooks_3.3-3.deb
+F XCOLORSE.DEB;1                    	xcolorsel_1.1a-2.deb
+F XCOLORS_.DEB;1                    	xcolors_1.5-4.deb
+F XCOMPAT_.DEB;1                    	xcompat_3.1.2-4.deb
+F XCONTRIB.DEB;1                    	xcontrib_3.2-2.deb
+F XDALICLO.DEB;1                    	xdaliclock_2.07-2.deb
+F XEGA_3_2.DEB;1                    	xega_3.2-1.deb
+F XEXT_3_3.DEB;1                    	xext_3.3-3.deb
+L XFNT100_.DEB;1                    	xfnt100_3.3-3.deb	../../binary-all/x11/xfnt100_3.3-3.deb
+L XFNT75_3.DEB;1                    	xfnt75_3.3-3.deb	../../binary-all/x11/xfnt75_3.3-3.deb
+L XFNTBASE.DEB;1                    	xfntbase_3.3-3.deb	../../binary-all/x11/xfntbase_3.3-3.deb
+L XFNTBIG_.DEB;1                    	xfntbig_3.3-3.deb	../../binary-all/x11/xfntbig_3.3-3.deb
+L XFNTCYR_.DEB;1                    	xfntcyr_3.3-3.deb	../../binary-all/x11/xfntcyr_3.3-3.deb
+L XFNTIL2_.DEB;1                    	xfntil2_1.0.2.deb	../../binary-all/x11/xfntil2_1.0.2.deb
+L XFNTPEX_.DEB;1                    	xfntpex_3.3-3.deb	../../binary-all/x11/xfntpex_3.3-3.deb
+L XFNTSCL_.DEB;1                    	xfntscl_3.3-3.deb	../../binary-all/x11/xfntscl_3.3-3.deb
+F XINPUT_1.DEB;1                    	xinput_1.1.1-1.deb
+F XKEYCAPS.DEB;1                    	xkeycaps_2.29-3.deb
+F XLIB6-DE.DEB;1                    	xlib6-dev_3.3-3.deb
+F XLIB6_3_.DEB;1                    	xlib6_3.3-3.deb
+F XLOCKMOR.DEB;1                    	xlockmore_4.02.1-1.deb
+L XMANPAGE.DEB;1                    	xmanpages_3.3-3.deb	../../binary-all/x11/xmanpages_3.3-3.deb
+F XMOTD_1_.DEB;1                    	xmotd_1.14b3-1.deb
+F XNEST_3_.DEB;1                    	xnest_3.3-3.deb
+F XODO_1_2.DEB;1                    	xodo_1.2-3.deb
+F XPASTE_1.DEB;1                    	xpaste_1.1-4.deb
+F XPM4_7-D.DEB;1                    	xpm4.7-dev_3.4g-9.deb
+F XPM4_7_3.DEB;1                    	xpm4.7_3.4g-9.deb
+F XPOSTITP.DEB;1                    	xpostitplus_2.3.1-1.deb
+F XSCREENS.DEB;1                    	xscreensaver_1.27-2.deb
+F XSERVER-.000;1                    	xserver-svga_3.3-3.deb
+F XSERVER-.001;1                    	xserver-mach8_3.3-3.deb
+F XSERVER-.002;1                    	xserver-8514_3.3-3.deb
+F XSERVER-.003;1                    	xserver-p9000_3.3-3.deb
+F XSERVER-.004;1                    	xserver-mono_3.3-3.deb
+F XSERVER-.005;1                    	xserver-w32_3.3-3.deb
+F XSERVER-.006;1                    	xserver-s3v_3.3-3.deb
+F XSERVER-.007;1                    	xserver-mach32_3.3-3.deb
+F XSERVER-.008;1                    	xserver-agx_3.3-3.deb
+F XSERVER-.009;1                    	xserver-i128_3.3-3.deb
+F XSERVER-.00A;1                    	xserver-vga16_3.3-3.deb
+F XSERVER-.00B;1                    	xserver-s3_3.3-3.deb
+F XSERVER-.DEB;1                    	xserver-mach64_3.3-3.deb
+F XSLIB_3_.DEB;1                    	xslib_3.3-3.deb
+F XTOOLWAI.DEB;1                    	xtoolwait_1.1-1.deb
+F XTRLOCK_.DEB;1                    	xtrlock_2.0-2.1.deb
+F XVIEW-CL.DEB;1                    	xview-clients_3.2p1.3-2.deb
+F XVIEW-DE.DEB;1                    	xview-dev_3.2p1.3-2.deb
+F XVIEW_3_.DEB;1                    	xview_3.2p1.3-2.deb
+F XZOOM_0_.DEB;1                    	xzoom_0.3-1.deb

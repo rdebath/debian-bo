@@ -1,0 +1,23 @@
+F AUMIX_1_.DEB;1                    	aumix_1.6.1-3.deb
+L AWE-DRV_.DEB;1                    	awe-drv_0.3.3c-1.deb	../../binary-all/sound/awe-drv_0.3.3c-1.deb
+F AWE-MIDI.DEB;1                    	awe-midi_0.3.3c-1.deb
+F AWE-NETS.DEB;1                    	awe-netscape_0.3.3c-1.deb
+F AWE-PATC.DEB;1                    	awe-patch_0.3.3c-1.deb
+F AWE-UTIL.DEB;1                    	awe-utils_0.3.3c-1.deb
+F BPLAY_0_.DEB;1                    	bplay_0.96-1.deb
+F CDDA2WAV.DEB;1                    	cdda2wav_0.8-1.deb
+F CDTOOL_1.DEB;1                    	cdtool_1.01-1.deb
+F GMOD_3_0.DEB;1                    	gmod_3.0.5-1.deb
+F MAPLAY_1.DEB;1                    	maplay_1.2-3.deb
+F MCTOOLS-.DEB;1                    	mctools-lite_970129-1.deb
+F NAS_1_2P.DEB;1                    	nas_1.2p4-1.deb
+F PLAYMIDI.DEB;1                    	playmidi_2.3-12.deb
+F S3MOD_1_.DEB;1                    	s3mod_1.09-9.deb
+F SAYTIME_.DEB;1                    	saytime_1.0-4.deb
+F SOX_11GA.DEB;1                    	sox_11gamma-1.deb
+F SPLAY_0_.DEB;1                    	splay_0.2-1.deb
+F TIMIDITY.000;1                    	timidity_0.2i-3.deb
+L TIMIDITY.DEB;1                    	timidity-patches_0.1-1.deb	../../binary-all/sound/timidity-patches_0.1-1.deb
+F WORKBONE.DEB;1                    	workbone_2.31-4.deb
+F XMIX_2_1.DEB;1                    	xmix_2.1-3.deb
+F XMP_0_99.DEB;1                    	xmp_0.99c-2.deb

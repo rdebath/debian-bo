@@ -1,0 +1,16 @@
+F BL_1_2-2.DEB;1                    	bl_1.2-2.deb
+F COLOR-CA.DEB;1                    	color-cal_3.5-1.deb
+F DBVIEW_1.DEB;1                    	dbview_1.0.3-2.deb
+F EJECT_1_.DEB;1                    	eject_1.5-1.deb
+F GPM_1_10.DEB;1                    	gpm_1.10-6.deb
+F HELLO_1_.DEB;1                    	hello_1.3-13.deb
+F ICAL_2_0.DEB;1                    	ical_2.0p2-2.deb
+F JOYSTICK.DEB;1                    	joystick_0.8.0-2.deb
+L KERNEL-P.DEB;1                    	kernel-package_3.28.deb	../../binary-all/misc/kernel-package_3.28.deb
+F LEE_1_1-.DEB;1                    	lee_1.1-2.deb
+L MISCUTIL.DEB;1                    	miscutils_999.0-1.deb	../../binary-all/misc/miscutils_999.0-1.deb
+F PC532DOW.DEB;1                    	pc532down_1.1-3.deb
+F SCREEN_3.DEB;1                    	screen_3.7.2-2.deb
+F SYSVBANN.DEB;1                    	sysvbanner_1.0-1.deb
+F UMSDOS_0.DEB;1                    	umsdos_0.9-1.deb
+F XCAL_4_1.DEB;1                    	xcal_4.1-2.deb

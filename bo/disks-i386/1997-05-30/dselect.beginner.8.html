@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>dselect.beginner</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Dselect documentation for beginners.</H2>
+
+<P>This file documents Dselect for first-time users and is intended to
+help in getting Debian installed successfully. It makes no attempt to explain
+everything, so when you first meet dselect work through the help screens.</P>
+
+<P>Dselect is used to select just which <A HREF="#Package">packages</A>
+<!-- XXX update this number -->
+(from ~1100) you wish to install. It will be run for you during the install
+and as it is a very powerful and somewhat complex thing, some knowledge
+of it before hand will not go astray. It will step you through the package
+installation process as follows: </P>
+
+<UL>
+<P>Choose the access method to use.<BR>
+Update list of available packages, if possible. <BR>
+Request which packages you want on your system. <BR>
+Install and upgrade wanted packages. <BR>
+Configure any packages that are unconfigured. <BR>
+Remove unwanted software.</P>
+</UL>
+
+<P><BR>
+<BR>
+As each step is completed successfully it will lead you on to the next.
+Go through them in order without skipping any steps. </P>
+
+<P>Here and there in this document we talk of starting another shell. Linux
+has 6 console sessions or shells available at any one time. You switch
+betwen them by hitting &lt;LEFT-ALT&gt; &lt;F1&gt; ... &lt;F6&gt;, after
+which you log in on your new shell and go ahead. The shell used by the
+install process is #1 so hit &lt;LEFT-ALT&gt; &lt;F1&gt;when you want to
+return to that process.</P>
+
+<P>Once in dselect you will get this screen:- </P>
+
+<H4>Debian Linux `dselect' package handling front end.</H4>
+
+<PRE>0.  [A]ccess  Choose the access method to use. 
+1.  [U]pdate  Update list of available packages, if possible. 
+2   [S]elect  Request which packages you want on your system.
+3.  [I]nstall Install and upgrade wanted packages. 
+4.  [C]onfig  Configure any packages that are unconfigured. 
+5.  [R]emove  Remove unwanted software.
+6.  [Q]uit    Quit dselect.</PRE>
+
+<PRE> Let's look at these one by one.</PRE>
+
+<H3>
+<HR WIDTH="100%"><BR>
+0 Access: </H3>
+
+<P>Here's the access screen: </P>
+
+<H4><BR>
+dselect - list of access methods </H4>
+
+<UL>
+<PRE><B>Abbrev.   Description 
+</B>cdrom     Install from a CD-ROM.
+nfs       Install from an NFS server (not yet mounted). 
+harddisk  Install from a hard disk partition (not yet mounted). 
+mounted   Install from a filesystem which is already mounted. 
+floppy    Install from a pile of floppy disks. 
+ftp       Install using ftp. </PRE>
+</UL>
+
+<P><BR>
+Here we tell dselect where our packages are. Note that the first three
+items are just a convenience and it would be just as good if you mounted
+your cdrom, nfs mount or other partition yourself and then used the _mounted_
+option. It follows that if your cdrom _is_ already mounted then you use
+the _mounted_ item, rather than the cdrom item. The same thing goes for
+nfs and for partitions on your harddisk. </P>
+
+<P>If you run into a problem here - maybe Linux can not see your cdrom,
+your nfs mount is not working or you have forgotten which partition the
+packages are on - you have a couple of options:-</P>
+
+<LI>Start another shell. Fix the problem and then return to the main shell.
+<BR>
+</LI>
+
+<LI>Quit dselect and run it again later. You might even need to shut down
+the computer to solve some problem. This is quite ok but when you come
+back to dselect run it as root. It will not be run automatically after
+the first time. </LI>
+
+<P><BR>
+After you choose the access method dselect will get you to indicate the
+precise location of the packages. If you do not get this right the first
+time hit ^C and return to the Access item.</P>
+
+<P>Once you are through here you will be returned to the main screen. </P>
+
+<P>
+<HR WIDTH="100%"></P>
+
+<H3><BR>
+1 Update </H3>
+
+<P>Dselect will read the <B>Packages</B> or <B>Packages.gz</B> files from
+the mirror and create a database on your system of all available packages.
+</P>
+
+<P>
+<HR WIDTH="100%"></P>
+
+<H3>2 Select</H3>
+
+<P>Hang on to your hat. This is where it all happens. The object of the
+excercise is to select just which packages you wish to have installed.
+</P>
+
+<P>Hit &lt;Enter&gt;. If you have a slow machine be aware that the screen
+will clear and can remain blank for 15 seconds so don't start bashing keys
+at this point.</P>
+
+<P>The first thing that comes up on the screen is page 1 of the Help file.
+You can get to this help by hitting <B>?</B> at any point in the Select
+screens and you can page through the help screens by hitting the <B>.</B>
+(full stop) key. </P>
+
+<P>Before you dive in note these points: </P>
+
+<LI>To <B>exit</B> the Select screen after all selections are complete,
+hit &lt;Enter&gt;. This will return you to the main screen <B>if</B> there
+is no problem with your selection. Else you will be asked to deal with
+that problem. When you are happy with any given screen hit &lt;Enter&gt;
+to get out. <BR>
+</LI>
+
+<LI><B>_Problems_</B> are quite normal and are to be expected. If you select
+package A and that package requires package B to run, then dselect will
+warn you of the problem and will most likely suggest a solution. If package
+A conflicts with package B (they are mutually exclusive) you will be asked
+to decide between them. <BR>
+</LI>
+
+<P>Let's look at the top two lines of the Select screen. </P>
+
+<PRE><B>dselect - recursive package listing               mark:+/=/- verbose:v help:? 
+EIOM Pri Section Package Description </B></PRE>
+
+<P>This tells us of some of the special keys:-</P>
+
+<PRE>+      Select a package for installation.
+=      Place a package on hold - useful on a broken package. You can reinstall an older 
+         version and place it on hold while you wait for a new one to appear. 
+-      Remove a package
+_      Remove a package and its config files.
+i,I    Toggle/cycle info displays.
+o,O    Cycle through the sort options.
+v,V    Is a terse/verbose toggle. Use this key to unlock the meanings of EIOM on line two,
+       but I'll give you a summary here anyway. (Note that upper and lower case keys are 
+       quite different in effect.) 
+
+<B>Flag   Meaning           Possible values 
+</B>E      Error             Space, R, I
+I      Installed state   Space, *, -, U, C, I 
+O      Old mark          *, -, =, _, n
+M      Mark              *, -, =, _, n 
+
+</PRE>
+
+<P><BR>
+Rather that spell all this out here I refer you to the Help screens where
+all is revealed. One example though. <BR>
+You enter dselect and find a line like this:-</P>
+
+<PRE><B>EIOM Pri  Section  Package   Description 
+</B>  ** Opt  misc     loadlin   a loader (running under DOS) for LINUX kernel
+</PRE>
+
+<P><BR>
+This is saying that loadlin was selected when you last ran dselect and
+that it is still selected, but it is not installed. Why not? The answer
+must be that the loadlin package is not physically avaiable. It is missing
+from your mirror. </P>
+
+<P>The information which dselect uses to get all the right packages installed
+is buried in the packages themselves. Nothing in this world is perfect
+and it does sometimes happen that the dependancies built into a package
+are incorrect, with the result that dselect simply cannot resolve the situation.
+A way out is provided where the user can regain control and it takes the
+form of the commands Q and X which are available in the Select screen.
+</P>
+
+<PRE><B>Q</B>   An over-ride. Forces dselect to ignore the built in dependancies and to do what you have 
+      specified. The results, of course, will be on your own head. 
+<B>X</B>   Use <B>X</B> if you get totally lost. It puts things back the way they were and exits. </PRE>
+
+<P>Keys which help you _not_ to get lost (!) are <B>R</B>, <B>U</B> and
+<B>D</B>. </P>
+
+<PRE><B>R</B>   Cancels all selections at this level. Does not affect selections made
+      at the previous level.
+<B>U</B>   If dselect has proposed changes and you have made further changes U will
+      restore dselect's selections.
+<B>D</B>   Removes the selections made by dselect, leaving only yours.
+
+</PRE>
+
+<P><B>An example: </B></P>
+
+<P>The boot-floppies package depends on these packages:-<BR>
+libc5-pic <BR>
+ncurses3.0-pic <BR>
+mkrboot <BR>
+ncurses3.0-dev <BR>
+</P>
+
+<P>The person maintaining boot-floppies also thinks that the following
+packages should be installed. These are not, however, essential:- </P>
+
+<PRE>loadlin
+fdos 
+dosemu 
+
+So when I select boot-floppies I get this screen: 
+
+<B>dselect - recursive package listing mark:             +/=/- verbose:v help:?
+EIOM Pri Section Package Description
+
+</B>  _* Opt devel boot-floppie Scripts to create the Debian installationfloppy
+  _* Xtt devel libc5-pic Kit for building specialized versions of the sha
+  _* Xtr devel ncurses3.0-p Video termial manipulation: Shared-library subs
+  _* Opt devel mkrboot Make a kernel + rootimage bootable from one disk
+  _* Opt devel ncurses3.0-d Video terminal manipulation: Developer's librari
+  _* Opt misc loadlin a loader (running under DOS) for LINUX kernel i
+  _* Opt misc fdos Free DOS (Kernel + boot utilities + Documentatio 
+  __ Opt misc dosemu The Linux DOS Emulator</PRE>
+
+<PRE>See how all the required packages have been selected for me.
+
+</PRE>
+
+<P>The <B>R</B> key puts things back to the starting point. </P>
+
+<PRE><B>dselect - recursive package listing mark:             +/=/- verbose:v help:?
+EIOM Pri Section Package Description
+</B>  __ Opt devel boot-floppie Scripts to create the Debian installationfloppy
+  __ Xtt devel libc5-pic Kit for building specialized versions of the sha
+  __ Xtr devel ncurses3.0-p Video termial manipulation: Shared-library subs
+  __ Opt devel mkrboot Make a kernel + rootimage bootable from one disk
+  __ Opt devel ncurses3.0-d Video terminal manipulation: Developer's librari
+  __ Opt misc loadlin a loader (running under DOS) for LINUX kernel i
+  __ Opt misc fdos Free DOS (Kernel + boot utilities + Documentatio
+  __ Opt misc dosemu The Linux DOS Emulator
+</PRE>
+
+<P>(If I decide now that I don't want boot-floppies I just hit &lt;Enter&gt;.)<BR>
+</P>
+
+<P>The <B>D </B>key puts things the way I selected them in the first place.
+</P>
+
+<PRE><B>dselect - recursive package listing mark:             +/=/- verbose:v help:?
+EIOM Pri Section Package Description
+</B>  _* Opt devel boot-floppie Scripts to create the Debian installation floppy
+  __ Xtt devel libc5-pic Kit for building specialized versions of the sha
+  __ Xtr devel ncurses3.0-p Video termial manipulation: Shared-library subs
+  __ Opt devel mkrboot Make a kernel + rootimage bootable from one disk
+  __ Opt devel ncurses3.0-d Video terminal manipulation: Developer's librari
+  __ Opt misc loadlin a loader (running under DOS) for LINUX kernel 
+  __ Opt misc fdos Free DOS (Kernel + boot utilities + Documentatio
+  __ Opt misc dosemu The Linux DOS Emulator
+
+</PRE>
+
+<P>The <B>U</B> key restores dselect's selections. </P>
+
+<PRE><B>dselect - recursive package listing mark:            +/=/- verbose:v help:?
+EIOM Pri Section Package Description
+</B>  _* Opt devel boot-floppie Scripts to create the Debian installation floppy 
+  _* Xtt devel libc5-pic Kit for building specialized versions of the sha
+  _* Xtr devel ncurses3.0-p Video termial manipulation: Shared-library subs
+  _* Opt devel mkrboot Make a kernel + rootimage bootable from one disk
+  _* Opt devel ncurses3.0-d Video terminal manipulation: Developer's librari
+  _* Opt misc loadlin a loader (running under DOS) for LINUX kernel i
+  _* Opt misc fdos Free DOS (Kernel + boot utilities + Documentatio
+  __ Opt misc dosemu The Linux DOS Emulator
+</PRE>
+
+<P>I suggest running with the defaults for now - you will have ample opportunity
+of adding more later. A possible exception which you may choose to deselect
+depending on your experience is:- </P>
+
+<PRE><B>emacs</B> (very big, not everyone wants it)
+</PRE>
+
+<P>And I would suggest not installing: </P>
+
+<PRE><B>inn</B>   (big, difficult to get going)
+<B>x11</B>   (big, difficult to get going)</PRE>
+
+<P>Whatever you decide, hit &lt;Enter&gt; to accept and return to the main
+screen. If this results in unresolved problems you will be bounced right
+back to another problem resolution screen. </P>
+
+<P>So the <B>R</B>, <B>U</B> and <B>D</B> keys are very useful in what_if
+situations. You can experiment at will and then restore everything and
+start again. <B>Don't</B> look on them as being in a glass box labelled
+<B>Break In Emergency. </B></P>
+
+<P>After making your selections in the Select screen, hit <B>I</B> to give
+you a big window, <B>t</B> to take you to the beginning and then use the
+<B>page-down</B> key to look quickly through the settings. This way you
+can check the results of your work and spot glaring errors. Some people
+have dselected whole groups of packages by mistake and not noticed the
+error until too late. Dselect is a _very_ powerful tool so don't misuse
+it. </P>
+
+<P>You should now have this situation:-</P>
+
+<PRE><B>package category     status
+
+</B>required             all selected
+important            all selected
+standard             mostly selected
+optional             mostly dselected
+extra                mostly dselected
+</PRE>
+
+<P>Happy? Hit &lt;Enter&gt; to exit the Select process. You can come back
+and run Select again if you wish. </P>
+
+<H3>
+<HR WIDTH="100%"><BR>
+3 Install </H3>
+
+<!-- XXX update numbers -->
+<P>Dselect runs through the entire 1100 packages and installs those selected.
+Expect to get asked to make decisions as you go. It is often useful to
+switch to a different shell to compare, say, an old config with a new one.
+If the old file is conf.modules the new one will be conf.modules.dpkg-new.
+</P>
+
+<P>The screen scrolls past fairly quickly on a new machine. You can stop/start
+it with ^S/^Q and at the end of the run you will get a list of any uninstalled
+packages. If you want to keep a record of everything that happens use normal
+Unix features like tee or script. </P>
+
+<P>It can happen that a package does not get installed because it depends on 
+some other package which is listed for installation but is not yet installed. 
+The answer here is to run Install again.  Cases have been reported where it 
+was necessary to run it 4 times before everything slipped into place. </P>
+
+<H3>
+<HR WIDTH="100%"><BR>
+4 Configure </H3>
+
+<P>Most packages get configured in step 3, but anything left hanging can
+be configured here.</P>
+
+<H3>
+<HR WIDTH="100%"><BR>
+5 Remove </H3>
+
+<P>Removes packages that are installed but no longer required. </P>
+
+<H3>
+<HR WIDTH="100%"><BR>
+6 Quit </H3>
+
+<P>I suggest running <B>/etc/cron.daily/find </B>at this point as you have
+a lot of new files on your system. Then you can use <B>locate</B> to get
+the location of any given file. </P>
+
+<H4>
+<HR WIDTH="100%"><BR>
+A few hints in conclusion.</H4>
+
+<P>When the install process runs dselect for you, you will doubtless be
+eager to get Debian running ASAP. Well, please be prepared to take an hour
+or so as you have to learn your way around and then get it right. When
+you enter the Select screen for the first time don't make ANY selections
+at all - just hit &lt;Enter&gt; and see what dependancy problems there
+are. Try fixing them. If you find yourself back at the main screen run
+<B>Select</B> again. </P>
+
+<P>You can get an idea of the size of a package by hitting <B>i </B>twice
+and looking for the Size figure. This is the size of the crunched package,
+so the uncrunched files will be a lot bigger. </P>
+
+<P>Installing a new Debian system is a very complex thing, but dselect
+can do it for you as easily as can be. So take the time to learn how to
+drive it. Read the help screens and experiment with <B>i, I, o,</B> and
+<B>O</B>. Use the <B>R</B> key. It's all there, but it's up to you to use
+it effectively.</P>
+
+<P>
+<HR WIDTH="100%"><B>Glossary:</B></P>
+
+<P><A NAME="Package"></A><B>Package</B> <BR>
+A file which contains everything needed to install, de-install and run
+a particular program. </P>
+
+<P>The program which handles packages is <B>dpkg</B>. <B>Dselect </B>is
+a front end to dpkg. Experienced users often use dpkg to install or remove
+a package.</P>
+
+<P><BR>
+<A NAME="Package_names"></A><B>Package names</B> <BR>
+All package names have the form xxxxxxxxxxx.deb </P>
+
+<P><B>Sample package names are</B>:<BR>
+efax_08a-1.deb<BR>
+lrzsz_0.12b-1.deb<BR>
+mgetty_0.99.2-6.deb<BR>
+minicom_1.75-1.deb <BR>
+term_2.3.5-5.deb <BR>
+uucp_1.06.1-2.deb <BR>
+uutraf_1.1-1.deb <BR>
+xringd_1.10-2.deb <BR>
+xtel_3.1-2.deb </P>
+
+</BODY>
+</HTML>
