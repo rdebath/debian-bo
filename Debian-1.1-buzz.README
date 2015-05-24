@@ -1,0 +1,13 @@
+This is a unofficial image of a Debian 1.1 "buzz" cdrom in jigdo format.
+
+The jigdo files require network access to the Debian archive to reconstruct
+the CD-ROM image.
+
+    http://archive.debian.org/debian/dists/buzz/
+
+The "jigdo-lite" command can do the download and reconstruction based either
+on a previously mirrored copy of the archive or by directly downloading.
+
+    jigdo-lite Debian-1.1-buzz.jigdo
+
+The README at the root of the ISO image describes how to install for QEMU.
